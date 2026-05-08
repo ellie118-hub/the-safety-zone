@@ -5,7 +5,7 @@ import random
 import datetime
 
 # --- 1. CONFIG ---
-API_KEY = "AIzaSyBQX5CCossh3TWg_xk4qVYWCtLXNIlooCE"
+API_KEY = st.secrets["GEMINI_KEY"]
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash')
 
