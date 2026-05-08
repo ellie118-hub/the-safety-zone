@@ -7,7 +7,7 @@ import datetime
 # --- 1. CONFIG ---
 API_KEY = st.secrets["GEMINI_KEY"]
 genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 st.set_page_config(page_title="The Safety Zone", page_icon="🎙️", layout="wide")
 
