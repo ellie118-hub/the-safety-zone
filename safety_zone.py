@@ -5,9 +5,23 @@ import random
 import datetime
 
 # --- 1. CONFIG ---
+# --- 1. CONFIG ---
 API_KEY = st.secrets["GEMINI_KEY"]
 genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel(model_name='gemini-pro')
+
+try:
+    # Этот код запросит у Google список всех моделей, которые тебе доступны
+    available_models = [m.name for m in genai.list_models() if 'generateContent' in m.supported_generation_methods]
+    if available_models:
+        # Берем самую первую доступную модель из списка
+        model_to_use = available_models[0]
+        model = genai.GenerativeModel(model_to_use)
+    else:
+        st.error("Google говорит, что у тебя нет доступных моделей. Проверь API ключ!")
+        st.stop()
+except Exception as e:
+    st.error(f"Ошибка при подключении к Google: {e}")
+    st.stop()
 
 st.set_page_config(page_title="The Safety Zone", page_icon="🎙️", layout="wide")
 
