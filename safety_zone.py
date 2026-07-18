@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from streamlit_mic_recorder import mic_recorder
 import google.generativeai as genai
 import random
@@ -6,7 +7,7 @@ import datetime
 
 # --- 1. CONFIG ---
 # --- 1. CONFIG ---
-API_KEY = st.secrets["GEMINI_KEY"]
+API_KEY = os.environ["GEMINI_KEY"]
 genai.configure(api_key=API_KEY)
 
 try:
