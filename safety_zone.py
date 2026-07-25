@@ -23,6 +23,13 @@ except Exception as e:
 
 st.set_page_config(page_title="The Safety Zone", page_icon="🎙️", layout="wide")
 
+# =========================================================================
+#   explain_lang  -> the language the STUDENT understands (UI text, and
+#                     the meaning/translation of new words, idioms, books)
+#   practice_lang -> the language the STUDENT IS PRACTICING SPEAKING
+#   level         -> only shown/used for languages in LEVELED_LANGS
+# =========================================================================
+
 EXPLAIN_LANGS = ["kk", "ru", "en"]
 EXPLAIN_LABELS = {"kk": "ҚАЗ", "ru": "РУС", "en": "ENG"}
 
@@ -504,48 +511,57 @@ with st.sidebar:
     st.write("---")
 
     st.subheader(t["articles_header"])
-    if practice_lang == "de":
-        st.markdown("""
-        * **[Nachrichtenleicht](https://www.nachrichtenleicht.de/)**
-        * **[DW Learn German](https://learngerman.dw.com/)**
-        * **[Deutsche Welle](https://www.dw.com/de/themen/s-9077)**
-        """)
-    elif practice_lang == "ru":
-        st.markdown("""
-        * **[N+1](https://nplus1.ru/)**
-        * **[ПостНаука](https://postnauka.ru/)**
-        * **[Arzamas](https://arzamas.academy/)**
-        """)
-    elif practice_lang == "kk":
-        st.markdown("""
-        * **[Abai.kz](https://abai.kz/)**
-        * **[Adebiportal.kz](https://adebiportal.kz/)**
-        * **[Massaget.kz](https://massaget.kz/)**
-        """)
-    elif practice_lang == "es":
-        st.markdown("""
-        * **[News in Slow Spanish](https://www.newsinslowspanish.com/)**
-        * **[BBC Mundo](https://www.bbc.com/mundo)**
-        * **[El País](https://elpais.com/)**
-        """)
-    elif practice_lang == "it":
-        st.markdown("""
-        * **[News in Slow Italian](https://www.newsinslowitalian.com/)**
-        * **[Internazionale](https://www.internazionale.it/)**
-        * **[Corriere della Sera](https://www.corriere.it/)**
-        """)
-    elif practice_lang == "fr":
-        st.markdown("""
-        * **[News in Slow French](https://www.newsinslowfrench.com/)**
-        * **[RFI Savoirs](https://savoirs.rfi.fr/)**
-        * **[Le Monde](https://www.lemonde.fr/)**
-        """)
+    ARTICLES = {
+        "en": {
+            "A1-A2": [("News in Levels (Level 1-2)", "https://www.newsinlevels.com/"),
+                      ("BBC Learning English", "https://www.bbc.co.uk/learningenglish/")],
+            "B1-B2": [("News in Levels (Level 3)", "https://www.newsinlevels.com/"),
+                      ("BBC Learning English - 6 Minute English", "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english")],
+            "C1-C2": [("Teen Vogue", "https://www.teenvogue.com/"),
+                      ("BBC News", "https://www.bbc.com/news")],
+        },
+        "de": {
+            "A1-A2": [("Nachrichtenleicht", "https://www.nachrichtenleicht.de/"),
+                      ("DW Learn German", "https://learngerman.dw.com/")],
+            "B1-B2": [("DW Learn German - Nachrichten", "https://learngerman.dw.com/"),
+                      ("Nachrichtenleicht", "https://www.nachrichtenleicht.de/")],
+            "C1-C2": [("Deutsche Welle", "https://www.dw.com/de/themen/s-9077"),
+                      ("Tagesschau", "https://www.tagesschau.de/")],
+        },
+        "es": {
+            "A1-A2": [("Duolingo Stories", "https://stories.duolingo.com/"),
+                      ("Spanish Playground", "https://spanishplayground.net/")],
+            "B1-B2": [("20 Minutos", "https://www.20minutos.es/"),
+                      ("BBC Mundo", "https://www.bbc.com/mundo")],
+            "C1-C2": [("El País", "https://elpais.com/"),
+                      ("BBC Mundo", "https://www.bbc.com/mundo")],
+        },
+        "it": {
+            "A1-A2": [("Podcast Italiano (transcript facili)", "https://podcastitaliano.com/"),
+                      ("One World Italiano", "https://oneworlditaliano.com/")],
+            "B1-B2": [("Il Post", "https://www.ilpost.it/"),
+                      ("Podcast Italiano", "https://podcastitaliano.com/")],
+            "C1-C2": [("Corriere della Sera", "https://www.corriere.it/"),
+                      ("Internazionale", "https://www.internazionale.it/")],
+        },
+        "fr": {
+            "A1-A2": [("Podcast Français Facile", "https://www.podcastfrancaisfacile.com/"),
+                      ("1jour1actu", "https://www.1jour1actu.com/")],
+            "B1-B2": [("1jour1actu", "https://www.1jour1actu.com/"),
+                      ("RFI Savoirs", "https://savoirs.rfi.fr/")],
+            "C1-C2": [("RFI", "https://www.rfi.fr/fr/"),
+                      ("France Culture", "https://www.radiofrance.fr/franceculture")],
+        },
+        "ru": [("N+1", "https://nplus1.ru/"), ("ПостНаука", "https://postnauka.ru/"), ("Arzamas", "https://arzamas.academy/")],
+        "kk": [("Abai.kz", "https://abai.kz/"), ("Adebiportal.kz", "https://adebiportal.kz/"), ("Massaget.kz", "https://massaget.kz/")],
+    }
+
+    if practice_lang in LEVELED_LANGS:
+        article_links = ARTICLES[practice_lang][level]
     else:
-        st.markdown("""
-        * **[News in Levels](https://www.newsinlevels.com/)**
-        * **[BBC Learning English](https://www.bbc.co.uk/learningenglish/english/features/6-minute-english)**
-        * **[Teen Vogue - Politics](https://www.teenvogue.com/politics)**
-        """)
+        article_links = ARTICLES[practice_lang]
+
+    st.markdown("\n".join(f"* **[{name}]({url})**" for name, url in article_links))
 
     books_pool = BOOKS[practice_lang]
     week_num = datetime.date.today().isocalendar()[1]
