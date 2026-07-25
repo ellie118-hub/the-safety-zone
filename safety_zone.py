@@ -23,8 +23,6 @@ except Exception as e:
 
 st.set_page_config(page_title="The Safety Zone", page_icon="🎙️", layout="wide")
 
-
-
 EXPLAIN_LANGS = ["kk", "ru", "en"]
 EXPLAIN_LABELS = {"kk": "ҚАЗ", "ru": "РУС", "en": "ENG"}
 
@@ -423,55 +421,57 @@ IDIOMS_FR = {
 }
 
 # --- 5. BOOKS (flat per practice_lang, not leveled) ---
+# "term" = the actual word from the book, in the PRACTICE language.
+# "meaning" = translation of what it means, per explain_lang (en/ru/kk).
 BOOKS_EN = [
-    {"title": "'Animal Farm' by George Orwell", "tag": "Politics", "vocab": {"en": "Allegory — a story with a hidden meaning.", "ru": "Аллегория — история со скрытым смыслом.", "kk": "Аллегория — жасырын мағынасы бар әңгіме."}},
-    {"title": "'The Giver' by Lois Lowry", "tag": "Society", "vocab": {"en": "Utopia — an imagined perfect place.", "ru": "Утопия — воображаемое идеальное место.", "kk": "Утопия — қиялдағы мінсіз орын."}},
-    {"title": "'Fahrenheit 451' by Ray Bradbury", "tag": "Media", "vocab": {"en": "Censorship — suppressing information.", "ru": "Цензура — подавление информации.", "kk": "Цензура — ақпаратты тежеу."}},
-    {"title": "'Wonder' by R.J. Palacio", "tag": "School Life", "vocab": {"en": "Empathy — understanding others' feelings.", "ru": "Эмпатия — понимание чувств других.", "kk": "Эмпатия — басқалардың сезімін түсіну."}},
-    {"title": "'1984' by George Orwell", "tag": "Freedom", "vocab": {"en": "Totalitarianism — absolute state control.", "ru": "Тоталитаризм — абсолютный контроль государства.", "kk": "Тоталитаризм — мемлекеттің толық бақылауы."}},
+    {"title": "'Animal Farm' by George Orwell", "tag": "Politics", "term": "Allegory", "meaning": {"en": "a story with a hidden meaning.", "ru": "история со скрытым смыслом.", "kk": "жасырын мағынасы бар әңгіме."}},
+    {"title": "'The Giver' by Lois Lowry", "tag": "Society", "term": "Utopia", "meaning": {"en": "an imagined perfect place.", "ru": "воображаемое идеальное место.", "kk": "қиялдағы мінсіз орын."}},
+    {"title": "'Fahrenheit 451' by Ray Bradbury", "tag": "Media", "term": "Censorship", "meaning": {"en": "suppressing information.", "ru": "подавление информации.", "kk": "ақпаратты тежеу."}},
+    {"title": "'Wonder' by R.J. Palacio", "tag": "School Life", "term": "Empathy", "meaning": {"en": "understanding others' feelings.", "ru": "понимание чувств других.", "kk": "басқалардың сезімін түсіну."}},
+    {"title": "'1984' by George Orwell", "tag": "Freedom", "term": "Totalitarianism", "meaning": {"en": "absolute state control.", "ru": "абсолютный контроль государства.", "kk": "мемлекеттің толық бақылауы."}},
 ]
 
 BOOKS_DE = [
-    {"title": "«Die Welle» – Todd Strasser", "tag": "Gesellschaft", "vocab": {"en": "Conformity — going along with the group.", "ru": "Конформизм — подчинение группе.", "kk": "Конформизм — топқа бағыну."}},
-    {"title": "«Tschick» – Wolfgang Herrndorf", "tag": "Freundschaft", "vocab": {"en": "Outsider — someone who doesn't belong.", "ru": "Аутсайдер — тот, кто не вписывается.", "kk": "Аутсайдер — топқа сыймайтын адам."}},
-    {"title": "«Momo» – Michael Ende", "tag": "Zeit", "vocab": {"en": "Mindfulness — being aware of the present.", "ru": "Осознанность — внимание к настоящему моменту.", "kk": "Зейін қою — қазіргі сәтке мән беру."}},
-    {"title": "«Emil und die Detektive» – Erich Kästner", "tag": "Abenteuer", "vocab": {"en": "Solidarity — acting together for a goal.", "ru": "Солидарность — совместные действия ради цели.", "kk": "Ынтымақтастық — ортақ мақсат үшін бірге әрекет ету."}},
-    {"title": "«Die Verwandlung» – Franz Kafka", "tag": "Identität", "vocab": {"en": "Alienation — feeling disconnected from others.", "ru": "Отчуждение — чувство оторванности от других.", "kk": "Оқшаулану — басқалардан алшақтау сезімі."}},
+    {"title": "«Die Welle» – Todd Strasser", "tag": "Gesellschaft", "term": "Konformität", "meaning": {"en": "going along with the group.", "ru": "подчинение группе.", "kk": "топқа бағыну."}},
+    {"title": "«Tschick» – Wolfgang Herrndorf", "tag": "Freundschaft", "term": "Außenseiter", "meaning": {"en": "someone who doesn't belong.", "ru": "тот, кто не вписывается.", "kk": "топқа сыймайтын адам."}},
+    {"title": "«Momo» – Michael Ende", "tag": "Zeit", "term": "Achtsamkeit", "meaning": {"en": "being aware of the present.", "ru": "внимание к настоящему моменту.", "kk": "қазіргі сәтке мән беру."}},
+    {"title": "«Emil und die Detektive» – Erich Kästner", "tag": "Abenteuer", "term": "Zusammenhalt", "meaning": {"en": "acting together for a goal.", "ru": "совместные действия ради цели.", "kk": "ортақ мақсат үшін бірге әрекет ету."}},
+    {"title": "«Die Verwandlung» – Franz Kafka", "tag": "Identität", "term": "Entfremdung", "meaning": {"en": "feeling disconnected from others.", "ru": "чувство оторванности от других.", "kk": "басқалардан алшақтау сезімі."}},
 ]
 
 BOOKS_RU = [
-    {"title": "«Мастер и Маргарита» — Михаил Булгаков", "tag": "Философия", "vocab": {"en": "Allegory — a story with a hidden meaning.", "ru": "Аллегория — история со скрытым смыслом.", "kk": "Аллегория — жасырын мағынасы бар әңгіме."}},
-    {"title": "«Дети подземелья» — Владимир Короленко", "tag": "Общество", "vocab": {"en": "Compassion — sympathy for others.", "ru": "Сострадание — сочувствие другим.", "kk": "Мейірімділік — басқаларға жанашырлық."}},
-    {"title": "«Дубровский» — Александр Пушкин", "tag": "Справедливость", "vocab": {"en": "Justice — fairness and moral rightness.", "ru": "Справедливость — нравственная правота.", "kk": "Әділдік — адалдық пен растық."}},
-    {"title": "«Судьба человека» — Михаил Шолохов", "tag": "Война", "vocab": {"en": "Resilience — the ability to recover from hardship.", "ru": "Стойкость — способность преодолевать трудности.", "kk": "Төзімділік — қиындықтан қайта қалпына келу қабілеті."}},
+    {"title": "«Мастер и Маргарита» — Михаил Булгаков", "tag": "Философия", "term": "Аллегория", "meaning": {"en": "a story with a hidden meaning.", "ru": "история со скрытым смыслом.", "kk": "жасырын мағынасы бар әңгіме."}},
+    {"title": "«Дети подземелья» — Владимир Короленко", "tag": "Общество", "term": "Сострадание", "meaning": {"en": "sympathy for others.", "ru": "сочувствие другим.", "kk": "басқаларға жанашырлық."}},
+    {"title": "«Дубровский» — Александр Пушкин", "tag": "Справедливость", "term": "Справедливость", "meaning": {"en": "fairness and moral rightness.", "ru": "нравственная правота.", "kk": "адалдық пен растық."}},
+    {"title": "«Судьба человека» — Михаил Шолохов", "tag": "Война", "term": "Стойкость", "meaning": {"en": "the ability to recover from hardship.", "ru": "способность преодолевать трудности.", "kk": "қиындықтан қайта қалпына келу қабілеті."}},
 ]
 
 BOOKS_KK = [
-    {"title": "«Абай жолы» – Мұхтар Әуезов", "tag": "Тарих", "vocab": {"kk": "Тағдыр — адам өмірінің бағыты.", "ru": "Судьба — предопределённый ход жизни человека.", "en": "Fate — the predetermined course of one's life."}},
-    {"title": "«Менің атым Қожа» – Бердібек Соқпақбаев", "tag": "Мектеп өмірі", "vocab": {"kk": "Жауапкершілік — өз әрекетің үшін жауап беру.", "ru": "Ответственность — обязанность отвечать за свои поступки.", "en": "Responsibility — being accountable for one's actions."}},
-    {"title": "«Көшпенділер» – Ілияс Есенберлин", "tag": "Тарих", "vocab": {"kk": "Азаттық — тәуелсіздік, еркіндік.", "ru": "Свобода — независимость.", "en": "Freedom — independence."}},
-    {"title": "«Ұлпан» – Ғабит Мүсірепов", "tag": "Қоғам", "vocab": {"kk": "Әділдік — растық пен адалдық.", "ru": "Справедливость — правда и честность.", "en": "Justice — fairness and honesty."}},
+    {"title": "«Абай жолы» – Мұхтар Әуезов", "tag": "Тарих", "term": "Тағдыр", "meaning": {"kk": "адам өмірінің бағыты.", "ru": "предопределённый ход жизни человека.", "en": "the predetermined course of one's life."}},
+    {"title": "«Менің атым Қожа» – Бердібек Соқпақбаев", "tag": "Мектеп өмірі", "term": "Жауапкершілік", "meaning": {"kk": "өз әрекетің үшін жауап беру.", "ru": "обязанность отвечать за свои поступки.", "en": "being accountable for one's actions."}},
+    {"title": "«Көшпенділер» – Ілияс Есенберлин", "tag": "Тарих", "term": "Азаттық", "meaning": {"kk": "тәуелсіздік, еркіндік.", "ru": "независимость.", "en": "independence."}},
+    {"title": "«Ұлпан» – Ғабит Мүсірепов", "tag": "Қоғам", "term": "Әділдік", "meaning": {"kk": "растық пен адалдық.", "ru": "правда и честность.", "en": "fairness and honesty."}},
 ]
 
 BOOKS_ES = [
-    {"title": "'Como agua para chocolate' – Laura Esquivel", "tag": "Tradición", "vocab": {"en": "Passion — intense, powerful emotion.", "ru": "Страсть — сильное, глубокое чувство.", "kk": "Құштарлық — қатты, терең сезім."}},
-    {"title": "'Cien años de soledad' – Gabriel García Márquez", "tag": "Realismo mágico", "vocab": {"en": "Solitude — the state of being alone.", "ru": "Одиночество — состояние уединения.", "kk": "Жалғыздық — жалғыз қалу күйі."}},
-    {"title": "'La casa de los espíritus' – Isabel Allende", "tag": "Familia", "vocab": {"en": "Fate — the predetermined course of events.", "ru": "Судьба — предопределённый ход событий.", "kk": "Тағдыр — алдын ала белгіленген өмір барысы."}},
-    {"title": "'El túnel' – Ernesto Sabato", "tag": "Psicología", "vocab": {"en": "Obsession — a fixed, intense preoccupation.", "ru": "Одержимость — навязчивая, сильная поглощённость чем-то.", "kk": "Елігу — бір нәрсеге қатты құмарту."}},
+    {"title": "'Como agua para chocolate' – Laura Esquivel", "tag": "Tradición", "term": "Pasión", "meaning": {"en": "intense, powerful emotion.", "ru": "сильное, глубокое чувство.", "kk": "қатты, терең сезім."}},
+    {"title": "'Cien años de soledad' – Gabriel García Márquez", "tag": "Realismo mágico", "term": "Soledad", "meaning": {"en": "the state of being alone.", "ru": "состояние уединения.", "kk": "жалғыз қалу күйі."}},
+    {"title": "'La casa de los espíritus' – Isabel Allende", "tag": "Familia", "term": "Destino", "meaning": {"en": "the predetermined course of events.", "ru": "предопределённый ход событий.", "kk": "алдын ала белгіленген өмір барысы."}},
+    {"title": "'El túnel' – Ernesto Sabato", "tag": "Psicología", "term": "Obsesión", "meaning": {"en": "a fixed, intense preoccupation.", "ru": "навязчивая, сильная поглощённость чем-то.", "kk": "бір нәрсеге қатты құмарту."}},
 ]
 
 BOOKS_IT = [
-    {"title": "'Il fu Mattia Pascal' – Luigi Pirandello", "tag": "Identità", "vocab": {"en": "Identity — who a person truly is.", "ru": "Идентичность — то, кем человек является на самом деле.", "kk": "Бірегейлік — адамның шынайы болмысы."}},
-    {"title": "'Se questo è un uomo' – Primo Levi", "tag": "Memoria", "vocab": {"en": "Dignity — the value and worth of a person.", "ru": "Достоинство — ценность и значимость человека.", "kk": "Қадір-қасиет — адамның құндылығы."}},
-    {"title": "'Il nome della rosa' – Umberto Eco", "tag": "Mistero", "vocab": {"en": "Truth — what is actually real.", "ru": "Истина — то, что действительно реально.", "kk": "Ақиқат — шынайы болған нәрсе."}},
-    {"title": "'La coscienza di Zeno' – Italo Svevo", "tag": "Psicologia", "vocab": {"en": "Consciousness — awareness of oneself.", "ru": "Сознание — осознание себя.", "kk": "Сана — өзін-өзі түйсіну."}},
+    {"title": "'Il fu Mattia Pascal' – Luigi Pirandello", "tag": "Identità", "term": "Identità", "meaning": {"en": "who a person truly is.", "ru": "то, кем человек является на самом деле.", "kk": "адамның шынайы болмысы."}},
+    {"title": "'Se questo è un uomo' – Primo Levi", "tag": "Memoria", "term": "Dignità", "meaning": {"en": "the value and worth of a person.", "ru": "ценность и значимость человека.", "kk": "адамның құндылығы."}},
+    {"title": "'Il nome della rosa' – Umberto Eco", "tag": "Mistero", "term": "Verità", "meaning": {"en": "what is actually real.", "ru": "то, что действительно реально.", "kk": "шынайы болған нәрсе."}},
+    {"title": "'La coscienza di Zeno' – Italo Svevo", "tag": "Psicologia", "term": "Coscienza", "meaning": {"en": "awareness of oneself.", "ru": "осознание себя.", "kk": "өзін-өзі түйсіну."}},
 ]
 
 BOOKS_FR = [
-    {"title": "'L'Étranger' – Albert Camus", "tag": "Philosophie", "vocab": {"en": "Absurd — lacking apparent logical meaning.", "ru": "Абсурд — лишённое видимого логического смысла.", "kk": "Абсурд — логикалық мағынасы жоқтай көрінетін."}},
-    {"title": "'Le Petit Prince' – Antoine de Saint-Exupéry", "tag": "Philosophie", "vocab": {"en": "Essential — what truly matters.", "ru": "Существенное — то, что действительно важно.", "kk": "Маңызды — шынымен мәні бар нәрсе."}},
-    {"title": "'Les Misérables' – Victor Hugo", "tag": "Justice sociale", "vocab": {"en": "Redemption — being saved from wrongdoing.", "ru": "Искупление — освобождение от вины через исправление.", "kk": "Өтеу — кінәні түзету арқылы құтылу."}},
-    {"title": "'No et moi' – Delphine de Vigan", "tag": "Société", "vocab": {"en": "Solitude — the state of being alone.", "ru": "Одиночество — состояние уединения.", "kk": "Жалғыздық — жалғыз қалу күйі."}},
+    {"title": "'L'Étranger' – Albert Camus", "tag": "Philosophie", "term": "Absurde", "meaning": {"en": "lacking apparent logical meaning.", "ru": "лишённое видимого логического смысла.", "kk": "логикалық мағынасы жоқтай көрінетін."}},
+    {"title": "'Le Petit Prince' – Antoine de Saint-Exupéry", "tag": "Philosophie", "term": "Essentiel", "meaning": {"en": "what truly matters.", "ru": "то, что действительно важно.", "kk": "шынымен мәні бар нәрсе."}},
+    {"title": "'Les Misérables' – Victor Hugo", "tag": "Justice sociale", "term": "Rédemption", "meaning": {"en": "being saved from wrongdoing.", "ru": "освобождение от вины через исправление.", "kk": "кінәні түзету арқылы құтылу."}},
+    {"title": "'No et moi' – Delphine de Vigan", "tag": "Société", "term": "Solitude", "meaning": {"en": "the state of being alone.", "ru": "состояние уединения.", "kk": "жалғыз қалу күйі."}},
 ]
 
 BOOKS = {"en": BOOKS_EN, "de": BOOKS_DE, "ru": BOOKS_RU, "kk": BOOKS_KK, "es": BOOKS_ES, "it": BOOKS_IT, "fr": BOOKS_FR}
@@ -559,7 +559,7 @@ with st.sidebar:
     st.write("---")
     st.subheader(t["vocab_header"])
     for book in weekly_selection:
-        st.info(f"**{book['title']}**\n\n{book['vocab'][explain_lang]}")
+        st.info(f"**{book['title']}**\n\n**{book['term']}** — {book['meaning'][explain_lang]}")
 
 # --- 7. TOPICS ---
 TOPICS_EN = {
