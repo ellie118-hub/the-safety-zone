@@ -427,24 +427,51 @@ IDIOMS_FR = {
     ],
 }
 
-# --- 5. BOOKS (flat per practice_lang, not leveled) ---
+# --- 5. BOOKS ---
 # "term" = the actual word from the book, in the PRACTICE language.
 # "meaning" = translation of what it means, per explain_lang (en/ru/kk).
-BOOKS_EN = [
-    {"title": "'Animal Farm' by George Orwell", "tag": "Politics", "term": "Allegory", "meaning": {"en": "a story with a hidden meaning.", "ru": "история со скрытым смыслом.", "kk": "жасырын мағынасы бар әңгіме."}},
-    {"title": "'The Giver' by Lois Lowry", "tag": "Society", "term": "Utopia", "meaning": {"en": "an imagined perfect place.", "ru": "воображаемое идеальное место.", "kk": "қиялдағы мінсіз орын."}},
-    {"title": "'Fahrenheit 451' by Ray Bradbury", "tag": "Media", "term": "Censorship", "meaning": {"en": "suppressing information.", "ru": "подавление информации.", "kk": "ақпаратты тежеу."}},
-    {"title": "'Wonder' by R.J. Palacio", "tag": "School Life", "term": "Empathy", "meaning": {"en": "understanding others' feelings.", "ru": "понимание чувств других.", "kk": "басқалардың сезімін түсіну."}},
-    {"title": "'1984' by George Orwell", "tag": "Freedom", "term": "Totalitarianism", "meaning": {"en": "absolute state control.", "ru": "абсолютный контроль государства.", "kk": "мемлекеттің толық бақылауы."}},
-]
+# Leveled languages get DIFFERENT books per level (a beginner can't read '1984').
+BOOKS_EN = {
+    "A1-A2": [
+        {"title": "'Diary of a Wimpy Kid' by Jeff Kinney", "tag": "Humor", "term": "Awkward", "meaning": {"en": "feeling embarrassed or uncomfortable.", "ru": "чувствующий смущение или неловкость.", "kk": "ыңғайсыздық немесе ұялу сезімін сезінетін."}},
+        {"title": "'Charlotte's Web' by E.B. White", "tag": "Friendship", "term": "Runt", "meaning": {"en": "the smallest animal in a litter.", "ru": "самый маленький детёныш в помёте.", "kk": "төлдегі ең кішкентай төл."}},
+        {"title": "'Because of Winn-Dixie' by Kate DiCamillo", "tag": "Friendship", "term": "Lonely", "meaning": {"en": "feeling sad because you are alone.", "ru": "чувствующий грусть от одиночества.", "kk": "жалғыздықтан мұңды сезінетін."}},
+        {"title": "'Judy Moody' by Megan McDonald", "tag": "School Life", "term": "Mood", "meaning": {"en": "a temporary state of feeling.", "ru": "временное состояние настроения.", "kk": "уақытша көңіл-күй."}},
+    ],
+    "B1-B2": [
+        {"title": "'Wonder' by R.J. Palacio", "tag": "School Life", "term": "Empathy", "meaning": {"en": "understanding others' feelings.", "ru": "понимание чувств других.", "kk": "басқалардың сезімін түсіну."}},
+        {"title": "'The Giver' by Lois Lowry", "tag": "Society", "term": "Utopia", "meaning": {"en": "an imagined perfect place.", "ru": "воображаемое идеальное место.", "kk": "қиялдағы мінсіз орын."}},
+        {"title": "'Animal Farm' by George Orwell", "tag": "Politics", "term": "Allegory", "meaning": {"en": "a story with a hidden meaning.", "ru": "история со скрытым смыслом.", "kk": "жасырын мағынасы бар әңгіме."}},
+        {"title": "'Holes' by Louis Sachar", "tag": "Adventure", "term": "Injustice", "meaning": {"en": "unfair treatment of someone.", "ru": "несправедливое обращение с кем-то.", "kk": "біреуге әділетсіз қарау."}},
+    ],
+    "C1-C2": [
+        {"title": "'1984' by George Orwell", "tag": "Freedom", "term": "Totalitarianism", "meaning": {"en": "absolute state control.", "ru": "абсолютный контроль государства.", "kk": "мемлекеттің толық бақылауы."}},
+        {"title": "'Fahrenheit 451' by Ray Bradbury", "tag": "Media", "term": "Censorship", "meaning": {"en": "suppressing information.", "ru": "подавление информации.", "kk": "ақпаратты тежеу."}},
+        {"title": "'Brave New World' by Aldous Huxley", "tag": "Society", "term": "Conditioning", "meaning": {"en": "training someone to behave a certain way.", "ru": "обучение кого-либо определённому поведению.", "kk": "біреуді белгілі бір тәртіпке үйрету."}},
+        {"title": "'Lord of the Flies' by William Golding", "tag": "Human Nature", "term": "Savagery", "meaning": {"en": "extremely cruel or violent behavior.", "ru": "крайне жестокое поведение.", "kk": "өте қатыгез мінез-құлық."}},
+    ],
+}
 
-BOOKS_DE = [
-    {"title": "«Die Welle» – Todd Strasser", "tag": "Gesellschaft", "term": "Konformität", "meaning": {"en": "going along with the group.", "ru": "подчинение группе.", "kk": "топқа бағыну."}},
-    {"title": "«Tschick» – Wolfgang Herrndorf", "tag": "Freundschaft", "term": "Außenseiter", "meaning": {"en": "someone who doesn't belong.", "ru": "тот, кто не вписывается.", "kk": "топқа сыймайтын адам."}},
-    {"title": "«Momo» – Michael Ende", "tag": "Zeit", "term": "Achtsamkeit", "meaning": {"en": "being aware of the present.", "ru": "внимание к настоящему моменту.", "kk": "қазіргі сәтке мән беру."}},
-    {"title": "«Emil und die Detektive» – Erich Kästner", "tag": "Abenteuer", "term": "Zusammenhalt", "meaning": {"en": "acting together for a goal.", "ru": "совместные действия ради цели.", "kk": "ортақ мақсат үшін бірге әрекет ету."}},
-    {"title": "«Die Verwandlung» – Franz Kafka", "tag": "Identität", "term": "Entfremdung", "meaning": {"en": "feeling disconnected from others.", "ru": "чувство оторванности от других.", "kk": "басқалардан алшақтау сезімі."}},
-]
+BOOKS_DE = {
+    "A1-A2": [
+        {"title": "«Rico, Oskar und die Tieferschatten» – Andreas Steinhöfel", "tag": "Freundschaft", "term": "Ängstlich", "meaning": {"en": "fearful, anxious.", "ru": "тревожный, боязливый.", "kk": "қорқынышты, үрейлі."}},
+        {"title": "«Die Sams» – Paul Maar", "tag": "Fantasie", "term": "Wunsch", "meaning": {"en": "a desire or wish.", "ru": "желание.", "kk": "тілек."}},
+        {"title": "«Emil und die Detektive» – Erich Kästner", "tag": "Abenteuer", "term": "Zusammenhalt", "meaning": {"en": "acting together for a goal.", "ru": "совместные действия ради цели.", "kk": "ортақ мақсат үшін бірге әрекет ету."}},
+        {"title": "«Das doppelte Lottchen» – Erich Kästner", "tag": "Familie", "term": "Zwilling", "meaning": {"en": "a twin.", "ru": "близнец.", "kk": "егіз."}},
+    ],
+    "B1-B2": [
+        {"title": "«Die Welle» – Todd Strasser", "tag": "Gesellschaft", "term": "Konformität", "meaning": {"en": "going along with the group.", "ru": "подчинение группе.", "kk": "топқа бағыну."}},
+        {"title": "«Tschick» – Wolfgang Herrndorf", "tag": "Freundschaft", "term": "Außenseiter", "meaning": {"en": "someone who doesn't belong.", "ru": "тот, кто не вписывается.", "kk": "топқа сыймайтын адам."}},
+        {"title": "«Momo» – Michael Ende", "tag": "Zeit", "term": "Achtsamkeit", "meaning": {"en": "being aware of the present.", "ru": "внимание к настоящему моменту.", "kk": "қазіргі сәтке мән беру."}},
+        {"title": "«Krabat» – Otfried Preußler", "tag": "Fantasie", "term": "Macht", "meaning": {"en": "control or power over others.", "ru": "власть, контроль над другими.", "kk": "басқаларға билік жүргізу."}},
+    ],
+    "C1-C2": [
+        {"title": "«Die Verwandlung» – Franz Kafka", "tag": "Identität", "term": "Entfremdung", "meaning": {"en": "feeling disconnected from others.", "ru": "чувство оторванности от других.", "kk": "басқалардан алшақтау сезімі."}},
+        {"title": "«Der Steppenwolf» – Hermann Hesse", "tag": "Philosophie", "term": "Zerrissenheit", "meaning": {"en": "inner conflict, being torn between two selves.", "ru": "внутренний разлад, раздвоенность.", "kk": "ішкі қайшылық, екіге бөлінген күй."}},
+        {"title": "«Der Vorleser» – Bernhard Schlink", "tag": "Geschichte", "term": "Schuld", "meaning": {"en": "guilt, responsibility for wrongdoing.", "ru": "вина, ответственность за проступок.", "kk": "кінә, жасаған қателігі үшін жауапкершілік."}},
+        {"title": "«Homo Faber» – Max Frisch", "tag": "Schicksal", "term": "Zufall", "meaning": {"en": "chance, coincidence.", "ru": "случайность.", "kk": "кездейсоқтық."}},
+    ],
+}
 
 BOOKS_RU = [
     {"title": "«Мастер и Маргарита» — Михаил Булгаков", "tag": "Философия", "term": "Аллегория", "meaning": {"en": "a story with a hidden meaning.", "ru": "история со скрытым смыслом.", "kk": "жасырын мағынасы бар әңгіме."}},
@@ -460,28 +487,75 @@ BOOKS_KK = [
     {"title": "«Ұлпан» – Ғабит Мүсірепов", "tag": "Қоғам", "term": "Әділдік", "meaning": {"kk": "растық пен адалдық.", "ru": "правда и честность.", "en": "fairness and honesty."}},
 ]
 
-BOOKS_ES = [
-    {"title": "'Como agua para chocolate' – Laura Esquivel", "tag": "Tradición", "term": "Pasión", "meaning": {"en": "intense, powerful emotion.", "ru": "сильное, глубокое чувство.", "kk": "қатты, терең сезім."}},
-    {"title": "'Cien años de soledad' – Gabriel García Márquez", "tag": "Realismo mágico", "term": "Soledad", "meaning": {"en": "the state of being alone.", "ru": "состояние уединения.", "kk": "жалғыз қалу күйі."}},
-    {"title": "'La casa de los espíritus' – Isabel Allende", "tag": "Familia", "term": "Destino", "meaning": {"en": "the predetermined course of events.", "ru": "предопределённый ход событий.", "kk": "алдын ала белгіленген өмір барысы."}},
-    {"title": "'El túnel' – Ernesto Sabato", "tag": "Psicología", "term": "Obsesión", "meaning": {"en": "a fixed, intense preoccupation.", "ru": "навязчивая, сильная поглощённость чем-то.", "kk": "бір нәрсеге қатты құмарту."}},
-]
+BOOKS_ES = {
+    "A1-A2": [
+        {"title": "'El Principito' – Antoine de Saint-Exupéry", "tag": "Filosofía", "term": "Esencial", "meaning": {"en": "what truly matters.", "ru": "то, что действительно важно.", "kk": "шынымен мәні бар нәрсе."}},
+        {"title": "'Platero y yo' – Juan Ramón Jiménez", "tag": "Naturaleza", "term": "Ternura", "meaning": {"en": "tenderness, gentle affection.", "ru": "нежность.", "kk": "нәзіктік."}},
+        {"title": "'Cuentos de la selva' – Horacio Quiroga", "tag": "Aventura", "term": "Selva", "meaning": {"en": "jungle, forest.", "ru": "джунгли, лес.", "kk": "джунгли, орман."}},
+        {"title": "'Marcelino Pan y Vino' – José María Sánchez Silva", "tag": "Amistad", "term": "Bondad", "meaning": {"en": "kindness, goodness.", "ru": "доброта.", "kk": "мейірімділік."}},
+    ],
+    "B1-B2": [
+        {"title": "'Como agua para chocolate' – Laura Esquivel", "tag": "Tradición", "term": "Pasión", "meaning": {"en": "intense, powerful emotion.", "ru": "сильное, глубокое чувство.", "kk": "қатты, терең сезім."}},
+        {"title": "'El túnel' – Ernesto Sabato", "tag": "Psicología", "term": "Obsesión", "meaning": {"en": "a fixed, intense preoccupation.", "ru": "навязчивая, сильная поглощённость чем-то.", "kk": "бір нәрсеге қатты құмарту."}},
+        {"title": "'La casa de los espíritus' – Isabel Allende", "tag": "Familia", "term": "Destino", "meaning": {"en": "the predetermined course of events.", "ru": "предопределённый ход событий.", "kk": "алдын ала белгіленген өмір барысы."}},
+        {"title": "'Réquiem por un campesino español' – Ramón J. Sender", "tag": "Guerra", "term": "Traición", "meaning": {"en": "betrayal.", "ru": "предательство.", "kk": "опасыздық."}},
+    ],
+    "C1-C2": [
+        {"title": "'Cien años de soledad' – Gabriel García Márquez", "tag": "Realismo mágico", "term": "Soledad", "meaning": {"en": "the state of being alone.", "ru": "состояние уединения.", "kk": "жалғыз қалу күйі."}},
+        {"title": "'Rayuela' – Julio Cortázar", "tag": "Literatura experimental", "term": "Ambigüedad", "meaning": {"en": "ambiguity.", "ru": "двусмысленность.", "kk": "екіұштылық."}},
+        {"title": "'Pedro Páramo' – Juan Rulfo", "tag": "Realismo mágico", "term": "Fantasma", "meaning": {"en": "ghost, apparition.", "ru": "призрак.", "kk": "елес, аруақ."}},
+        {"title": "'La casa de Bernarda Alba' – Federico García Lorca", "tag": "Teatro", "term": "Represión", "meaning": {"en": "repression.", "ru": "подавление, репрессия.", "kk": "басып-жаншу, репрессия."}},
+    ],
+}
 
-BOOKS_IT = [
-    {"title": "'Il fu Mattia Pascal' – Luigi Pirandello", "tag": "Identità", "term": "Identità", "meaning": {"en": "who a person truly is.", "ru": "то, кем человек является на самом деле.", "kk": "адамның шынайы болмысы."}},
-    {"title": "'Se questo è un uomo' – Primo Levi", "tag": "Memoria", "term": "Dignità", "meaning": {"en": "the value and worth of a person.", "ru": "ценность и значимость человека.", "kk": "адамның құндылығы."}},
-    {"title": "'Il nome della rosa' – Umberto Eco", "tag": "Mistero", "term": "Verità", "meaning": {"en": "what is actually real.", "ru": "то, что действительно реально.", "kk": "шынайы болған нәрсе."}},
-    {"title": "'La coscienza di Zeno' – Italo Svevo", "tag": "Psicologia", "term": "Coscienza", "meaning": {"en": "awareness of oneself.", "ru": "осознание себя.", "kk": "өзін-өзі түйсіну."}},
-]
+BOOKS_IT = {
+    "A1-A2": [
+        {"title": "'Il piccolo principe' – Antoine de Saint-Exupéry", "tag": "Filosofia", "term": "Essenziale", "meaning": {"en": "what truly matters.", "ru": "то, что действительно важно.", "kk": "шынымен мәні бар нәрсе."}},
+        {"title": "'Pinocchio' – Carlo Collodi", "tag": "Avventura", "term": "Bugia", "meaning": {"en": "a lie.", "ru": "ложь.", "kk": "өтірік."}},
+        {"title": "'Cuore' – Edmondo De Amicis", "tag": "Scuola", "term": "Amicizia", "meaning": {"en": "friendship.", "ru": "дружба.", "kk": "достық."}},
+        {"title": "'Marcovaldo' – Italo Calvino", "tag": "Vita quotidiana", "term": "Nostalgia", "meaning": {"en": "nostalgia.", "ru": "ностальгия.", "kk": "аңсау сезімі."}},
+    ],
+    "B1-B2": [
+        {"title": "'Io non ho paura' – Niccolò Ammaniti", "tag": "Infanzia", "term": "Paura", "meaning": {"en": "fear.", "ru": "страх.", "kk": "қорқыныш."}},
+        {"title": "'L'isola di Arturo' – Elsa Morante", "tag": "Crescita", "term": "Solitudine", "meaning": {"en": "solitude.", "ru": "одиночество.", "kk": "жалғыздық."}},
+        {"title": "'Va' dove ti porta il cuore' – Susanna Tamaro", "tag": "Famiglia", "term": "Rimpianto", "meaning": {"en": "regret.", "ru": "сожаление.", "kk": "өкіну."}},
+        {"title": "'Il nome della rosa' – Umberto Eco", "tag": "Mistero", "term": "Verità", "meaning": {"en": "what is actually real.", "ru": "то, что действительно реально.", "kk": "шынайы болған нәрсе."}},
+    ],
+    "C1-C2": [
+        {"title": "'Il fu Mattia Pascal' – Luigi Pirandello", "tag": "Identità", "term": "Identità", "meaning": {"en": "who a person truly is.", "ru": "то, кем человек является на самом деле.", "kk": "адамның шынайы болмысы."}},
+        {"title": "'Se questo è un uomo' – Primo Levi", "tag": "Memoria", "term": "Dignità", "meaning": {"en": "the value and worth of a person.", "ru": "ценность и значимость человека.", "kk": "адамның құндылығы."}},
+        {"title": "'La coscienza di Zeno' – Italo Svevo", "tag": "Psicologia", "term": "Coscienza", "meaning": {"en": "awareness of oneself.", "ru": "осознание себя.", "kk": "өзін-өзі түйсіну."}},
+        {"title": "'Se una notte d'inverno un viaggiatore' – Italo Calvino", "tag": "Metaletteratura", "term": "Narrazione", "meaning": {"en": "storytelling, narration.", "ru": "повествование.", "kk": "әңгімелеу."}},
+    ],
+}
 
-BOOKS_FR = [
-    {"title": "'L'Étranger' – Albert Camus", "tag": "Philosophie", "term": "Absurde", "meaning": {"en": "lacking apparent logical meaning.", "ru": "лишённое видимого логического смысла.", "kk": "логикалық мағынасы жоқтай көрінетін."}},
-    {"title": "'Le Petit Prince' – Antoine de Saint-Exupéry", "tag": "Philosophie", "term": "Essentiel", "meaning": {"en": "what truly matters.", "ru": "то, что действительно важно.", "kk": "шынымен мәні бар нәрсе."}},
-    {"title": "'Les Misérables' – Victor Hugo", "tag": "Justice sociale", "term": "Rédemption", "meaning": {"en": "being saved from wrongdoing.", "ru": "освобождение от вины через исправление.", "kk": "кінәні түзету арқылы құтылу."}},
-    {"title": "'No et moi' – Delphine de Vigan", "tag": "Société", "term": "Solitude", "meaning": {"en": "the state of being alone.", "ru": "состояние уединения.", "kk": "жалғыз қалу күйі."}},
-]
+BOOKS_FR = {
+    "A1-A2": [
+        {"title": "'Le Petit Prince' – Antoine de Saint-Exupéry", "tag": "Philosophie", "term": "Essentiel", "meaning": {"en": "what truly matters.", "ru": "то, что действительно важно.", "kk": "шынымен мәні бар нәрсе."}},
+        {"title": "'Le Petit Nicolas' – René Goscinny", "tag": "École", "term": "Bêtise", "meaning": {"en": "a silly or foolish act.", "ru": "глупый поступок.", "kk": "ақымақтық іс."}},
+        {"title": "'Charlie et la Chocolaterie' – Roald Dahl", "tag": "Aventure", "term": "Gourmandise", "meaning": {"en": "greed for food or sweets.", "ru": "чревоугодие, жадность до сладкого.", "kk": "тәтті нәрсеге құмарлық."}},
+        {"title": "'Poil de Carotte' – Jules Renard", "tag": "Famille", "term": "Injustice", "meaning": {"en": "unfair treatment.", "ru": "несправедливость.", "kk": "әділетсіздік."}},
+    ],
+    "B1-B2": [
+        {"title": "'No et moi' – Delphine de Vigan", "tag": "Société", "term": "Solitude", "meaning": {"en": "the state of being alone.", "ru": "состояние уединения.", "kk": "жалғыз қалу күйі."}},
+        {"title": "'L'Élégance du hérisson' – Muriel Barbery", "tag": "Société", "term": "Apparence", "meaning": {"en": "outward appearance versus reality.", "ru": "внешний вид в противовес реальности.", "kk": "сырт көрінісі мен шынайылықтың айырмашылығы."}},
+        {"title": "'Kiffe kiffe demain' – Faïza Guène", "tag": "Identité", "term": "Banlieue", "meaning": {"en": "suburb, outskirts of a city.", "ru": "пригород, окраина города.", "kk": "қала маңы."}},
+        {"title": "'La Gloire de mon père' – Marcel Pagnol", "tag": "Enfance", "term": "Souvenir", "meaning": {"en": "a memory.", "ru": "воспоминание.", "kk": "естелік."}},
+    ],
+    "C1-C2": [
+        {"title": "'L'Étranger' – Albert Camus", "tag": "Philosophie", "term": "Absurde", "meaning": {"en": "lacking apparent logical meaning.", "ru": "лишённое видимого логического смысла.", "kk": "логикалық мағынасы жоқтай көрінетін."}},
+        {"title": "'Les Misérables' – Victor Hugo", "tag": "Justice sociale", "term": "Rédemption", "meaning": {"en": "being saved from wrongdoing.", "ru": "освобождение от вины через исправление.", "kk": "кінәні түзету арқылы құтылу."}},
+        {"title": "'Huis clos' – Jean-Paul Sartre", "tag": "Philosophie", "term": "Enfer", "meaning": {"en": "hell (here, a metaphor for other people).", "ru": "ад (здесь — метафора для других людей).", "kk": "тозақ (мұнда — басқа адамдарға метафора)."}},
+        {"title": "'Madame Bovary' – Gustave Flaubert", "tag": "Société", "term": "Désillusion", "meaning": {"en": "disillusionment.", "ru": "разочарование.", "kk": "көңілі қалу."}},
+    ],
+}
 
 BOOKS = {"en": BOOKS_EN, "de": BOOKS_DE, "ru": BOOKS_RU, "kk": BOOKS_KK, "es": BOOKS_ES, "it": BOOKS_IT, "fr": BOOKS_FR}
+
+def get_books_pool(p_lang, lvl):
+    if p_lang in LEVELED_LANGS:
+        return BOOKS[p_lang][lvl]
+    return BOOKS[p_lang]
 
 # --- helpers to fetch the right pool ---
 def get_word_pool(p_lang, lvl):
@@ -563,7 +637,7 @@ with st.sidebar:
 
     st.markdown("\n".join(f"* **[{name}]({url})**" for name, url in article_links))
 
-    books_pool = BOOKS[practice_lang]
+    books_pool = get_books_pool(practice_lang, level)
     week_num = datetime.date.today().isocalendar()[1]
     random.seed(week_num)
     weekly_selection = random.sample(books_pool, min(4, len(books_pool)))
