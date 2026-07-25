@@ -23,12 +23,7 @@ except Exception as e:
 
 st.set_page_config(page_title="The Safety Zone", page_icon="🎙️", layout="wide")
 
-# =========================================================================
-#   explain_lang  -> the language the STUDENT understands (UI text, and
-#                     the meaning/translation of new words, idioms, books)
-#   practice_lang -> the language the STUDENT IS PRACTICING SPEAKING
-#   level         -> only shown/used for languages in LEVELED_LANGS
-# =========================================================================
+
 
 EXPLAIN_LANGS = ["kk", "ru", "en"]
 EXPLAIN_LABELS = {"kk": "ҚАЗ", "ru": "РУС", "en": "ENG"}
@@ -38,9 +33,12 @@ PRACTICE_LANGS = {
     "de": {"label": "Deutsch", "flag": "🇩🇪"},
     "ru": {"label": "Русский", "flag": "🇷🇺"},
     "kk": {"label": "Қазақша", "flag": "🇰🇿"},
+    "es": {"label": "Español", "flag": "🇪🇸"},
+    "it": {"label": "Italiano", "flag": "🇮🇹"},
+    "fr": {"label": "Français", "flag": "🇫🇷"},
 }
 
-LEVELED_LANGS = {"de", "en"}   # ru and kk stay single-tier (B1-B2+)
+LEVELED_LANGS = {"de", "en", "es", "it", "fr"}   # ru and kk stay single-tier (B1-B2+)
 LEVELS = ["A1-A2", "B1-B2", "C1-C2"]
 
 if "explain_lang" not in st.session_state:
@@ -215,6 +213,78 @@ WORDS_KK = [
     {"word": "Сенімді", "def": {"kk": "нанымды, шындыққа жанасымды.", "ru": "правдоподобный, заслуживающий доверия.", "en": "plausible, credible."}},
 ]
 
+WORDS_ES = {
+    "A1-A2": [
+        {"word": "Casa", "def": {"en": "house", "ru": "дом", "kk": "үй"}},
+        {"word": "Amigo", "def": {"en": "friend", "ru": "друг", "kk": "дос"}},
+        {"word": "Escuela", "def": {"en": "school", "ru": "школа", "kk": "мектеп"}},
+        {"word": "Familia", "def": {"en": "family", "ru": "семья", "kk": "отбасы"}},
+        {"word": "Clima", "def": {"en": "weather", "ru": "погода", "kk": "ауа райы"}},
+    ],
+    "B1-B2": [
+        {"word": "Ambiguo", "def": {"en": "having more than one meaning; unclear.", "ru": "неоднозначный, неясный.", "kk": "бірнеше мағынасы бар, түсініксіз."}},
+        {"word": "Elocuente", "def": {"en": "fluent and persuasive in speech.", "ru": "красноречивый.", "kk": "шешен, сендіре білетін."}},
+        {"word": "Pragmático", "def": {"en": "practical and realistic.", "ru": "практичный, реалистичный.", "kk": "тәжірибелік әрі шынайы."}},
+        {"word": "Omnipresente", "def": {"en": "present everywhere.", "ru": "вездесущий.", "kk": "барлық жерде бар."}},
+        {"word": "Meticuloso", "def": {"en": "extremely careful and precise.", "ru": "очень тщательный.", "kk": "аса мұқият әрі дәл."}},
+    ],
+    "C1-C2": [
+        {"word": "Efímero", "def": {"en": "lasting for a very short time.", "ru": "мимолётный.", "kk": "өте қысқа мерзімге созылатын."}},
+        {"word": "Inefable", "def": {"en": "too great to be expressed in words.", "ru": "невыразимый словами.", "kk": "сөзбен айтып жеткізе алмайтын."}},
+        {"word": "Perspicaz", "def": {"en": "having keen insight or judgment.", "ru": "проницательный.", "kk": "өткір пайымды, зерек."}},
+        {"word": "Ostensible", "def": {"en": "apparent, seemingly true.", "ru": "кажущийся, показной.", "kk": "сырт көрінісінде дұрыс болып көрінетін."}},
+        {"word": "Ambivalente", "def": {"en": "having mixed, contradictory feelings.", "ru": "амбивалентный, двойственный.", "kk": "қарама-қайшы сезімдер тудыратын."}},
+    ],
+}
+
+WORDS_IT = {
+    "A1-A2": [
+        {"word": "Casa", "def": {"en": "house", "ru": "дом", "kk": "үй"}},
+        {"word": "Amico", "def": {"en": "friend", "ru": "друг", "kk": "дос"}},
+        {"word": "Scuola", "def": {"en": "school", "ru": "школа", "kk": "мектеп"}},
+        {"word": "Famiglia", "def": {"en": "family", "ru": "семья", "kk": "отбасы"}},
+        {"word": "Meteo", "def": {"en": "weather", "ru": "погода", "kk": "ауа райы"}},
+    ],
+    "B1-B2": [
+        {"word": "Ambiguo", "def": {"en": "having more than one meaning; unclear.", "ru": "неоднозначный.", "kk": "бірнеше мағынасы бар."}},
+        {"word": "Eloquente", "def": {"en": "fluent and persuasive in speech.", "ru": "красноречивый.", "kk": "шешен."}},
+        {"word": "Pragmatico", "def": {"en": "practical and realistic.", "ru": "практичный.", "kk": "тәжірибелік әрі шынайы."}},
+        {"word": "Onnipresente", "def": {"en": "present everywhere.", "ru": "вездесущий.", "kk": "барлық жерде бар."}},
+        {"word": "Meticoloso", "def": {"en": "extremely careful and precise.", "ru": "очень тщательный.", "kk": "аса мұқият."}},
+    ],
+    "C1-C2": [
+        {"word": "Effimero", "def": {"en": "lasting for a very short time.", "ru": "мимолётный.", "kk": "өте қысқа мерзімге созылатын."}},
+        {"word": "Ineffabile", "def": {"en": "too great to be expressed in words.", "ru": "невыразимый.", "kk": "сөзбен жеткізе алмайтын."}},
+        {"word": "Perspicace", "def": {"en": "having keen insight.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
+        {"word": "Apparente", "def": {"en": "apparent, seemingly true.", "ru": "кажущийся.", "kk": "сырт көрінісінде дұрыс болып көрінетін."}},
+        {"word": "Ambivalente", "def": {"en": "having mixed feelings.", "ru": "двойственный.", "kk": "қарама-қайшы сезімдер тудыратын."}},
+    ],
+}
+
+WORDS_FR = {
+    "A1-A2": [
+        {"word": "Maison", "def": {"en": "house", "ru": "дом", "kk": "үй"}},
+        {"word": "Ami", "def": {"en": "friend", "ru": "друг", "kk": "дос"}},
+        {"word": "École", "def": {"en": "school", "ru": "школа", "kk": "мектеп"}},
+        {"word": "Famille", "def": {"en": "family", "ru": "семья", "kk": "отбасы"}},
+        {"word": "Météo", "def": {"en": "weather", "ru": "погода", "kk": "ауа райы"}},
+    ],
+    "B1-B2": [
+        {"word": "Ambigu", "def": {"en": "having more than one meaning; unclear.", "ru": "неоднозначный.", "kk": "бірнеше мағынасы бар."}},
+        {"word": "Éloquent", "def": {"en": "fluent and persuasive in speech.", "ru": "красноречивый.", "kk": "шешен."}},
+        {"word": "Pragmatique", "def": {"en": "practical and realistic.", "ru": "практичный.", "kk": "тәжірибелік әрі шынайы."}},
+        {"word": "Omniprésent", "def": {"en": "present everywhere.", "ru": "вездесущий.", "kk": "барлық жерде бар."}},
+        {"word": "Méticuleux", "def": {"en": "extremely careful and precise.", "ru": "очень тщательный.", "kk": "аса мұқият."}},
+    ],
+    "C1-C2": [
+        {"word": "Éphémère", "def": {"en": "lasting for a very short time.", "ru": "мимолётный.", "kk": "өте қысқа мерзімге созылатын."}},
+        {"word": "Ineffable", "def": {"en": "too great to be expressed in words.", "ru": "невыразимый.", "kk": "сөзбен жеткізе алмайтын."}},
+        {"word": "Perspicace", "def": {"en": "having keen insight.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
+        {"word": "Ostensible", "def": {"en": "apparent, seemingly true.", "ru": "кажущийся.", "kk": "сырт көрінісінде дұрыс болып көрінетін."}},
+        {"word": "Ambivalent", "def": {"en": "having mixed feelings.", "ru": "двойственный.", "kk": "қарама-қайшы сезімдер тудыратын."}},
+    ],
+}
+
 # --- 4. IDIOMS ---
 IDIOMS_EN = {
     "A1-A2": [
@@ -280,6 +350,78 @@ IDIOMS_KK = [
     {"idiom": "Ит арқасы қияда", "meaning": {"kk": "істің оңға басып, сәті түсуі.", "ru": "дела идут в гору, всё складывается удачно.", "en": "things are going smoothly."}},
 ]
 
+IDIOMS_ES = {
+    "A1-A2": [
+        {"idiom": "Mucho gusto", "meaning": {"en": "nice to meet you.", "ru": "приятно познакомиться.", "kk": "танысқаныма қуаныштымын."}},
+        {"idiom": "No pasa nada", "meaning": {"en": "no worries, it's fine.", "ru": "ничего страшного.", "kk": "ештеңе етпейді."}},
+        {"idiom": "Hasta luego", "meaning": {"en": "see you later.", "ru": "до скорого.", "kk": "кездескенше."}},
+        {"idiom": "¡Buen trabajo!", "meaning": {"en": "good job!", "ru": "хорошая работа!", "kk": "жарайсың!"}},
+        {"idiom": "Tranquilo/a", "meaning": {"en": "take it easy, relax.", "ru": "не переживай, расслабься.", "kk": "алаңдама, тыныш бол."}},
+    ],
+    "B1-B2": [
+        {"idiom": "Estar en las nubes", "meaning": {"en": "to be daydreaming, absent-minded.", "ru": "витать в облаках.", "kk": "ойға шомып кету."}},
+        {"idiom": "Costar un ojo de la cara", "meaning": {"en": "to cost a fortune.", "ru": "стоить целое состояние.", "kk": "өте қымбатқа түсу."}},
+        {"idiom": "Meter la pata", "meaning": {"en": "to make a blunder.", "ru": "сделать промах.", "kk": "қателік жіберу."}},
+        {"idiom": "No tener pelos en la lengua", "meaning": {"en": "to speak bluntly, without holding back.", "ru": "говорить без обиняков.", "kk": "тіке, ашық сөйлеу."}},
+        {"idiom": "Ser pan comido", "meaning": {"en": "to be very easy (a piece of cake).", "ru": "быть проще простого.", "kk": "өте оңай болу."}},
+    ],
+    "C1-C2": [
+        {"idiom": "Tirar la casa por la ventana", "meaning": {"en": "to spare no expense.", "ru": "не жалеть денег, шиковать.", "kk": "шығынды аямай жұмсау."}},
+        {"idiom": "Hablar por los codos", "meaning": {"en": "to talk nonstop.", "ru": "говорить без умолку.", "kk": "тоқтаусыз сөйлеу."}},
+        {"idiom": "Dar en el clavo", "meaning": {"en": "to hit the nail on the head.", "ru": "попасть в самую точку.", "kk": "мәселенің дәл өзін айту."}},
+        {"idiom": "Irse por las ramas", "meaning": {"en": "to beat around the bush.", "ru": "ходить вокруг да около.", "kk": "негізгі тақырыпты айналып өту."}},
+        {"idiom": "Poner los puntos sobre las íes", "meaning": {"en": "to clarify something precisely.", "ru": "расставить все точки над и.", "kk": "бәрін нақтылап түсіндіру."}},
+    ],
+}
+
+IDIOMS_IT = {
+    "A1-A2": [
+        {"idiom": "Piacere di conoscerti", "meaning": {"en": "nice to meet you.", "ru": "приятно познакомиться.", "kk": "танысқаныма қуаныштымын."}},
+        {"idiom": "Non c'è problema", "meaning": {"en": "no problem.", "ru": "нет проблем.", "kk": "мәселе жоқ."}},
+        {"idiom": "Ci vediamo dopo", "meaning": {"en": "see you later.", "ru": "увидимся позже.", "kk": "кейін кездесеміз."}},
+        {"idiom": "Ottimo lavoro!", "meaning": {"en": "great job!", "ru": "отличная работа!", "kk": "керемет жұмыс!"}},
+        {"idiom": "Stai tranquillo/a", "meaning": {"en": "take it easy.", "ru": "не переживай.", "kk": "алаңдама."}},
+    ],
+    "B1-B2": [
+        {"idiom": "In bocca al lupo", "meaning": {"en": "good luck.", "ru": "ни пуха ни пера.", "kk": "сәттілік."}},
+        {"idiom": "Avere le mani in pasta", "meaning": {"en": "to be involved in something.", "ru": "быть причастным к делу.", "kk": "бір іске араласу."}},
+        {"idiom": "Prendere due piccioni con una fava", "meaning": {"en": "to kill two birds with one stone.", "ru": "убить двух зайцев.", "kk": "бір оқпен екі қоян ату."}},
+        {"idiom": "Non vedere l'ora", "meaning": {"en": "to be unable to wait for something.", "ru": "с нетерпением ждать.", "kk": "асыға күту."}},
+        {"idiom": "Fare orecchie da mercante", "meaning": {"en": "to pretend not to hear.", "ru": "делать вид, что не слышишь.", "kk": "естімегенсіп жасалу."}},
+    ],
+    "C1-C2": [
+        {"idiom": "Toccare il cielo con un dito", "meaning": {"en": "to be extremely happy.", "ru": "быть на седьмом небе от счастья.", "kk": "бақыттан ұшып жүру."}},
+        {"idiom": "Rompere il ghiaccio", "meaning": {"en": "to break the ice.", "ru": "растопить лёд (в разговоре).", "kk": "мұзды еріту (сөйлесуде)."}},
+        {"idiom": "Avere la coda di paglia", "meaning": {"en": "to have a guilty conscience.", "ru": "иметь нечистую совесть.", "kk": "ар-ұяты таза болмау."}},
+        {"idiom": "Menare il can per l'aia", "meaning": {"en": "to beat around the bush.", "ru": "ходить вокруг да около.", "kk": "негізгі тақырыпты айналып өту."}},
+        {"idiom": "Mettere il carro davanti ai buoi", "meaning": {"en": "to put the cart before the horse.", "ru": "ставить телегу впереди лошади.", "kk": "ретсіз, кезексіз іс істеу."}},
+    ],
+}
+
+IDIOMS_FR = {
+    "A1-A2": [
+        {"idiom": "Enchanté(e)", "meaning": {"en": "nice to meet you.", "ru": "приятно познакомиться.", "kk": "танысқаныма қуаныштымын."}},
+        {"idiom": "Pas de problème", "meaning": {"en": "no problem.", "ru": "без проблем.", "kk": "мәселе жоқ."}},
+        {"idiom": "À plus tard", "meaning": {"en": "see you later.", "ru": "до скорого.", "kk": "кездескенше."}},
+        {"idiom": "Bon travail !", "meaning": {"en": "good job!", "ru": "хорошая работа!", "kk": "жарайсың!"}},
+        {"idiom": "Ne t'en fais pas", "meaning": {"en": "take it easy, don't worry.", "ru": "не переживай.", "kk": "алаңдама."}},
+    ],
+    "B1-B2": [
+        {"idiom": "Avoir le cafard", "meaning": {"en": "to feel down, blue.", "ru": "хандрить, грустить.", "kk": "көңіл-күйі түсу."}},
+        {"idiom": "Casser les pieds", "meaning": {"en": "to annoy someone.", "ru": "надоедать кому-то.", "kk": "біреуді мазалау."}},
+        {"idiom": "Poser un lapin", "meaning": {"en": "to stand someone up.", "ru": "не прийти на встречу.", "kk": "кездесуге келмей қою."}},
+        {"idiom": "Coûter les yeux de la tête", "meaning": {"en": "to cost a fortune.", "ru": "стоить целое состояние.", "kk": "өте қымбатқа түсу."}},
+        {"idiom": "Avoir un chat dans la gorge", "meaning": {"en": "to have a frog in one's throat.", "ru": "першить в горле.", "kk": "тамақ ашуы."}},
+    ],
+    "C1-C2": [
+        {"idiom": "Mettre les points sur les i", "meaning": {"en": "to clarify something precisely.", "ru": "расставить все точки над и.", "kk": "бәрін нақтылап түсіндіру."}},
+        {"idiom": "Tourner autour du pot", "meaning": {"en": "to beat around the bush.", "ru": "ходить вокруг да около.", "kk": "негізгі тақырыпты айналып өту."}},
+        {"idiom": "Ne pas y aller par quatre chemins", "meaning": {"en": "to get straight to the point.", "ru": "говорить без обиняков.", "kk": "тіке, ашық айту."}},
+        {"idiom": "Avoir d'autres chats à fouetter", "meaning": {"en": "to have other priorities.", "ru": "иметь дела поважнее.", "kk": "маңыздырақ істері болу."}},
+        {"idiom": "Se serrer les coudes", "meaning": {"en": "to stick together, support each other.", "ru": "держаться сообща.", "kk": "бірлесе қолдау көрсету."}},
+    ],
+}
+
 # --- 5. BOOKS (flat per practice_lang, not leveled) ---
 BOOKS_EN = [
     {"title": "'Animal Farm' by George Orwell", "tag": "Politics", "vocab": {"en": "Allegory — a story with a hidden meaning.", "ru": "Аллегория — история со скрытым смыслом.", "kk": "Аллегория — жасырын мағынасы бар әңгіме."}},
@@ -311,14 +453,39 @@ BOOKS_KK = [
     {"title": "«Ұлпан» – Ғабит Мүсірепов", "tag": "Қоғам", "vocab": {"kk": "Әділдік — растық пен адалдық.", "ru": "Справедливость — правда и честность.", "en": "Justice — fairness and honesty."}},
 ]
 
-BOOKS = {"en": BOOKS_EN, "de": BOOKS_DE, "ru": BOOKS_RU, "kk": BOOKS_KK}
+BOOKS_ES = [
+    {"title": "'Como agua para chocolate' – Laura Esquivel", "tag": "Tradición", "vocab": {"en": "Passion — intense, powerful emotion.", "ru": "Страсть — сильное, глубокое чувство.", "kk": "Құштарлық — қатты, терең сезім."}},
+    {"title": "'Cien años de soledad' – Gabriel García Márquez", "tag": "Realismo mágico", "vocab": {"en": "Solitude — the state of being alone.", "ru": "Одиночество — состояние уединения.", "kk": "Жалғыздық — жалғыз қалу күйі."}},
+    {"title": "'La casa de los espíritus' – Isabel Allende", "tag": "Familia", "vocab": {"en": "Fate — the predetermined course of events.", "ru": "Судьба — предопределённый ход событий.", "kk": "Тағдыр — алдын ала белгіленген өмір барысы."}},
+    {"title": "'El túnel' – Ernesto Sabato", "tag": "Psicología", "vocab": {"en": "Obsession — a fixed, intense preoccupation.", "ru": "Одержимость — навязчивая, сильная поглощённость чем-то.", "kk": "Елігу — бір нәрсеге қатты құмарту."}},
+]
+
+BOOKS_IT = [
+    {"title": "'Il fu Mattia Pascal' – Luigi Pirandello", "tag": "Identità", "vocab": {"en": "Identity — who a person truly is.", "ru": "Идентичность — то, кем человек является на самом деле.", "kk": "Бірегейлік — адамның шынайы болмысы."}},
+    {"title": "'Se questo è un uomo' – Primo Levi", "tag": "Memoria", "vocab": {"en": "Dignity — the value and worth of a person.", "ru": "Достоинство — ценность и значимость человека.", "kk": "Қадір-қасиет — адамның құндылығы."}},
+    {"title": "'Il nome della rosa' – Umberto Eco", "tag": "Mistero", "vocab": {"en": "Truth — what is actually real.", "ru": "Истина — то, что действительно реально.", "kk": "Ақиқат — шынайы болған нәрсе."}},
+    {"title": "'La coscienza di Zeno' – Italo Svevo", "tag": "Psicologia", "vocab": {"en": "Consciousness — awareness of oneself.", "ru": "Сознание — осознание себя.", "kk": "Сана — өзін-өзі түйсіну."}},
+]
+
+BOOKS_FR = [
+    {"title": "'L'Étranger' – Albert Camus", "tag": "Philosophie", "vocab": {"en": "Absurd — lacking apparent logical meaning.", "ru": "Абсурд — лишённое видимого логического смысла.", "kk": "Абсурд — логикалық мағынасы жоқтай көрінетін."}},
+    {"title": "'Le Petit Prince' – Antoine de Saint-Exupéry", "tag": "Philosophie", "vocab": {"en": "Essential — what truly matters.", "ru": "Существенное — то, что действительно важно.", "kk": "Маңызды — шынымен мәні бар нәрсе."}},
+    {"title": "'Les Misérables' – Victor Hugo", "tag": "Justice sociale", "vocab": {"en": "Redemption — being saved from wrongdoing.", "ru": "Искупление — освобождение от вины через исправление.", "kk": "Өтеу — кінәні түзету арқылы құтылу."}},
+    {"title": "'No et moi' – Delphine de Vigan", "tag": "Société", "vocab": {"en": "Solitude — the state of being alone.", "ru": "Одиночество — состояние уединения.", "kk": "Жалғыздық — жалғыз қалу күйі."}},
+]
+
+BOOKS = {"en": BOOKS_EN, "de": BOOKS_DE, "ru": BOOKS_RU, "kk": BOOKS_KK, "es": BOOKS_ES, "it": BOOKS_IT, "fr": BOOKS_FR}
 
 # --- helpers to fetch the right pool ---
 def get_word_pool(p_lang, lvl):
-    return {"en": WORDS_EN[lvl], "de": WORDS_DE[lvl], "ru": WORDS_RU, "kk": WORDS_KK}[p_lang]
+    if p_lang in LEVELED_LANGS:
+        return {"en": WORDS_EN, "de": WORDS_DE, "es": WORDS_ES, "it": WORDS_IT, "fr": WORDS_FR}[p_lang][lvl]
+    return {"ru": WORDS_RU, "kk": WORDS_KK}[p_lang]
 
 def get_idiom_pool(p_lang, lvl):
-    return {"en": IDIOMS_EN[lvl], "de": IDIOMS_DE[lvl], "ru": IDIOMS_RU, "kk": IDIOMS_KK}[p_lang]
+    if p_lang in LEVELED_LANGS:
+        return {"en": IDIOMS_EN, "de": IDIOMS_DE, "es": IDIOMS_ES, "it": IDIOMS_IT, "fr": IDIOMS_FR}[p_lang][lvl]
+    return {"ru": IDIOMS_RU, "kk": IDIOMS_KK}[p_lang]
 
 word_pool = get_word_pool(practice_lang, level)
 idiom_pool = get_idiom_pool(practice_lang, level)
@@ -354,6 +521,24 @@ with st.sidebar:
         * **[Abai.kz](https://abai.kz/)**
         * **[Adebiportal.kz](https://adebiportal.kz/)**
         * **[Massaget.kz](https://massaget.kz/)**
+        """)
+    elif practice_lang == "es":
+        st.markdown("""
+        * **[News in Slow Spanish](https://www.newsinslowspanish.com/)**
+        * **[BBC Mundo](https://www.bbc.com/mundo)**
+        * **[El País](https://elpais.com/)**
+        """)
+    elif practice_lang == "it":
+        st.markdown("""
+        * **[News in Slow Italian](https://www.newsinslowitalian.com/)**
+        * **[Internazionale](https://www.internazionale.it/)**
+        * **[Corriere della Sera](https://www.corriere.it/)**
+        """)
+    elif practice_lang == "fr":
+        st.markdown("""
+        * **[News in Slow French](https://www.newsinslowfrench.com/)**
+        * **[RFI Savoirs](https://savoirs.rfi.fr/)**
+        * **[Le Monde](https://www.lemonde.fr/)**
         """)
     else:
         st.markdown("""
@@ -473,8 +658,115 @@ TOPICS_KK = [
     "Объективті ақиқат бар ма, әлде бәрі көзқарасқа байланысты ма?",
 ]
 
+TOPICS_ES = {
+    "A1-A2": [
+        "Cuéntame sobre tu familia.",
+        "¿Qué te gusta comer los fines de semana?",
+        "Describe tu ciudad.",
+        "¿Cuál es tu deporte favorito?",
+        "Habla sobre tu mejor amigo.",
+        "¿Qué haces en tus vacaciones?",
+        "Describe un día típico en tu escuela.",
+        "¿Cuál es tu color favorito y por qué?",
+    ],
+    "B1-B2": [
+        "Las redes sociales: ¿nos acercan o nos aíslan?",
+        "¿Deberían los jóvenes trabajar mientras estudian?",
+        "El fútbol: ¿un deporte o una religión en algunos países?",
+        "¿Es mejor vivir en una ciudad grande o en un pueblo pequeño?",
+        "Las tradiciones familiares: ¿deberíamos mantenerlas o modernizarlas?",
+        "¿Debería prohibirse el uso del celular en las escuelas?",
+        "La fama en redes sociales: ¿es un logro real?",
+        "El turismo: ¿beneficia o daña a las comunidades locales?",
+        "¿Deberían los adolescentes tener más independencia?",
+        "¿Es mejor aprender de los propios errores o de los consejos de otros?",
+    ],
+    "C1-C2": [
+        "¿Puede una lengua morir junto con sus últimos hablantes, o sobrevive de otra forma?",
+        "¿La identidad cultural es algo que se hereda o algo que se elige?",
+        "¿Es posible ser bilingüe sin pertenecer completamente a ninguna de las dos culturas?",
+        "¿La globalización enriquece las culturas locales o las borra?",
+        "¿El arte debe tener un propósito social, o basta con que sea bello?",
+        "¿Podemos confiar plenamente en la memoria colectiva de un pueblo?",
+        "¿La libertad individual debe ceder ante el bien común?",
+        "¿Existe una verdadera meritocracia, o es solo una ilusión conveniente?",
+    ],
+}
+
+TOPICS_IT = {
+    "A1-A2": [
+        "Parlami della tua famiglia.",
+        "Cosa ti piace mangiare la domenica?",
+        "Descrivi la tua città.",
+        "Qual è il tuo sport preferito?",
+        "Parlami del tuo migliore amico.",
+        "Cosa fai durante le vacanze?",
+        "Descrivi una giornata tipica a scuola.",
+        "Qual è il tuo colore preferito e perché?",
+    ],
+    "B1-B2": [
+        "I social media: ci avvicinano o ci isolano?",
+        "È giusto che gli adolescenti lavorino mentre studiano?",
+        "Il calcio: uno sport o una vera passione nazionale?",
+        "Meglio vivere in una grande città o in un piccolo paese?",
+        "Le tradizioni di famiglia: mantenerle o modernizzarle?",
+        "Bisognerebbe vietare i cellulari a scuola?",
+        "La fama sui social è un vero successo?",
+        "Il turismo di massa danneggia le città d'arte?",
+        "Gli adolescenti dovrebbero avere più indipendenza?",
+        "È meglio imparare dai propri errori o dai consigli degli altri?",
+    ],
+    "C1-C2": [
+        "Una lingua può morire con i suoi ultimi parlanti, o sopravvive in altre forme?",
+        "L'identità culturale si eredita o si sceglie?",
+        "Si può essere bilingue senza appartenere del tutto a nessuna delle due culture?",
+        "La globalizzazione arricchisce le culture locali o le cancella?",
+        "L'arte deve avere uno scopo sociale, o basta che sia bella?",
+        "Possiamo fidarci pienamente della memoria collettiva di un popolo?",
+        "La libertà individuale deve cedere di fronte al bene comune?",
+        "Esiste una vera meritocrazia, o è solo un'illusione comoda?",
+    ],
+}
+
+TOPICS_FR = {
+    "A1-A2": [
+        "Parle-moi de ta famille.",
+        "Qu'est-ce que tu aimes manger le week-end?",
+        "Décris ta ville.",
+        "Quel est ton sport préféré?",
+        "Parle-moi de ton meilleur ami.",
+        "Que fais-tu pendant les vacances?",
+        "Décris une journée typique à l'école.",
+        "Quelle est ta couleur préférée et pourquoi?",
+    ],
+    "B1-B2": [
+        "Les réseaux sociaux nous rapprochent-ils ou nous isolent-ils?",
+        "Les adolescents devraient-ils travailler pendant leurs études?",
+        "Le football: un sport ou une véritable passion nationale?",
+        "Vaut-il mieux vivre dans une grande ville ou un petit village?",
+        "Les traditions familiales: faut-il les garder ou les moderniser?",
+        "Faudrait-il interdire les téléphones portables à l'école?",
+        "La célébrité sur les réseaux sociaux est-elle une vraie réussite?",
+        "Le tourisme de masse nuit-il aux villes historiques?",
+        "Les adolescents devraient-ils avoir plus d'indépendance?",
+        "Vaut-il mieux apprendre de ses propres erreurs ou des conseils des autres?",
+    ],
+    "C1-C2": [
+        "Une langue peut-elle mourir avec ses derniers locuteurs, ou survit-elle autrement?",
+        "L'identité culturelle s'hérite-t-elle ou se choisit-elle?",
+        "Peut-on être bilingue sans appartenir pleinement à aucune des deux cultures?",
+        "La mondialisation enrichit-elle les cultures locales ou les efface-t-elle?",
+        "L'art doit-il avoir un but social, ou suffit-il qu'il soit beau?",
+        "Peut-on vraiment faire confiance à la mémoire collective d'un peuple?",
+        "La liberté individuelle doit-elle céder face au bien commun?",
+        "Existe-t-il une véritable méritocratie, ou n'est-ce qu'une illusion commode?",
+    ],
+}
+
 def get_topic_pool(p_lang, lvl):
-    return {"en": TOPICS_EN[lvl], "de": TOPICS_DE[lvl], "ru": TOPICS_RU, "kk": TOPICS_KK}[p_lang]
+    if p_lang in LEVELED_LANGS:
+        return {"en": TOPICS_EN, "de": TOPICS_DE, "es": TOPICS_ES, "it": TOPICS_IT, "fr": TOPICS_FR}[p_lang][lvl]
+    return {"ru": TOPICS_RU, "kk": TOPICS_KK}[p_lang]
 
 # --- 8. MAIN INTERFACE ---
 st.title(t["title"])
