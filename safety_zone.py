@@ -23,12 +23,6 @@ except Exception as e:
 
 st.set_page_config(page_title="The Safety Zone", page_icon="🎙️", layout="wide")
 
-# =========================================================================
-#   explain_lang  -> the language the STUDENT understands (UI text, and
-#                     the meaning/translation of new words, idioms, books)
-#   practice_lang -> the language the STUDENT IS PRACTICING SPEAKING
-#   level         -> only shown/used for languages in LEVELED_LANGS
-# =========================================================================
 
 EXPLAIN_LANGS = ["kk", "ru", "en"]
 EXPLAIN_LABELS = {"kk": "ҚАЗ", "ru": "РУС", "en": "ENG"}
