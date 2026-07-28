@@ -29,16 +29,29 @@ EXPLAIN_LABELS = {"kk": "ҚАЗ", "ru": "РУС", "en": "ENG"}
 
 PRACTICE_LANGS = {
     "en": {"label": "English", "flag": "🇬🇧"},
-    "de": {"label": "Deutsch", "flag": "🇩🇪"},
-    "ru": {"label": "Русский", "flag": "🇷🇺"},
     "kk": {"label": "Қазақша", "flag": "🇰🇿"},
+    "ru": {"label": "Русский", "flag": "🇷🇺"},
+    "de": {"label": "Deutsch", "flag": "🇩🇪"},
     "es": {"label": "Español", "flag": "🇪🇸"},
     "it": {"label": "Italiano", "flag": "🇮🇹"},
     "fr": {"label": "Français", "flag": "🇫🇷"},
+    "zh": {"label": "中文", "flag": "🇨🇳"},
+    "ja": {"label": "日本語", "flag": "🇯🇵"},
+    "ko": {"label": "한국어", "flag": "🇰🇷"},
 }
 
-LEVELED_LANGS = {"de", "en", "es", "it", "fr"}   # ru and kk stay single-tier (B1-B2+)
-LEVELS = ["A1-A2", "B1-B2", "C1-C2"]
+# each leveled language uses ITS OWN proficiency scale, not one shared A1-C2 scale
+LEVELS_BY_LANG = {
+    "en": ["A1-A2", "B1-B2", "C1-C2"],
+    "de": ["A1-A2", "B1-B2", "C1-C2"],
+    "es": ["A1-A2", "B1-B2", "C1-C2"],
+    "it": ["A1-A2", "B1-B2", "C1-C2"],
+    "fr": ["A1-A2", "B1-B2", "C1-C2"],
+    "zh": ["HSK 1-3", "HSK 4-6", "HSK 7-9"],
+    "ja": ["N5-N4", "N3-N2", "N1"],
+    "ko": ["TOPIK 1-2", "TOPIK 3-4", "TOPIK 5-6"],
+}
+LEVELED_LANGS = set(LEVELS_BY_LANG.keys())   # ru and kk stay single-tier (B1-B2+)
 
 if "explain_lang" not in st.session_state:
     st.session_state.explain_lang = "en"
@@ -68,12 +81,18 @@ with top2:
 if new_practice != st.session_state.practice_lang:
     st.session_state.practice_lang = new_practice
     st.session_state.topic = None
+    # each language has its own level labels, so reset to that language's first tier
+    if new_practice in LEVELS_BY_LANG:
+        st.session_state.level = LEVELS_BY_LANG[new_practice][0]
 with top3:
     if st.session_state.practice_lang in LEVELED_LANGS:
+        lvl_options = LEVELS_BY_LANG[st.session_state.practice_lang]
+        if st.session_state.level not in lvl_options:
+            st.session_state.level = lvl_options[0]
         st.session_state.level = st.selectbox(
             "Level",
-            options=LEVELS,
-            index=LEVELS.index(st.session_state.level),
+            options=lvl_options,
+            index=lvl_options.index(st.session_state.level),
             key="level_picker",
         )
 
@@ -284,7 +303,79 @@ WORDS_FR = {
     ],
 }
 
-# --- 4. IDIOMS ---
+WORDS_ZH = {
+    "HSK 1-3": [
+        {"word": "家 (jiā)", "def": {"en": "home / family.", "ru": "дом / семья.", "kk": "үй / отбасы."}},
+        {"word": "朋友 (péngyǒu)", "def": {"en": "friend.", "ru": "друг.", "kk": "дос."}},
+        {"word": "学校 (xuéxiào)", "def": {"en": "school.", "ru": "школа.", "kk": "мектеп."}},
+        {"word": "天气 (tiānqì)", "def": {"en": "weather.", "ru": "погода.", "kk": "ауа райы."}},
+        {"word": "高兴 (gāoxìng)", "def": {"en": "happy.", "ru": "счастливый, довольный.", "kk": "қуанышты."}},
+    ],
+    "HSK 4-6": [
+        {"word": "矛盾 (máodùn)", "def": {"en": "conflicting, contradictory.", "ru": "противоречивый.", "kk": "қарама-қайшы."}},
+        {"word": "实际 (shíjì)", "def": {"en": "practical, realistic.", "ru": "практичный, реалистичный.", "kk": "тәжірибелік, шынайы."}},
+        {"word": "普遍 (pǔbiàn)", "def": {"en": "widespread, universal.", "ru": "повсеместный.", "kk": "кең тараған."}},
+        {"word": "合理 (hélǐ)", "def": {"en": "reasonable, plausible.", "ru": "разумный, обоснованный.", "kk": "негізді, сенімді."}},
+        {"word": "细致 (xìzhì)", "def": {"en": "meticulous, detailed.", "ru": "скрупулёзный, детальный.", "kk": "мұқият, егжей-тегжейлі."}},
+    ],
+    "HSK 7-9": [
+        {"word": "短暂 (duǎnzàn)", "def": {"en": "ephemeral, short-lived.", "ru": "мимолётный.", "kk": "қысқа мерзімді."}},
+        {"word": "难以言喻 (nányǐyányù)", "def": {"en": "ineffable, hard to put into words.", "ru": "невыразимый словами.", "kk": "сөзбен жеткізе алмайтын."}},
+        {"word": "敏锐 (mǐnruì)", "def": {"en": "perspicacious, sharp insight.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
+        {"word": "有争议 (yǒuzhēngyì)", "def": {"en": "controversial.", "ru": "спорный.", "kk": "даулы."}},
+        {"word": "多面性 (duōmiànxìng)", "def": {"en": "multifaceted nature.", "ru": "многогранность.", "kk": "көп қырлылық."}},
+    ],
+}
+
+WORDS_JA = {
+    "N5-N4": [
+        {"word": "家 (いえ)", "def": {"en": "house.", "ru": "дом.", "kk": "үй."}},
+        {"word": "友達 (ともだち)", "def": {"en": "friend.", "ru": "друг.", "kk": "дос."}},
+        {"word": "学校 (がっこう)", "def": {"en": "school.", "ru": "школа.", "kk": "мектеп."}},
+        {"word": "天気 (てんき)", "def": {"en": "weather.", "ru": "погода.", "kk": "ауа райы."}},
+        {"word": "嬉しい (うれしい)", "def": {"en": "happy, glad.", "ru": "счастливый, радостный.", "kk": "қуанышты."}},
+    ],
+    "N3-N2": [
+        {"word": "矛盾 (むじゅん)", "def": {"en": "contradiction, conflicting.", "ru": "противоречие.", "kk": "қайшылық."}},
+        {"word": "現実的 (げんじつてき)", "def": {"en": "practical, realistic.", "ru": "практичный, реалистичный.", "kk": "тәжірибелік, шынайы."}},
+        {"word": "普遍的 (ふへんてき)", "def": {"en": "universal, widespread.", "ru": "универсальный.", "kk": "жалпыға ортақ."}},
+        {"word": "妥当 (だとう)", "def": {"en": "reasonable, appropriate.", "ru": "разумный, уместный.", "kk": "негізді, орынды."}},
+        {"word": "几帳面 (きちょうめん)", "def": {"en": "meticulous, precise.", "ru": "скрупулёзный, педантичный.", "kk": "мұқият, дәл."}},
+    ],
+    "N1": [
+        {"word": "儚い (はかない)", "def": {"en": "ephemeral, fleeting.", "ru": "мимолётный, эфемерный.", "kk": "қысқа мерзімді, өткінші."}},
+        {"word": "言葉にできない", "def": {"en": "ineffable, cannot be put into words.", "ru": "невыразимый словами.", "kk": "сөзбен жеткізе алмайтын."}},
+        {"word": "洞察力がある (どうさつりょくがある)", "def": {"en": "perspicacious, insightful.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
+        {"word": "物議を醸す (ぶつぎをかもす)", "def": {"en": "controversial, causing debate.", "ru": "спорный, вызывающий споры.", "kk": "пікірталас тудыратын."}},
+        {"word": "多面的 (ためんてき)", "def": {"en": "multifaceted.", "ru": "многогранный.", "kk": "көп қырлы."}},
+    ],
+}
+
+WORDS_KO = {
+    "TOPIK 1-2": [
+        {"word": "집", "def": {"en": "house.", "ru": "дом.", "kk": "үй."}},
+        {"word": "친구", "def": {"en": "friend.", "ru": "друг.", "kk": "дос."}},
+        {"word": "학교", "def": {"en": "school.", "ru": "школа.", "kk": "мектеп."}},
+        {"word": "날씨", "def": {"en": "weather.", "ru": "погода.", "kk": "ауа райы."}},
+        {"word": "기쁘다", "def": {"en": "to be happy, glad.", "ru": "быть счастливым, радостным.", "kk": "қуанышты болу."}},
+    ],
+    "TOPIK 3-4": [
+        {"word": "모순되다", "def": {"en": "to be contradictory.", "ru": "быть противоречивым.", "kk": "қайшылықты болу."}},
+        {"word": "실용적", "def": {"en": "practical, realistic.", "ru": "практичный, реалистичный.", "kk": "тәжірибелік, шынайы."}},
+        {"word": "보편적", "def": {"en": "universal, widespread.", "ru": "универсальный.", "kk": "жалпыға ортақ."}},
+        {"word": "타당하다", "def": {"en": "to be reasonable, valid.", "ru": "быть разумным, обоснованным.", "kk": "негізді болу."}},
+        {"word": "꼼꼼하다", "def": {"en": "to be meticulous, thorough.", "ru": "быть скрупулёзным.", "kk": "мұқият, ұқыпты болу."}},
+    ],
+    "TOPIK 5-6": [
+        {"word": "덧없다", "def": {"en": "ephemeral, fleeting.", "ru": "мимолётный, эфемерный.", "kk": "қысқа мерзімді, өткінші."}},
+        {"word": "형언할 수 없다", "def": {"en": "ineffable, indescribable.", "ru": "невыразимый словами.", "kk": "сөзбен жеткізе алмайтын."}},
+        {"word": "통찰력 있다", "def": {"en": "perspicacious, insightful.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
+        {"word": "논란이 되다", "def": {"en": "to be controversial.", "ru": "быть спорным.", "kk": "пікірталас тудыру."}},
+        {"word": "다면적", "def": {"en": "multifaceted.", "ru": "многогранный.", "kk": "көп қырлы."}},
+    ],
+}
+
+
 IDIOMS_EN = {
     "A1-A2": [
         {"idiom": "Nice to meet you", "meaning": {"en": "a polite greeting when meeting someone new.", "ru": "вежливое приветствие при знакомстве.", "kk": "танысу кезіндегі сыпайы сәлемдесу."}},
@@ -421,6 +512,78 @@ IDIOMS_FR = {
     ],
 }
 
+IDIOMS_ZH = {
+    "HSK 1-3": [
+        {"idiom": "你好吗? (nǐ hǎo ma?)", "meaning": {"en": "How are you? (greeting)", "ru": "Как дела? (приветствие)", "kk": "Қалың қалай? (сәлемдесу)"}},
+        {"idiom": "没关系 (méi guānxi)", "meaning": {"en": "No problem, it's okay.", "ru": "Ничего страшного.", "kk": "Ештеңе етпейді."}},
+        {"idiom": "再见 (zàijiàn)", "meaning": {"en": "Goodbye.", "ru": "До свидания.", "kk": "Сау бол."}},
+        {"idiom": "做得好! (zuò de hǎo!)", "meaning": {"en": "Well done!", "ru": "Молодец!", "kk": "Жарайсың!"}},
+        {"idiom": "别担心 (bié dānxīn)", "meaning": {"en": "Don't worry.", "ru": "Не волнуйся.", "kk": "Алаңдама."}},
+    ],
+    "HSK 4-6": [
+        {"idiom": "马马虎虎 (mǎmǎhūhū)", "meaning": {"en": "careless, so-so, mediocre.", "ru": "так себе, небрежно.", "kk": "бей-жай, ортача."}},
+        {"idiom": "半途而废 (bàntú'érfèi)", "meaning": {"en": "to give up halfway.", "ru": "бросить на полпути.", "kk": "істі жартылай тастау."}},
+        {"idiom": "入乡随俗 (rùxiāngsuísú)", "meaning": {"en": "when in Rome, do as the Romans do.", "ru": "в чужой монастырь со своим уставом не ходят.", "kk": "қай жерге барсаң, сол жердің салтын ұста."}},
+        {"idiom": "画蛇添足 (huàshétiānzú)", "meaning": {"en": "to ruin something by overdoing it.", "ru": "испортить излишним старанием.", "kk": "артық әрекетпен істі бұзу."}},
+        {"idiom": "一举两得 (yìjǔliǎngdé)", "meaning": {"en": "to kill two birds with one stone.", "ru": "убить двух зайцев одним выстрелом.", "kk": "бір оқпен екі қоян ату."}},
+    ],
+    "HSK 7-9": [
+        {"idiom": "塞翁失马 (sàiwēngshīmǎ)", "meaning": {"en": "a blessing in disguise.", "ru": "нет худа без добра.", "kk": "жаманнан жақсылық шығуы."}},
+        {"idiom": "破釜沉舟 (pòfǔchénzhōu)", "meaning": {"en": "to commit fully, no retreat (burn one's bridges).", "ru": "сжечь мосты.", "kk": "кемені өртеп, соңына дейін бару."}},
+        {"idiom": "画龙点睛 (huàlóngdiǎnjīng)", "meaning": {"en": "to add the crucial finishing touch.", "ru": "добавить решающий штрих.", "kk": "шешуші түпкі штрихты қосу."}},
+        {"idiom": "亡羊补牢 (wángyángbǔláo)", "meaning": {"en": "better late than never.", "ru": "лучше поздно, чем никогда.", "kk": "кеш болса да, түк болмағаннан жақсы."}},
+        {"idiom": "井底之蛙 (jǐngdǐzhīwā)", "meaning": {"en": "a person with a narrow view of the world.", "ru": "человек с узким кругозором.", "kk": "дүниетанымы тар адам."}},
+    ],
+}
+
+IDIOMS_JA = {
+    "N5-N4": [
+        {"idiom": "元気ですか?", "meaning": {"en": "How are you? (greeting)", "ru": "Как дела? (приветствие)", "kk": "Қалың қалай? (сәлемдесу)"}},
+        {"idiom": "大丈夫です", "meaning": {"en": "It's okay, no problem.", "ru": "Всё в порядке.", "kk": "Бәрі жақсы."}},
+        {"idiom": "またね", "meaning": {"en": "See you (casual goodbye).", "ru": "Пока, увидимся.", "kk": "Кездескенше."}},
+        {"idiom": "よくできました!", "meaning": {"en": "Well done!", "ru": "Молодец!", "kk": "Жарайсың!"}},
+        {"idiom": "心配しないで", "meaning": {"en": "Don't worry.", "ru": "Не волнуйся.", "kk": "Алаңдама."}},
+    ],
+    "N3-N2": [
+        {"idiom": "猫の手も借りたい", "meaning": {"en": "to be extremely busy.", "ru": "быть очень занятым.", "kk": "өте бос емес болу."}},
+        {"idiom": "石の上にも三年", "meaning": {"en": "patience and persistence pay off.", "ru": "терпение и труд всё перетрут.", "kk": "төзімділік пен еңбек жеміс береді."}},
+        {"idiom": "馬が合う", "meaning": {"en": "to get along well with someone.", "ru": "хорошо ладить с кем-то.", "kk": "біреумен жақсы тіл табысу."}},
+        {"idiom": "頭が固い", "meaning": {"en": "to be stubborn, inflexible.", "ru": "быть упрямым.", "kk": "ойлауда қасаң болу."}},
+        {"idiom": "耳が痛い", "meaning": {"en": "a criticism that hits close to home.", "ru": "критика, задевающая за живое.", "kk": "жанға тиетін сын."}},
+    ],
+    "N1": [
+        {"idiom": "背水の陣", "meaning": {"en": "to commit fully with no retreat.", "ru": "сжечь мосты.", "kk": "кейін шегінбей, толық берілу."}},
+        {"idiom": "灯台下暗し", "meaning": {"en": "the obvious is often overlooked.", "ru": "самое очевидное часто остаётся незамеченным.", "kk": "көзге көрінген нәрсе байқалмай қалады."}},
+        {"idiom": "覆水盆に返らず", "meaning": {"en": "what's done cannot be undone.", "ru": "что сделано, то сделано.", "kk": "болған іс қайтпайды."}},
+        {"idiom": "虎穴に入らずんば虎子を得ず", "meaning": {"en": "nothing ventured, nothing gained.", "ru": "кто не рискует, тот не выигрывает.", "kk": "тәуекел етпеген жетістікке жетпейді."}},
+        {"idiom": "善は急げ", "meaning": {"en": "strike while the iron is hot.", "ru": "куй железо, пока горячо.", "kk": "темірді ыстығында соқ."}},
+    ],
+}
+
+IDIOMS_KO = {
+    "TOPIK 1-2": [
+        {"idiom": "어떻게 지내요?", "meaning": {"en": "How are you? (greeting)", "ru": "Как дела? (приветствие)", "kk": "Қалың қалай? (сәлемдесу)"}},
+        {"idiom": "괜찮아요", "meaning": {"en": "It's okay, no problem.", "ru": "Всё в порядке.", "kk": "Бәрі жақсы."}},
+        {"idiom": "또 만나요", "meaning": {"en": "See you again.", "ru": "До встречи.", "kk": "Тағы кездесеміз."}},
+        {"idiom": "잘했어요!", "meaning": {"en": "Well done!", "ru": "Молодец!", "kk": "Жарайсың!"}},
+        {"idiom": "걱정하지 마세요", "meaning": {"en": "Don't worry.", "ru": "Не волнуйся.", "kk": "Алаңдама."}},
+    ],
+    "TOPIK 3-4": [
+        {"idiom": "손이 크다", "meaning": {"en": "to be generous (lit: to have big hands).", "ru": "быть щедрым.", "kk": "жомарт болу."}},
+        {"idiom": "발이 넓다", "meaning": {"en": "to have wide social connections.", "ru": "иметь широкий круг знакомств.", "kk": "кең таныстығы болу."}},
+        {"idiom": "눈이 높다", "meaning": {"en": "to have high standards.", "ru": "иметь высокие требования.", "kk": "талғамы жоғары болу."}},
+        {"idiom": "입이 무겁다", "meaning": {"en": "to be discreet, able to keep a secret.", "ru": "уметь хранить секреты.", "kk": "құпияны сақтай білу."}},
+        {"idiom": "귀가 얇다", "meaning": {"en": "to be easily persuaded by others.", "ru": "легко поддаваться чужому влиянию.", "kk": "басқаның сөзіне тез көну."}},
+    ],
+    "TOPIK 5-6": [
+        {"idiom": "등잔 밑이 어둡다", "meaning": {"en": "the obvious is often overlooked.", "ru": "самое очевидное часто остаётся незамеченным.", "kk": "көзге көрінген нәрсе байқалмай қалады."}},
+        {"idiom": "엎질러진 물", "meaning": {"en": "what's done cannot be undone.", "ru": "что сделано, то сделано.", "kk": "болған іс қайтпайды."}},
+        {"idiom": "호랑이 굴에 가야 호랑이를 잡는다", "meaning": {"en": "nothing ventured, nothing gained.", "ru": "кто не рискует, тот не выигрывает.", "kk": "тәуекел етпеген жетістікке жетпейді."}},
+        {"idiom": "쇠뿔도 단김에 빼라", "meaning": {"en": "strike while the iron is hot.", "ru": "куй железо, пока горячо.", "kk": "темірді ыстығында соқ."}},
+        {"idiom": "우물 안 개구리", "meaning": {"en": "a person with a narrow view of the world.", "ru": "человек с узким кругозором.", "kk": "дүниетанымы тар адам."}},
+    ],
+}
+
 # --- 5. BOOKS ---
 # "term" = the actual word from the book, in the PRACTICE language.
 # "meaning" = translation of what it means, per explain_lang (en/ru/kk).
@@ -544,7 +707,53 @@ BOOKS_FR = {
     ],
 }
 
-BOOKS = {"en": BOOKS_EN, "de": BOOKS_DE, "ru": BOOKS_RU, "kk": BOOKS_KK, "es": BOOKS_ES, "it": BOOKS_IT, "fr": BOOKS_FR}
+BOOKS_ZH = {
+    "HSK 1-3": [
+        {"title": "《不一样的卡梅拉》系列", "tag": "儿童故事", "term": "勇敢 (yǒnggǎn)", "meaning": {"en": "brave, having courage.", "ru": "смелый, храбрый.", "kk": "батыл, ержүрек."}},
+        {"title": "《猜猜我有多爱你》", "tag": "家庭", "term": "爱 (ài)", "meaning": {"en": "love, deep affection.", "ru": "любовь, глубокая привязанность.", "kk": "сүйіспеншілік."}},
+    ],
+    "HSK 4-6": [
+        {"title": "《小王子》– 圣埃克苏佩里", "tag": "哲学", "term": "本质 (běnzhì)", "meaning": {"en": "essence, what truly matters.", "ru": "суть, то, что действительно важно.", "kk": "мән, шынымен маңызды нәрсе."}},
+        {"title": "《活着》– 余华", "tag": "人生", "term": "命运 (mìngyùn)", "meaning": {"en": "fate, the course of events beyond one's control.", "ru": "судьба.", "kk": "тағдыр."}},
+    ],
+    "HSK 7-9": [
+        {"title": "《红楼梦》– 曹雪芹", "tag": "经典文学", "term": "情缘 (qíngyuán)", "meaning": {"en": "a destined emotional bond between people.", "ru": "предначертанная эмоциональная связь между людьми.", "kk": "адамдар арасындағы тағдырлы сезімдік байланыс."}},
+        {"title": "《围城》– 钱钟书", "tag": "社会讽刺", "term": "讽刺 (fěngcì)", "meaning": {"en": "satire, using irony to criticize.", "ru": "сатира.", "kk": "сатира, мысқылмен сынау."}},
+    ],
+}
+
+BOOKS_JA = {
+    "N5-N4": [
+        {"title": "『ぐりとぐら』– 中川李枝子", "tag": "児童文学", "term": "友情 (ゆうじょう)", "meaning": {"en": "friendship.", "ru": "дружба.", "kk": "достық."}},
+        {"title": "『はらぺこあおむし』– エリック・カール", "tag": "児童文学", "term": "空腹 (くうふく)", "meaning": {"en": "hunger, being hungry.", "ru": "голод.", "kk": "аштық."}},
+    ],
+    "N3-N2": [
+        {"title": "『キッチン』– 吉本ばなな", "tag": "現代文学", "term": "喪失 (そうしつ)", "meaning": {"en": "loss, the state of losing something.", "ru": "утрата, потеря чего-либо.", "kk": "жоғалту, айырылу."}},
+        {"title": "『魔女の宅急便』– 角野栄子", "tag": "成長物語", "term": "自立 (じりつ)", "meaning": {"en": "independence, standing on one's own.", "ru": "самостоятельность.", "kk": "дербестік."}},
+    ],
+    "N1": [
+        {"title": "『人間失格』– 太宰治", "tag": "文学", "term": "疎外感 (そがいかん)", "meaning": {"en": "a sense of alienation.", "ru": "чувство отчуждения.", "kk": "оқшаулану сезімі."}},
+        {"title": "『こころ』– 夏目漱石", "tag": "文学", "term": "孤独 (こどく)", "meaning": {"en": "solitude, loneliness.", "ru": "одиночество.", "kk": "жалғыздық."}},
+    ],
+}
+
+BOOKS_KO = {
+    "TOPIK 1-2": [
+        {"title": "『구름빵』– 백희나", "tag": "동화", "term": "상상력", "meaning": {"en": "imagination.", "ru": "воображение.", "kk": "қиял, елестету қабілеті."}},
+        {"title": "『강아지똥』– 권정생", "tag": "동화", "term": "소중함", "meaning": {"en": "preciousness, being valuable.", "ru": "ценность, значимость.", "kk": "құндылық, маңыздылық."}},
+    ],
+    "TOPIK 3-4": [
+        {"title": "『완득이』– 김려령", "tag": "청소년 소설", "term": "편견", "meaning": {"en": "prejudice, a preconceived opinion.", "ru": "предрассудок, предвзятое мнение.", "kk": "жаңсақ пікір."}},
+        {"title": "『나미야 잡화점의 기적』– 히가시노 게이고", "tag": "소설", "term": "인연", "meaning": {"en": "fated connection between people.", "ru": "предопределённая связь между людьми.", "kk": "адамдар арасындағы тағдырлы байланыс."}},
+    ],
+    "TOPIK 5-6": [
+        {"title": "『채식주의자』– 한강", "tag": "현대 문학", "term": "소외감", "meaning": {"en": "a sense of alienation.", "ru": "чувство отчуждения.", "kk": "оқшаулану сезімі."}},
+        {"title": "『토지』– 박경리", "tag": "대하소설", "term": "운명", "meaning": {"en": "fate, destiny.", "ru": "судьба.", "kk": "тағдыр."}},
+    ],
+}
+
+BOOKS = {"en": BOOKS_EN, "de": BOOKS_DE, "ru": BOOKS_RU, "kk": BOOKS_KK, "es": BOOKS_ES, "it": BOOKS_IT, "fr": BOOKS_FR,
+         "zh": BOOKS_ZH, "ja": BOOKS_JA, "ko": BOOKS_KO}
 
 def get_books_pool(p_lang, lvl):
     if p_lang in LEVELED_LANGS:
@@ -554,12 +763,14 @@ def get_books_pool(p_lang, lvl):
 # --- helpers to fetch the right pool ---
 def get_word_pool(p_lang, lvl):
     if p_lang in LEVELED_LANGS:
-        return {"en": WORDS_EN, "de": WORDS_DE, "es": WORDS_ES, "it": WORDS_IT, "fr": WORDS_FR}[p_lang][lvl]
+        return {"en": WORDS_EN, "de": WORDS_DE, "es": WORDS_ES, "it": WORDS_IT, "fr": WORDS_FR,
+                "zh": WORDS_ZH, "ja": WORDS_JA, "ko": WORDS_KO}[p_lang][lvl]
     return {"ru": WORDS_RU, "kk": WORDS_KK}[p_lang]
 
 def get_idiom_pool(p_lang, lvl):
     if p_lang in LEVELED_LANGS:
-        return {"en": IDIOMS_EN, "de": IDIOMS_DE, "es": IDIOMS_ES, "it": IDIOMS_IT, "fr": IDIOMS_FR}[p_lang][lvl]
+        return {"en": IDIOMS_EN, "de": IDIOMS_DE, "es": IDIOMS_ES, "it": IDIOMS_IT, "fr": IDIOMS_FR,
+                "zh": IDIOMS_ZH, "ja": IDIOMS_JA, "ko": IDIOMS_KO}[p_lang][lvl]
     return {"ru": IDIOMS_RU, "kk": IDIOMS_KK}[p_lang]
 
 word_pool = get_word_pool(practice_lang, level)
@@ -619,6 +830,30 @@ with st.sidebar:
                       ("RFI Savoirs", "https://savoirs.rfi.fr/")],
             "C1-C2": [("RFI", "https://www.rfi.fr/fr/"),
                       ("France Culture", "https://www.radiofrance.fr/franceculture")],
+        },
+        "zh": {
+            "HSK 1-3": [("HSKStory (free graded stories)", "https://hskstory.com/"),
+                        ("Chinese Graded Reader", "https://chinesegradedreader.com/")],
+            "HSK 4-6": [("HSKReading.com (free)", "https://hskreading.com/"),
+                        ("HSK Course Reading", "https://www.hskcourse.com/chinese-reading/")],
+            "HSK 7-9": [("HSK Course Reading", "https://www.hskcourse.com/chinese-reading/"),
+                        ("HSKReading.com (advanced)", "https://hskreading.com/")],
+        },
+        "ja": {
+            "N5-N4": [("Hanabira Japanese Reading (free)", "https://www.hanabira.org/japanese/reading"),
+                      ("Japanesetest4you", "https://japanesetest4you.com/")],
+            "N3-N2": [("Hanabira Japanese Reading", "https://www.hanabira.org/japanese/reading"),
+                      ("NPO Tadoku Supporters (free)", "https://tadoku.org/")],
+            "N1": [("Japanesetest4you", "https://japanesetest4you.com/"),
+                   ("Hanabira Japanese Reading", "https://www.hanabira.org/japanese/reading")],
+        },
+        "ko": {
+            "TOPIK 1-2": [("Hanabira Korean Reading (free)", "https://hanabira.org/korean/reading"),
+                          ("Korean Graded Readers", "https://koreangradedreaders.com/gr/")],
+            "TOPIK 3-4": [("Korean Graded Readers", "https://koreangradedreaders.com/"),
+                          ("Hanabira Korean Reading", "https://hanabira.org/korean/reading")],
+            "TOPIK 5-6": [("Korean Graded Readers", "https://koreangradedreaders.com/"),
+                          ("TOPIK Mock Test (free)", "https://learning-korean.com/topik/")],
         },
         "ru": [("N+1", "https://nplus1.ru/"), ("ПостНаука", "https://postnauka.ru/"), ("Arzamas", "https://arzamas.academy/")],
         "kk": [("Abai.kz", "https://abai.kz/"), ("Adebiportal.kz", "https://adebiportal.kz/"), ("Massaget.kz", "https://massaget.kz/")],
@@ -847,9 +1082,106 @@ TOPICS_FR = {
     ],
 }
 
+TOPICS_ZH = {
+    "HSK 1-3": [
+        "说说你的家人。",
+        "你周末喜欢做什么?",
+        "描述一下你的房间。",
+        "你最喜欢的食物是什么?",
+        "说说你最好的朋友。",
+        "你最喜欢哪个季节?",
+        "描述你的学校。",
+        "你喜欢什么颜色?",
+    ],
+    "HSK 4-6": [
+        "社交媒体让我们更亲近还是更孤独?",
+        "青少年应该在上学期间打工吗?",
+        "生活在大城市好还是小城市好?",
+        "学校应该禁止使用手机吗?",
+        "传统习俗应该保留还是应该现代化?",
+        "网络名气算是真正的成功吗?",
+        "旅游业对当地社区是利大于弊还是弊大于利?",
+        "青少年应该有更多的独立性吗?",
+    ],
+    "HSK 7-9": [
+        "一种语言会随着最后一个使用者的消失而真正消亡吗?",
+        "文化身份是继承来的,还是自己选择的?",
+        "全球化究竟是丰富了本土文化,还是抹去了它们?",
+        "艺术必须具有社会意义吗,还是单纯的美就足够了?",
+        "我们能完全信任一个民族的集体记忆吗?",
+        "个人自由应该在多大程度上让位于集体利益?",
+        "真正的精英制度存在吗,还是只是一种方便的幻觉?",
+    ],
+}
+
+TOPICS_JA = {
+    "N5-N4": [
+        "家族について話してください。",
+        "週末は何をするのが好きですか?",
+        "自分の部屋を説明してください。",
+        "好きな食べ物は何ですか?",
+        "親友について話してください。",
+        "好きな季節はいつですか?",
+        "学校について説明してください。",
+        "好きな色は何ですか?",
+    ],
+    "N3-N2": [
+        "SNSは人と人を近づけますか、それとも孤立させますか?",
+        "学生は勉強しながらアルバイトをするべきですか?",
+        "大都市と田舎、どちらに住む方がいいですか?",
+        "学校で携帯電話を禁止するべきですか?",
+        "伝統は守るべきですか、それとも現代化するべきですか?",
+        "SNSでの人気は本当の成功と言えますか?",
+        "観光は地元の社会に良い影響を与えますか?",
+        "若者はもっと自立するべきですか?",
+    ],
+    "N1": [
+        "言語は最後の話者と共に本当に消えるのでしょうか、それとも別の形で生き続けるのでしょうか?",
+        "文化的アイデンティティは受け継ぐものでしょうか、それとも自ら選ぶものでしょうか?",
+        "グローバル化は地域文化を豊かにするのでしょうか、それとも消し去るのでしょうか?",
+        "芸術には社会的な目的が必要でしょうか、それとも美しさだけで十分でしょうか?",
+        "私たちは民族の集合的記憶を完全に信頼できるのでしょうか?",
+        "個人の自由は、どこまで集団の利益に譲るべきでしょうか?",
+        "真の実力主義は存在するのでしょうか、それとも都合の良い幻想に過ぎないのでしょうか?",
+    ],
+}
+
+TOPICS_KO = {
+    "TOPIK 1-2": [
+        "가족에 대해 이야기해 주세요.",
+        "주말에 무엇을 하는 것을 좋아해요?",
+        "당신의 방을 묘사해 보세요.",
+        "가장 좋아하는 음식은 무엇이에요?",
+        "가장 친한 친구에 대해 말해 주세요.",
+        "어떤 계절을 가장 좋아해요?",
+        "학교에 대해 설명해 주세요.",
+        "가장 좋아하는 색깔은 무엇이에요?",
+    ],
+    "TOPIK 3-4": [
+        "소셜 미디어는 우리를 더 가깝게 만들까요, 아니면 더 고립시킬까요?",
+        "학생들은 공부하면서 아르바이트를 해야 할까요?",
+        "대도시와 작은 마을 중 어디에 사는 것이 더 좋을까요?",
+        "학교에서 휴대폰 사용을 금지해야 할까요?",
+        "전통은 지켜야 할까요, 아니면 현대화해야 할까요?",
+        "소셜 미디어에서의 인기가 진짜 성공이라고 할 수 있을까요?",
+        "관광은 지역 사회에 도움이 될까요, 해가 될까요?",
+        "청소년은 더 많은 독립성을 가져야 할까요?",
+    ],
+    "TOPIK 5-6": [
+        "언어는 마지막 사용자와 함께 정말로 사라지는 것일까요, 아니면 다른 형태로 살아남는 것일까요?",
+        "문화적 정체성은 물려받는 것일까요, 아니면 스스로 선택하는 것일까요?",
+        "세계화는 지역 문화를 풍요롭게 할까요, 아니면 지워버릴까요?",
+        "예술은 사회적 목적을 가져야 할까요, 아니면 아름다움만으로 충분할까요?",
+        "우리는 한 민족의 집단 기억을 완전히 신뢰할 수 있을까요?",
+        "개인의 자유는 어느 정도까지 공동의 이익에 양보해야 할까요?",
+        "진정한 능력주의는 존재할까요, 아니면 편리한 환상일 뿐일까요?",
+    ],
+}
+
 def get_topic_pool(p_lang, lvl):
     if p_lang in LEVELED_LANGS:
-        return {"en": TOPICS_EN, "de": TOPICS_DE, "es": TOPICS_ES, "it": TOPICS_IT, "fr": TOPICS_FR}[p_lang][lvl]
+        return {"en": TOPICS_EN, "de": TOPICS_DE, "es": TOPICS_ES, "it": TOPICS_IT, "fr": TOPICS_FR,
+                 "zh": TOPICS_ZH, "ja": TOPICS_JA, "ko": TOPICS_KO}[p_lang][lvl]
     return {"ru": TOPICS_RU, "kk": TOPICS_KK}[p_lang]
 
 # --- 8. MAIN INTERFACE ---
@@ -881,7 +1213,10 @@ if audio:
             audio_data = {"mime_type": "audio/wav", "data": audio['bytes']}
 
             feedback_lang_name = {"en": "English", "ru": "Russian", "kk": "Kazakh"}[explain_lang]
-            practice_lang_name = PRACTICE_LANGS[practice_lang]["label"]
+            PROMPT_LANG_NAME = {"en": "English", "kk": "Kazakh", "ru": "Russian", "de": "German",
+                                 "es": "Spanish", "it": "Italian", "fr": "French",
+                                 "zh": "Chinese", "ja": "Japanese", "ko": "Korean"}
+            practice_lang_name = PROMPT_LANG_NAME[practice_lang]
             level_note = f" The student's level is {level}." if practice_lang in LEVELED_LANGS else ""
 
             prompt = (
