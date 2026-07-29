@@ -1084,97 +1084,97 @@ TOPICS_FR = {
 
 TOPICS_ZH = {
     "HSK 1-3": [
-        "说说你的家人。",
-        "你周末喜欢做什么?",
-        "描述一下你的房间。",
-        "你最喜欢的食物是什么?",
-        "说说你最好的朋友。",
-        "你最喜欢哪个季节?",
-        "描述你的学校。",
-        "你喜欢什么颜色?",
+        ("说说你的家人。", "Shuōshuo nǐ de jiārén."),
+        ("你周末喜欢做什么?", "Nǐ zhōumò xǐhuan zuò shénme?"),
+        ("描述一下你的房间。", "Miáoshù yíxià nǐ de fángjiān."),
+        ("你最喜欢的食物是什么?", "Nǐ zuì xǐhuan de shíwù shì shénme?"),
+        ("说说你最好的朋友。", "Shuōshuo nǐ zuì hǎo de péngyou."),
+        ("你最喜欢哪个季节?", "Nǐ zuì xǐhuan nǎge jìjié?"),
+        ("描述你的学校。", "Miáoshù nǐ de xuéxiào."),
+        ("你喜欢什么颜色?", "Nǐ xǐhuan shénme yánsè?"),
     ],
     "HSK 4-6": [
-        "社交媒体让我们更亲近还是更孤独?",
-        "青少年应该在上学期间打工吗?",
-        "生活在大城市好还是小城市好?",
-        "学校应该禁止使用手机吗?",
-        "传统习俗应该保留还是应该现代化?",
-        "网络名气算是真正的成功吗?",
-        "旅游业对当地社区是利大于弊还是弊大于利?",
-        "青少年应该有更多的独立性吗?",
+        ("社交媒体让我们更亲近还是更孤独?", "Shèjiāo méitǐ ràng wǒmen gèng qīnjìn háishi gèng gūdú?"),
+        ("青少年应该在上学期间打工吗?", "Qīngshàonián yīnggāi zài shàngxué qījiān dǎgōng ma?"),
+        ("生活在大城市好还是小城市好?", "Shēnghuó zài dà chéngshì hǎo háishi xiǎo chéngshì hǎo?"),
+        ("学校应该禁止使用手机吗?", "Xuéxiào yīnggāi jìnzhǐ shǐyòng shǒujī ma?"),
+        ("传统习俗应该保留还是应该现代化?", "Chuántǒng xísú yīnggāi bǎoliú háishi yīnggāi xiàndàihuà?"),
+        ("网络名气算是真正的成功吗?", "Wǎngluò míngqì suàn shì zhēnzhèng de chénggōng ma?"),
+        ("旅游业对当地社区是利大于弊还是弊大于利?", "Lǚyóuyè duì dāngdì shèqū shì lì dàyú bì háishi bì dàyú lì?"),
+        ("青少年应该有更多的独立性吗?", "Qīngshàonián yīnggāi yǒu gèngduō de dúlìxìng ma?"),
     ],
     "HSK 7-9": [
-        "一种语言会随着最后一个使用者的消失而真正消亡吗?",
-        "文化身份是继承来的,还是自己选择的?",
-        "全球化究竟是丰富了本土文化,还是抹去了它们?",
-        "艺术必须具有社会意义吗,还是单纯的美就足够了?",
-        "我们能完全信任一个民族的集体记忆吗?",
-        "个人自由应该在多大程度上让位于集体利益?",
-        "真正的精英制度存在吗,还是只是一种方便的幻觉?",
+        ("一种语言会随着最后一个使用者的消失而真正消亡吗?", "Yì zhǒng yǔyán huì suízhe zuìhòu yí gè shǐyòngzhě de xiāoshī ér zhēnzhèng xiāowáng ma?"),
+        ("文化身份是继承来的,还是自己选择的?", "Wénhuà shēnfèn shì jìchéng lái de, háishi zìjǐ xuǎnzé de?"),
+        ("全球化究竟是丰富了本土文化,还是抹去了它们?", "Quánqiúhuà jiūjìng shì fēngfùle běntǔ wénhuà, háishi mǒqùle tāmen?"),
+        ("艺术必须具有社会意义吗,还是单纯的美就足够了?", "Yìshù bìxū jùyǒu shèhuì yìyì ma, háishi dānchún de měi jiù zúgòule?"),
+        ("我们能完全信任一个民族的集体记忆吗?", "Wǒmen néng wánquán xìnrèn yí gè mínzú de jítǐ jìyì ma?"),
+        ("个人自由应该在多大程度上让位于集体利益?", "Gèrén zìyóu yīnggāi zài duōdà chéngdù shàng ràngwèi yú jítǐ lìyì?"),
+        ("真正的精英制度存在吗,还是只是一种方便的幻觉?", "Zhēnzhèng de jīngyīng zhìdù cúnzài ma, háishi zhǐshì yì zhǒng fāngbiàn de huànjué?"),
     ],
 }
 
 TOPICS_JA = {
     "N5-N4": [
-        "家族について話してください。",
-        "週末は何をするのが好きですか?",
-        "自分の部屋を説明してください。",
-        "好きな食べ物は何ですか?",
-        "親友について話してください。",
-        "好きな季節はいつですか?",
-        "学校について説明してください。",
-        "好きな色は何ですか?",
+        ("家族について話してください。", "Kazoku ni tsuite hanashite kudasai."),
+        ("週末は何をするのが好きですか?", "Shūmatsu wa nani o suru no ga suki desu ka?"),
+        ("自分の部屋を説明してください。", "Jibun no heya o setsumei shite kudasai."),
+        ("好きな食べ物は何ですか?", "Suki na tabemono wa nan desu ka?"),
+        ("親友について話してください。", "Shin'yū ni tsuite hanashite kudasai."),
+        ("好きな季節はいつですか?", "Suki na kisetsu wa itsu desu ka?"),
+        ("学校について説明してください。", "Gakkō ni tsuite setsumei shite kudasai."),
+        ("好きな色は何ですか?", "Suki na iro wa nan desu ka?"),
     ],
     "N3-N2": [
-        "SNSは人と人を近づけますか、それとも孤立させますか?",
-        "学生は勉強しながらアルバイトをするべきですか?",
-        "大都市と田舎、どちらに住む方がいいですか?",
-        "学校で携帯電話を禁止するべきですか?",
-        "伝統は守るべきですか、それとも現代化するべきですか?",
-        "SNSでの人気は本当の成功と言えますか?",
-        "観光は地元の社会に良い影響を与えますか?",
-        "若者はもっと自立するべきですか?",
+        ("SNSは人と人を近づけますか、それとも孤立させますか?", "SNS wa hito to hito o chikazukemasu ka, soretomo koritsu sasemasu ka?"),
+        ("学生は勉強しながらアルバイトをするべきですか?", "Gakusei wa benkyō shinagara arubaito o suru beki desu ka?"),
+        ("大都市と田舎、どちらに住む方がいいですか?", "Daitoshi to inaka, dochira ni sumu hō ga ii desu ka?"),
+        ("学校で携帯電話を禁止するべきですか?", "Gakkō de keitai denwa o kinshi suru beki desu ka?"),
+        ("伝統は守るべきですか、それとも現代化するべきですか?", "Dentō wa mamoru beki desu ka, soretomo gendaika suru beki desu ka?"),
+        ("SNSでの人気は本当の成功と言えますか?", "SNS de no ninki wa hontō no seikō to iemasu ka?"),
+        ("観光は地元の社会に良い影響を与えますか?", "Kankō wa jimoto no shakai ni yoi eikyō o ataemasu ka?"),
+        ("若者はもっと自立するべきですか?", "Wakamono wa motto jiritsu suru beki desu ka?"),
     ],
     "N1": [
-        "言語は最後の話者と共に本当に消えるのでしょうか、それとも別の形で生き続けるのでしょうか?",
-        "文化的アイデンティティは受け継ぐものでしょうか、それとも自ら選ぶものでしょうか?",
-        "グローバル化は地域文化を豊かにするのでしょうか、それとも消し去るのでしょうか?",
-        "芸術には社会的な目的が必要でしょうか、それとも美しさだけで十分でしょうか?",
-        "私たちは民族の集合的記憶を完全に信頼できるのでしょうか?",
-        "個人の自由は、どこまで集団の利益に譲るべきでしょうか?",
-        "真の実力主義は存在するのでしょうか、それとも都合の良い幻想に過ぎないのでしょうか?",
+        ("言語は最後の話者と共に本当に消えるのでしょうか、それとも別の形で生き続けるのでしょうか?", "Gengo wa saigo no washa to tomo ni hontō ni kieru no deshō ka, soretomo betsu no katachi de ikitsuzukeru no deshō ka?"),
+        ("文化的アイデンティティは受け継ぐものでしょうか、それとも自ら選ぶものでしょうか?", "Bunkateki aidentiti wa uketsugu mono deshō ka, soretomo mizukara erabu mono deshō ka?"),
+        ("グローバル化は地域文化を豊かにするのでしょうか、それとも消し去るのでしょうか?", "Gurōbaruka wa chiiki bunka o yutaka ni suru no deshō ka, soretomo keshisaru no deshō ka?"),
+        ("芸術には社会的な目的が必要でしょうか、それとも美しさだけで十分でしょうか?", "Geijutsu ni wa shakaiteki na mokuteki ga hitsuyō deshō ka, soretomo utsukushisa dake de jūbun deshō ka?"),
+        ("私たちは民族の集合的記憶を完全に信頼できるのでしょうか?", "Watashitachi wa minzoku no shūgōteki kioku o kanzen ni shinrai dekiru no deshō ka?"),
+        ("個人の自由は、どこまで集団の利益に譲るべきでしょうか?", "Kojin no jiyū wa, dokomade shūdan no rieki ni yuzuru beki deshō ka?"),
+        ("真の実力主義は存在するのでしょうか、それとも都合の良い幻想に過ぎないのでしょうか?", "Shin no jitsuryoku shugi wa sonzai suru no deshō ka, soretomo tsugō no yoi gensō ni suginai no deshō ka?"),
     ],
 }
 
 TOPICS_KO = {
     "TOPIK 1-2": [
-        "가족에 대해 이야기해 주세요.",
-        "주말에 무엇을 하는 것을 좋아해요?",
-        "당신의 방을 묘사해 보세요.",
-        "가장 좋아하는 음식은 무엇이에요?",
-        "가장 친한 친구에 대해 말해 주세요.",
-        "어떤 계절을 가장 좋아해요?",
-        "학교에 대해 설명해 주세요.",
-        "가장 좋아하는 색깔은 무엇이에요?",
+        ("가족에 대해 이야기해 주세요.", "Gajoge daehae iyagihae juseyo."),
+        ("주말에 무엇을 하는 것을 좋아해요?", "Jumare mueoseul haneun geoseul joahaeyo?"),
+        ("당신의 방을 묘사해 보세요.", "Dangsinui bangeul myosahae boseyo."),
+        ("가장 좋아하는 음식은 무엇이에요?", "Gajang joahaneun eumsigeun mueosieyo?"),
+        ("가장 친한 친구에 대해 말해 주세요.", "Gajang chinhan chingue daehae malhae juseyo."),
+        ("어떤 계절을 가장 좋아해요?", "Eotteon gyejeoreul gajang joahaeyo?"),
+        ("학교에 대해 설명해 주세요.", "Hakgyoe daehae seolmyeonghae juseyo."),
+        ("가장 좋아하는 색깔은 무엇이에요?", "Gajang joahaneun saekkkareun mueosieyo?"),
     ],
     "TOPIK 3-4": [
-        "소셜 미디어는 우리를 더 가깝게 만들까요, 아니면 더 고립시킬까요?",
-        "학생들은 공부하면서 아르바이트를 해야 할까요?",
-        "대도시와 작은 마을 중 어디에 사는 것이 더 좋을까요?",
-        "학교에서 휴대폰 사용을 금지해야 할까요?",
-        "전통은 지켜야 할까요, 아니면 현대화해야 할까요?",
-        "소셜 미디어에서의 인기가 진짜 성공이라고 할 수 있을까요?",
-        "관광은 지역 사회에 도움이 될까요, 해가 될까요?",
-        "청소년은 더 많은 독립성을 가져야 할까요?",
+        ("소셜 미디어는 우리를 더 가깝게 만들까요, 아니면 더 고립시킬까요?", "Sosyeol midieoneun urireul deo gakkapge mandeulkkayo, animyeon deo goripsikilkkayo?"),
+        ("학생들은 공부하면서 아르바이트를 해야 할까요?", "Haksaengdeureun gongbuhamyeonseo areubaiteureul haeya halkkayo?"),
+        ("대도시와 작은 마을 중 어디에 사는 것이 더 좋을까요?", "Daedosiwa jageun maeul jung eodie saneun geosi deo joeulkkayo?"),
+        ("학교에서 휴대폰 사용을 금지해야 할까요?", "Hakgyoeseo hyudaepon sayongeul geumjihaeya halkkayo?"),
+        ("전통은 지켜야 할까요, 아니면 현대화해야 할까요?", "Jeontongeun jikyeoya halkkayo, animyeon hyeondaehwahaeya halkkayo?"),
+        ("소셜 미디어에서의 인기가 진짜 성공이라고 할 수 있을까요?", "Sosyeol midieoeseoui ingiga jinjja seonggongirago hal su isseulkkayo?"),
+        ("관광은 지역 사회에 도움이 될까요, 해가 될까요?", "Gwangwangeun jiyeok sahoee doumi doelkkayo, haega doelkkayo?"),
+        ("청소년은 더 많은 독립성을 가져야 할까요?", "Cheongsonyeoneun deo maneun dongnipseongeul gajyeoya halkkayo?"),
     ],
     "TOPIK 5-6": [
-        "언어는 마지막 사용자와 함께 정말로 사라지는 것일까요, 아니면 다른 형태로 살아남는 것일까요?",
-        "문화적 정체성은 물려받는 것일까요, 아니면 스스로 선택하는 것일까요?",
-        "세계화는 지역 문화를 풍요롭게 할까요, 아니면 지워버릴까요?",
-        "예술은 사회적 목적을 가져야 할까요, 아니면 아름다움만으로 충분할까요?",
-        "우리는 한 민족의 집단 기억을 완전히 신뢰할 수 있을까요?",
-        "개인의 자유는 어느 정도까지 공동의 이익에 양보해야 할까요?",
-        "진정한 능력주의는 존재할까요, 아니면 편리한 환상일 뿐일까요?",
+        ("언어는 마지막 사용자와 함께 정말로 사라지는 것일까요, 아니면 다른 형태로 살아남는 것일까요?", "Eoneoneun majimak sayongjawa hamkke jeongmallo sarajineun geosilkkayo, animyeon dareun hyeongtaero saranamneun geosilkkayo?"),
+        ("문화적 정체성은 물려받는 것일까요, 아니면 스스로 선택하는 것일까요?", "Munhwajeok jeongcheseongeun mullyeobatneun geosilkkayo, animyeon seuseuro seontaekhaneun geosilkkayo?"),
+        ("세계화는 지역 문화를 풍요롭게 할까요, 아니면 지워버릴까요?", "Segyehwaneun jiyeok munhwareul pungyoropge halkkayo, animyeon jiwobeorilkkayo?"),
+        ("예술은 사회적 목적을 가져야 할까요, 아니면 아름다움만으로 충분할까요?", "Yesureun sahoejeok mokjeogeul gajyeoya halkkayo, animyeon areumdaummaneuro chungbunhalkkayo?"),
+        ("우리는 한 민족의 집단 기억을 완전히 신뢰할 수 있을까요?", "Urineun han minjogui jipdan gieogeul wanjeonhi silloehal su isseulkkayo?"),
+        ("개인의 자유는 어느 정도까지 공동의 이익에 양보해야 할까요?", "Gaeinui jayuneun eoneu jeongdokkaji gongdongui iige yangbohaeya halkkayo?"),
+        ("진정한 능력주의는 존재할까요, 아니면 편리한 환상일 뿐일까요?", "Jinjeonghan neungnyeokjuuineun jonjaehalkkayo, animyeon pyeollihan hwansangil ppunilkkayo?"),
     ],
 }
 
@@ -1195,7 +1195,16 @@ if st.button(t["get_topic"]):
     random.seed()
     st.session_state.topic = random.choice(get_topic_pool(practice_lang, level))
 
-st.warning(f"**{t['current_topic']}** {st.session_state.topic}")
+# topics for zh/ja/ko are (text, reading) tuples; other languages are plain strings
+_topic = st.session_state.topic
+if isinstance(_topic, tuple):
+    topic_text = _topic[0]
+    topic_display = f"{_topic[0]} ({_topic[1]})"
+else:
+    topic_text = _topic
+    topic_display = _topic
+
+st.warning(f"**{t['current_topic']}** {topic_display}")
 
 # --- 9. THE RECORDER ---
 st.subheader(t["step1"])
@@ -1220,7 +1229,7 @@ if audio:
             level_note = f" The student's level is {level}." if practice_lang in LEVELED_LANGS else ""
 
             prompt = (
-                f"Topic (spoken in {practice_lang_name}): {st.session_state.topic}. "
+                f"Topic (spoken in {practice_lang_name}): {topic_text}. "
                 f"{level_note} Evaluate the student's grammar and vocabulary in {practice_lang_name}, "
                 f"and give 3 tips to improve. "
                 f"Write your entire feedback in {feedback_lang_name}, since the student may not yet "
