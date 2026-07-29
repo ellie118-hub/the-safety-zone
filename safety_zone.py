@@ -24,6 +24,7 @@ except Exception as e:
 st.set_page_config(page_title="The Safety Zone", page_icon="🎙️", layout="wide")
 
 
+
 EXPLAIN_LANGS = ["kk", "ru", "en"]
 EXPLAIN_LABELS = {"kk": "ҚАЗ", "ru": "РУС", "en": "ENG"}
 
@@ -40,7 +41,7 @@ PRACTICE_LANGS = {
     "ko": {"label": "한국어", "flag": "🇰🇷"},
 }
 
-# each leveled language uses ITS OWN proficiency scale, not one shared A1-C2 scale
+
 LEVELS_BY_LANG = {
     "en": ["A1-A2", "B1-B2", "C1-C2"],
     "de": ["A1-A2", "B1-B2", "C1-C2"],
@@ -81,7 +82,7 @@ with top2:
 if new_practice != st.session_state.practice_lang:
     st.session_state.practice_lang = new_practice
     st.session_state.topic = None
-    # each language has its own level labels, so reset to that language's first tier
+    
     if new_practice in LEVELS_BY_LANG:
         st.session_state.level = LEVELS_BY_LANG[new_practice][0]
 with top3:
@@ -344,7 +345,7 @@ WORDS_JA = {
     ],
     "N1": [
         {"word": "儚い (はかない)", "def": {"en": "ephemeral, fleeting.", "ru": "мимолётный, эфемерный.", "kk": "қысқа мерзімді, өткінші."}},
-        {"word": "言葉にできない", "def": {"en": "ineffable, cannot be put into words.", "ru": "невыразимый словами.", "kk": "сөзбен жеткізе алмайтын."}},
+        {"word": "言葉にできない (ことばにできない)", "def": {"en": "ineffable, cannot be put into words.", "ru": "невыразимый словами.", "kk": "сөзбен жеткізе алмайтын."}},
         {"word": "洞察力がある (どうさつりょくがある)", "def": {"en": "perspicacious, insightful.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
         {"word": "物議を醸す (ぶつぎをかもす)", "def": {"en": "controversial, causing debate.", "ru": "спорный, вызывающий споры.", "kk": "пікірталас тудыратын."}},
         {"word": "多面的 (ためんてき)", "def": {"en": "multifaceted.", "ru": "многогранный.", "kk": "көп қырлы."}},
@@ -353,25 +354,25 @@ WORDS_JA = {
 
 WORDS_KO = {
     "TOPIK 1-2": [
-        {"word": "집", "def": {"en": "house.", "ru": "дом.", "kk": "үй."}},
-        {"word": "친구", "def": {"en": "friend.", "ru": "друг.", "kk": "дос."}},
-        {"word": "학교", "def": {"en": "school.", "ru": "школа.", "kk": "мектеп."}},
-        {"word": "날씨", "def": {"en": "weather.", "ru": "погода.", "kk": "ауа райы."}},
-        {"word": "기쁘다", "def": {"en": "to be happy, glad.", "ru": "быть счастливым, радостным.", "kk": "қуанышты болу."}},
+        {"word": "집 (jip)", "def": {"en": "house.", "ru": "дом.", "kk": "үй."}},
+        {"word": "친구 (chingu)", "def": {"en": "friend.", "ru": "друг.", "kk": "дос."}},
+        {"word": "학교 (hakgyo)", "def": {"en": "school.", "ru": "школа.", "kk": "мектеп."}},
+        {"word": "날씨 (nalssi)", "def": {"en": "weather.", "ru": "погода.", "kk": "ауа райы."}},
+        {"word": "기쁘다 (gippeuda)", "def": {"en": "to be happy, glad.", "ru": "быть счастливым, радостным.", "kk": "қуанышты болу."}},
     ],
     "TOPIK 3-4": [
-        {"word": "모순되다", "def": {"en": "to be contradictory.", "ru": "быть противоречивым.", "kk": "қайшылықты болу."}},
-        {"word": "실용적", "def": {"en": "practical, realistic.", "ru": "практичный, реалистичный.", "kk": "тәжірибелік, шынайы."}},
-        {"word": "보편적", "def": {"en": "universal, widespread.", "ru": "универсальный.", "kk": "жалпыға ортақ."}},
-        {"word": "타당하다", "def": {"en": "to be reasonable, valid.", "ru": "быть разумным, обоснованным.", "kk": "негізді болу."}},
-        {"word": "꼼꼼하다", "def": {"en": "to be meticulous, thorough.", "ru": "быть скрупулёзным.", "kk": "мұқият, ұқыпты болу."}},
+        {"word": "모순되다 (mosundoeda)", "def": {"en": "to be contradictory.", "ru": "быть противоречивым.", "kk": "қайшылықты болу."}},
+        {"word": "실용적 (silyongjeok)", "def": {"en": "practical, realistic.", "ru": "практичный, реалистичный.", "kk": "тәжірибелік, шынайы."}},
+        {"word": "보편적 (bopyeonjeok)", "def": {"en": "universal, widespread.", "ru": "универсальный.", "kk": "жалпыға ортақ."}},
+        {"word": "타당하다 (tadanghada)", "def": {"en": "to be reasonable, valid.", "ru": "быть разумным, обоснованным.", "kk": "негізді болу."}},
+        {"word": "꼼꼼하다 (kkomkkomhada)", "def": {"en": "to be meticulous, thorough.", "ru": "быть скрупулёзным.", "kk": "мұқият, ұқыпты болу."}},
     ],
     "TOPIK 5-6": [
-        {"word": "덧없다", "def": {"en": "ephemeral, fleeting.", "ru": "мимолётный, эфемерный.", "kk": "қысқа мерзімді, өткінші."}},
-        {"word": "형언할 수 없다", "def": {"en": "ineffable, indescribable.", "ru": "невыразимый словами.", "kk": "сөзбен жеткізе алмайтын."}},
-        {"word": "통찰력 있다", "def": {"en": "perspicacious, insightful.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
-        {"word": "논란이 되다", "def": {"en": "to be controversial.", "ru": "быть спорным.", "kk": "пікірталас тудыру."}},
-        {"word": "다면적", "def": {"en": "multifaceted.", "ru": "многогранный.", "kk": "көп қырлы."}},
+        {"word": "덧없다 (deodeopda)", "def": {"en": "ephemeral, fleeting.", "ru": "мимолётный, эфемерный.", "kk": "қысқа мерзімді, өткінші."}},
+        {"word": "형언할 수 없다 (hyeongeonhal su eopda)", "def": {"en": "ineffable, indescribable.", "ru": "невыразимый словами.", "kk": "сөзбен жеткізе алмайтын."}},
+        {"word": "통찰력 있다 (tongchallyeok itda)", "def": {"en": "perspicacious, insightful.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
+        {"word": "논란이 되다 (nollani doeda)", "def": {"en": "to be controversial.", "ru": "быть спорным.", "kk": "пікірталас тудыру."}},
+        {"word": "다면적 (damyeonjeok)", "def": {"en": "multifaceted.", "ru": "многогранный.", "kk": "көп қырлы."}},
     ],
 }
 
@@ -538,49 +539,49 @@ IDIOMS_ZH = {
 
 IDIOMS_JA = {
     "N5-N4": [
-        {"idiom": "元気ですか?", "meaning": {"en": "How are you? (greeting)", "ru": "Как дела? (приветствие)", "kk": "Қалың қалай? (сәлемдесу)"}},
-        {"idiom": "大丈夫です", "meaning": {"en": "It's okay, no problem.", "ru": "Всё в порядке.", "kk": "Бәрі жақсы."}},
-        {"idiom": "またね", "meaning": {"en": "See you (casual goodbye).", "ru": "Пока, увидимся.", "kk": "Кездескенше."}},
-        {"idiom": "よくできました!", "meaning": {"en": "Well done!", "ru": "Молодец!", "kk": "Жарайсың!"}},
-        {"idiom": "心配しないで", "meaning": {"en": "Don't worry.", "ru": "Не волнуйся.", "kk": "Алаңдама."}},
+        {"idiom": "元気ですか? (Genki desu ka?)", "meaning": {"en": "How are you? (greeting)", "ru": "Как дела? (приветствие)", "kk": "Қалың қалай? (сәлемдесу)"}},
+        {"idiom": "大丈夫です (Daijōbu desu.)", "meaning": {"en": "It's okay, no problem.", "ru": "Всё в порядке.", "kk": "Бәрі жақсы."}},
+        {"idiom": "またね (Mata ne.)", "meaning": {"en": "See you (casual goodbye).", "ru": "Пока, увидимся.", "kk": "Кездескенше."}},
+        {"idiom": "よくできました! (Yoku dekimashita!)", "meaning": {"en": "Well done!", "ru": "Молодец!", "kk": "Жарайсың!"}},
+        {"idiom": "心配しないで (Shinpai shinaide.)", "meaning": {"en": "Don't worry.", "ru": "Не волнуйся.", "kk": "Алаңдама."}},
     ],
     "N3-N2": [
-        {"idiom": "猫の手も借りたい", "meaning": {"en": "to be extremely busy.", "ru": "быть очень занятым.", "kk": "өте бос емес болу."}},
-        {"idiom": "石の上にも三年", "meaning": {"en": "patience and persistence pay off.", "ru": "терпение и труд всё перетрут.", "kk": "төзімділік пен еңбек жеміс береді."}},
-        {"idiom": "馬が合う", "meaning": {"en": "to get along well with someone.", "ru": "хорошо ладить с кем-то.", "kk": "біреумен жақсы тіл табысу."}},
-        {"idiom": "頭が固い", "meaning": {"en": "to be stubborn, inflexible.", "ru": "быть упрямым.", "kk": "ойлауда қасаң болу."}},
-        {"idiom": "耳が痛い", "meaning": {"en": "a criticism that hits close to home.", "ru": "критика, задевающая за живое.", "kk": "жанға тиетін сын."}},
+        {"idiom": "猫の手も借りたい (Neko no te mo karitai.)", "meaning": {"en": "to be extremely busy.", "ru": "быть очень занятым.", "kk": "өте бос емес болу."}},
+        {"idiom": "石の上にも三年 (Ishi no ue ni mo san nen.)", "meaning": {"en": "patience and persistence pay off.", "ru": "терпение и труд всё перетрут.", "kk": "төзімділік пен еңбек жеміс береді."}},
+        {"idiom": "馬が合う (Uma ga au.)", "meaning": {"en": "to get along well with someone.", "ru": "хорошо ладить с кем-то.", "kk": "біреумен жақсы тіл табысу."}},
+        {"idiom": "頭が固い (Atama ga katai.)", "meaning": {"en": "to be stubborn, inflexible.", "ru": "быть упрямым.", "kk": "ойлауда қасаң болу."}},
+        {"idiom": "耳が痛い (Mimi ga itai.)", "meaning": {"en": "a criticism that hits close to home.", "ru": "критика, задевающая за живое.", "kk": "жанға тиетін сын."}},
     ],
     "N1": [
-        {"idiom": "背水の陣", "meaning": {"en": "to commit fully with no retreat.", "ru": "сжечь мосты.", "kk": "кейін шегінбей, толық берілу."}},
-        {"idiom": "灯台下暗し", "meaning": {"en": "the obvious is often overlooked.", "ru": "самое очевидное часто остаётся незамеченным.", "kk": "көзге көрінген нәрсе байқалмай қалады."}},
-        {"idiom": "覆水盆に返らず", "meaning": {"en": "what's done cannot be undone.", "ru": "что сделано, то сделано.", "kk": "болған іс қайтпайды."}},
-        {"idiom": "虎穴に入らずんば虎子を得ず", "meaning": {"en": "nothing ventured, nothing gained.", "ru": "кто не рискует, тот не выигрывает.", "kk": "тәуекел етпеген жетістікке жетпейді."}},
-        {"idiom": "善は急げ", "meaning": {"en": "strike while the iron is hot.", "ru": "куй железо, пока горячо.", "kk": "темірді ыстығында соқ."}},
+        {"idiom": "背水の陣 (Haisui no jin.)", "meaning": {"en": "to commit fully with no retreat.", "ru": "сжечь мосты.", "kk": "кейін шегінбей, толық берілу."}},
+        {"idiom": "灯台下暗し (Tōdai moto kurashi.)", "meaning": {"en": "the obvious is often overlooked.", "ru": "самое очевидное часто остаётся незамеченным.", "kk": "көзге көрінген нәрсе байқалмай қалады."}},
+        {"idiom": "覆水盆に返らず (Fukusui bon ni kaerazu.)", "meaning": {"en": "what's done cannot be undone.", "ru": "что сделано, то сделано.", "kk": "болған іс қайтпайды."}},
+        {"idiom": "虎穴に入らずんば虎子を得ず (Koketsu ni irazunba koji o ezu.)", "meaning": {"en": "nothing ventured, nothing gained.", "ru": "кто не рискует, тот не выигрывает.", "kk": "тәуекел етпеген жетістікке жетпейді."}},
+        {"idiom": "善は急げ (Zen wa isoge.)", "meaning": {"en": "strike while the iron is hot.", "ru": "куй железо, пока горячо.", "kk": "темірді ыстығында соқ."}},
     ],
 }
 
 IDIOMS_KO = {
     "TOPIK 1-2": [
-        {"idiom": "어떻게 지내요?", "meaning": {"en": "How are you? (greeting)", "ru": "Как дела? (приветствие)", "kk": "Қалың қалай? (сәлемдесу)"}},
-        {"idiom": "괜찮아요", "meaning": {"en": "It's okay, no problem.", "ru": "Всё в порядке.", "kk": "Бәрі жақсы."}},
-        {"idiom": "또 만나요", "meaning": {"en": "See you again.", "ru": "До встречи.", "kk": "Тағы кездесеміз."}},
-        {"idiom": "잘했어요!", "meaning": {"en": "Well done!", "ru": "Молодец!", "kk": "Жарайсың!"}},
-        {"idiom": "걱정하지 마세요", "meaning": {"en": "Don't worry.", "ru": "Не волнуйся.", "kk": "Алаңдама."}},
+        {"idiom": "어떻게 지내요? (Eotteoke jinaeyo?)", "meaning": {"en": "How are you? (greeting)", "ru": "Как дела? (приветствие)", "kk": "Қалың қалай? (сәлемдесу)"}},
+        {"idiom": "괜찮아요 (Gwaenchanhayo.)", "meaning": {"en": "It's okay, no problem.", "ru": "Всё в порядке.", "kk": "Бәрі жақсы."}},
+        {"idiom": "또 만나요 (Tto mannayo.)", "meaning": {"en": "See you again.", "ru": "До встречи.", "kk": "Тағы кездесеміз."}},
+        {"idiom": "잘했어요! (Jalhaesseoyo!)", "meaning": {"en": "Well done!", "ru": "Молодец!", "kk": "Жарайсың!"}},
+        {"idiom": "걱정하지 마세요 (Geokjeonghaji maseyo.)", "meaning": {"en": "Don't worry.", "ru": "Не волнуйся.", "kk": "Алаңдама."}},
     ],
     "TOPIK 3-4": [
-        {"idiom": "손이 크다", "meaning": {"en": "to be generous (lit: to have big hands).", "ru": "быть щедрым.", "kk": "жомарт болу."}},
-        {"idiom": "발이 넓다", "meaning": {"en": "to have wide social connections.", "ru": "иметь широкий круг знакомств.", "kk": "кең таныстығы болу."}},
-        {"idiom": "눈이 높다", "meaning": {"en": "to have high standards.", "ru": "иметь высокие требования.", "kk": "талғамы жоғары болу."}},
-        {"idiom": "입이 무겁다", "meaning": {"en": "to be discreet, able to keep a secret.", "ru": "уметь хранить секреты.", "kk": "құпияны сақтай білу."}},
-        {"idiom": "귀가 얇다", "meaning": {"en": "to be easily persuaded by others.", "ru": "легко поддаваться чужому влиянию.", "kk": "басқаның сөзіне тез көну."}},
+        {"idiom": "손이 크다 (Soni keuda.)", "meaning": {"en": "to be generous (lit: to have big hands).", "ru": "быть щедрым.", "kk": "жомарт болу."}},
+        {"idiom": "발이 넓다 (Bari neolda.)", "meaning": {"en": "to have wide social connections.", "ru": "иметь широкий круг знакомств.", "kk": "кең таныстығы болу."}},
+        {"idiom": "눈이 높다 (Nuni nopda.)", "meaning": {"en": "to have high standards.", "ru": "иметь высокие требования.", "kk": "талғамы жоғары болу."}},
+        {"idiom": "입이 무겁다 (Ibi mugeopda.)", "meaning": {"en": "to be discreet, able to keep a secret.", "ru": "уметь хранить секреты.", "kk": "құпияны сақтай білу."}},
+        {"idiom": "귀가 얇다 (Gwiga yalpda.)", "meaning": {"en": "to be easily persuaded by others.", "ru": "легко поддаваться чужому влиянию.", "kk": "басқаның сөзіне тез көну."}},
     ],
     "TOPIK 5-6": [
-        {"idiom": "등잔 밑이 어둡다", "meaning": {"en": "the obvious is often overlooked.", "ru": "самое очевидное часто остаётся незамеченным.", "kk": "көзге көрінген нәрсе байқалмай қалады."}},
-        {"idiom": "엎질러진 물", "meaning": {"en": "what's done cannot be undone.", "ru": "что сделано, то сделано.", "kk": "болған іс қайтпайды."}},
-        {"idiom": "호랑이 굴에 가야 호랑이를 잡는다", "meaning": {"en": "nothing ventured, nothing gained.", "ru": "кто не рискует, тот не выигрывает.", "kk": "тәуекел етпеген жетістікке жетпейді."}},
-        {"idiom": "쇠뿔도 단김에 빼라", "meaning": {"en": "strike while the iron is hot.", "ru": "куй железо, пока горячо.", "kk": "темірді ыстығында соқ."}},
-        {"idiom": "우물 안 개구리", "meaning": {"en": "a person with a narrow view of the world.", "ru": "человек с узким кругозором.", "kk": "дүниетанымы тар адам."}},
+        {"idiom": "등잔 밑이 어둡다 (Deungjan michi eodupda.)", "meaning": {"en": "the obvious is often overlooked.", "ru": "самое очевидное часто остаётся незамеченным.", "kk": "көзге көрінген нәрсе байқалмай қалады."}},
+        {"idiom": "엎질러진 물 (Eopjilleojin mul.)", "meaning": {"en": "what's done cannot be undone.", "ru": "что сделано, то сделано.", "kk": "болған іс қайтпайды."}},
+        {"idiom": "호랑이 굴에 가야 호랑이를 잡는다 (Horangi gure gaya horangireul jamneunda.)", "meaning": {"en": "nothing ventured, nothing gained.", "ru": "кто не рискует, тот не выигрывает.", "kk": "тәуекел етпеген жетістікке жетпейді."}},
+        {"idiom": "쇠뿔도 단김에 빼라 (Soebbuldo dangime ppaera.)", "meaning": {"en": "strike while the iron is hot.", "ru": "куй железо, пока горячо.", "kk": "темірді ыстығында соқ."}},
+        {"idiom": "우물 안 개구리 (Umul an gaeguri.)", "meaning": {"en": "a person with a narrow view of the world.", "ru": "человек с узким кругозором.", "kk": "дүниетанымы тар адам."}},
     ],
 }
 
@@ -739,16 +740,16 @@ BOOKS_JA = {
 
 BOOKS_KO = {
     "TOPIK 1-2": [
-        {"title": "『구름빵』– 백희나", "tag": "동화", "term": "상상력", "meaning": {"en": "imagination.", "ru": "воображение.", "kk": "қиял, елестету қабілеті."}},
-        {"title": "『강아지똥』– 권정생", "tag": "동화", "term": "소중함", "meaning": {"en": "preciousness, being valuable.", "ru": "ценность, значимость.", "kk": "құндылық, маңыздылық."}},
+        {"title": "『구름빵』– 백희나", "tag": "동화", "term": "상상력 (sangsangnyeok)", "meaning": {"en": "imagination.", "ru": "воображение.", "kk": "қиял, елестету қабілеті."}},
+        {"title": "『강아지똥』– 권정생", "tag": "동화", "term": "소중함 (sojungham)", "meaning": {"en": "preciousness, being valuable.", "ru": "ценность, значимость.", "kk": "құндылық, маңыздылық."}},
     ],
     "TOPIK 3-4": [
-        {"title": "『완득이』– 김려령", "tag": "청소년 소설", "term": "편견", "meaning": {"en": "prejudice, a preconceived opinion.", "ru": "предрассудок, предвзятое мнение.", "kk": "жаңсақ пікір."}},
-        {"title": "『나미야 잡화점의 기적』– 히가시노 게이고", "tag": "소설", "term": "인연", "meaning": {"en": "fated connection between people.", "ru": "предопределённая связь между людьми.", "kk": "адамдар арасындағы тағдырлы байланыс."}},
+        {"title": "『완득이』– 김려령", "tag": "청소년 소설", "term": "편견 (pyeongyeon)", "meaning": {"en": "prejudice, a preconceived opinion.", "ru": "предрассудок, предвзятое мнение.", "kk": "жаңсақ пікір."}},
+        {"title": "『나미야 잡화점의 기적』– 히가시노 게이고", "tag": "소설", "term": "인연 (inyeon)", "meaning": {"en": "fated connection between people.", "ru": "предопределённая связь между людьми.", "kk": "адамдар арасындағы тағдырлы байланыс."}},
     ],
     "TOPIK 5-6": [
-        {"title": "『채식주의자』– 한강", "tag": "현대 문학", "term": "소외감", "meaning": {"en": "a sense of alienation.", "ru": "чувство отчуждения.", "kk": "оқшаулану сезімі."}},
-        {"title": "『토지』– 박경리", "tag": "대하소설", "term": "운명", "meaning": {"en": "fate, destiny.", "ru": "судьба.", "kk": "тағдыр."}},
+        {"title": "『채식주의자』– 한강", "tag": "현대 문학", "term": "소외감 (so-oe-gam)", "meaning": {"en": "a sense of alienation.", "ru": "чувство отчуждения.", "kk": "оқшаулану сезімі."}},
+        {"title": "『토지』– 박경리", "tag": "대하소설", "term": "운명 (unmyeong)", "meaning": {"en": "fate, destiny.", "ru": "судьба.", "kk": "тағдыр."}},
     ],
 }
 
