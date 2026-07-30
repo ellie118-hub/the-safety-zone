@@ -24,7 +24,6 @@ except Exception as e:
 st.set_page_config(page_title="The Safety Zone", page_icon="🎙️", layout="wide")
 
 
-
 EXPLAIN_LANGS = ["kk", "ru", "en"]
 EXPLAIN_LABELS = {"kk": "ҚАЗ", "ru": "РУС", "en": "ENG"}
 
@@ -41,7 +40,7 @@ PRACTICE_LANGS = {
     "ko": {"label": "한국어", "flag": "🇰🇷"},
 }
 
-
+# each leveled language uses ITS OWN proficiency scale, not one shared A1-C2 scale
 LEVELS_BY_LANG = {
     "en": ["A1-A2", "B1-B2", "C1-C2"],
     "de": ["A1-A2", "B1-B2", "C1-C2"],
@@ -82,7 +81,7 @@ with top2:
 if new_practice != st.session_state.practice_lang:
     st.session_state.practice_lang = new_practice
     st.session_state.topic = None
-    
+    # each language has its own level labels, so reset to that language's first tier
     if new_practice in LEVELS_BY_LANG:
         st.session_state.level = LEVELS_BY_LANG[new_practice][0]
 with top3:
