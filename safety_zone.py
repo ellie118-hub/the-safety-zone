@@ -23,7 +23,6 @@ except Exception as e:
 
 st.set_page_config(page_title="The Safety Zone", page_icon="🎙️", layout="wide")
 
-
 EXPLAIN_LANGS = ["kk", "ru", "en"]
 EXPLAIN_LABELS = {"kk": "ҚАЗ", "ru": "РУС", "en": "ENG"}
 
@@ -174,6 +173,11 @@ WORDS_EN = {
         {"word": "Friend", "def": {"en": "a person you like and trust.", "ru": "человек, которому доверяешь.", "kk": "сенетін, ұнататын адам."}},
         {"word": "Weather", "def": {"en": "the condition of the sky and temperature.", "ru": "состояние неба и температуры.", "kk": "ауа-райының жағдайы."}},
         {"word": "Family", "def": {"en": "the people related to you.", "ru": "родственники, семья.", "kk": "туыстар, отбасы."}},
+        {"word": "School", "def": {"en": "a place where you go to learn.", "ru": "место, где учатся.", "kk": "оқитын орын."}},
+        {"word": "Book", "def": {"en": "pages with writing that you read.", "ru": "предмет для чтения со страницами.", "kk": "оқуға арналған беттері бар зат."}},
+        {"word": "Music", "def": {"en": "sounds arranged in a pleasing way.", "ru": "приятно организованные звуки.", "kk": "жағымды үйлестірілген дыбыстар."}},
+        {"word": "Animal", "def": {"en": "a living creature that is not a plant.", "ru": "живое существо, не растение.", "kk": "өсімдік емес тірі жәндік."}},
+        {"word": "Tired", "def": {"en": "needing rest or sleep.", "ru": "нуждающийся в отдыхе.", "kk": "демалу қажет ететін."}},
     ],
     "B1-B2": [
         {"word": "Ambiguous", "def": {"en": "having more than one possible meaning; unclear.", "ru": "имеющий более одного значения; неясный.", "kk": "бірнеше мағынасы бар, түсініксіз."}},
@@ -181,6 +185,11 @@ WORDS_EN = {
         {"word": "Pragmatic", "def": {"en": "dealing with things sensibly and realistically.", "ru": "практичный, реалистичный подход к делу.", "kk": "іске байыппен әрі шынайы қарайтын."}},
         {"word": "Ubiquitous", "def": {"en": "present, appearing, or found everywhere.", "ru": "повсеместный, встречающийся повсюду.", "kk": "барлық жерде кездесетін."}},
         {"word": "Meticulous", "def": {"en": "showing great attention to detail; very careful.", "ru": "очень внимательный к деталям, скрупулёзный.", "kk": "егжей-тегжейіне дейін ұқыпты қарайтын."}},
+        {"word": "Candid", "def": {"en": "honest and direct, even if blunt.", "ru": "честный и прямой, откровенный.", "kk": "ашық әрі турашыл."}},
+        {"word": "Resilient", "def": {"en": "able to recover quickly from difficulty.", "ru": "способный быстро восстанавливаться после трудностей.", "kk": "қиындықтан тез қалпына келе алатын."}},
+        {"word": "Superficial", "def": {"en": "shallow, not deep or thorough.", "ru": "поверхностный, неглубокий.", "kk": "терең емес, беткейлі."}},
+        {"word": "Versatile", "def": {"en": "able to adapt to many different uses.", "ru": "универсальный, приспосабливающийся.", "kk": "көп нәрсеге бейімделе алатын."}},
+        {"word": "Skeptical", "def": {"en": "having doubts about something.", "ru": "скептический, сомневающийся.", "kk": "күмәнмен қарайтын."}},
     ],
     "C1-C2": [
         {"word": "Ephemeral", "def": {"en": "lasting for a very short time.", "ru": "мимолётный, недолговечный.", "kk": "өте қысқа мерзімге созылатын."}},
@@ -188,6 +197,11 @@ WORDS_EN = {
         {"word": "Cognizant", "def": {"en": "aware of or knowing something.", "ru": "осведомлённый о чём-либо.", "kk": "бір нәрсені білетін, хабардар."}},
         {"word": "Ostensible", "def": {"en": "appearing to be true, but not necessarily so.", "ru": "кажущийся, показной.", "kk": "сырт көрінісінде ғана дұрыс болып көрінетін."}},
         {"word": "Perspicacious", "def": {"en": "having keen insight or judgment.", "ru": "проницательный.", "kk": "өткір пайымды, зерек."}},
+        {"word": "Enigmatic", "def": {"en": "mysterious, difficult to understand.", "ru": "загадочный, труднообъяснимый.", "kk": "жұмбақ, түсінуге қиын."}},
+        {"word": "Paradoxical", "def": {"en": "seemingly contradictory yet possibly true.", "ru": "парадоксальный, кажущийся противоречивым.", "kk": "қайшылықты көрінетін, бірақ шындыққа сай болуы мүмкін."}},
+        {"word": "Quintessential", "def": {"en": "representing the most perfect example of something.", "ru": "являющийся самым типичным примером чего-либо.", "kk": "бір нәрсенің ең үлгілі мысалы."}},
+        {"word": "Superfluous", "def": {"en": "unnecessary, more than needed.", "ru": "излишний, ненужный.", "kk": "артық, қажетсіз."}},
+        {"word": "Ambivalent", "def": {"en": "having mixed or contradictory feelings.", "ru": "испытывающий смешанные, противоречивые чувства.", "kk": "қарама-қайшы сезім тудыратын."}},
     ],
 }
 
@@ -329,25 +343,25 @@ WORDS_ZH = {
 
 WORDS_JA = {
     "N5-N4": [
-        {"word": "家 (いえ)", "def": {"en": "house.", "ru": "дом.", "kk": "үй."}},
-        {"word": "友達 (ともだち)", "def": {"en": "friend.", "ru": "друг.", "kk": "дос."}},
-        {"word": "学校 (がっこう)", "def": {"en": "school.", "ru": "школа.", "kk": "мектеп."}},
-        {"word": "天気 (てんき)", "def": {"en": "weather.", "ru": "погода.", "kk": "ауа райы."}},
-        {"word": "嬉しい (うれしい)", "def": {"en": "happy, glad.", "ru": "счастливый, радостный.", "kk": "қуанышты."}},
+        {"word": "家 (ie)", "def": {"en": "house.", "ru": "дом.", "kk": "үй."}},
+        {"word": "友達 (tomodachi)", "def": {"en": "friend.", "ru": "друг.", "kk": "дос."}},
+        {"word": "学校 (gakkō)", "def": {"en": "school.", "ru": "школа.", "kk": "мектеп."}},
+        {"word": "天気 (tenki)", "def": {"en": "weather.", "ru": "погода.", "kk": "ауа райы."}},
+        {"word": "嬉しい (ureshii)", "def": {"en": "happy, glad.", "ru": "счастливый, радостный.", "kk": "қуанышты."}},
     ],
     "N3-N2": [
-        {"word": "矛盾 (むじゅん)", "def": {"en": "contradiction, conflicting.", "ru": "противоречие.", "kk": "қайшылық."}},
-        {"word": "現実的 (げんじつてき)", "def": {"en": "practical, realistic.", "ru": "практичный, реалистичный.", "kk": "тәжірибелік, шынайы."}},
-        {"word": "普遍的 (ふへんてき)", "def": {"en": "universal, widespread.", "ru": "универсальный.", "kk": "жалпыға ортақ."}},
-        {"word": "妥当 (だとう)", "def": {"en": "reasonable, appropriate.", "ru": "разумный, уместный.", "kk": "негізді, орынды."}},
-        {"word": "几帳面 (きちょうめん)", "def": {"en": "meticulous, precise.", "ru": "скрупулёзный, педантичный.", "kk": "мұқият, дәл."}},
+        {"word": "矛盾 (mujun)", "def": {"en": "contradiction, conflicting.", "ru": "противоречие.", "kk": "қайшылық."}},
+        {"word": "現実的 (genjitsuteki)", "def": {"en": "practical, realistic.", "ru": "практичный, реалистичный.", "kk": "тәжірибелік, шынайы."}},
+        {"word": "普遍的 (fuhenteki)", "def": {"en": "universal, widespread.", "ru": "универсальный.", "kk": "жалпыға ортақ."}},
+        {"word": "妥当 (datō)", "def": {"en": "reasonable, appropriate.", "ru": "разумный, уместный.", "kk": "негізді, орынды."}},
+        {"word": "几帳面 (kichōmen)", "def": {"en": "meticulous, precise.", "ru": "скрупулёзный, педантичный.", "kk": "мұқият, дәл."}},
     ],
     "N1": [
-        {"word": "儚い (はかない)", "def": {"en": "ephemeral, fleeting.", "ru": "мимолётный, эфемерный.", "kk": "қысқа мерзімді, өткінші."}},
-        {"word": "言葉にできない (ことばにできない)", "def": {"en": "ineffable, cannot be put into words.", "ru": "невыразимый словами.", "kk": "сөзбен жеткізе алмайтын."}},
-        {"word": "洞察力がある (どうさつりょくがある)", "def": {"en": "perspicacious, insightful.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
-        {"word": "物議を醸す (ぶつぎをかもす)", "def": {"en": "controversial, causing debate.", "ru": "спорный, вызывающий споры.", "kk": "пікірталас тудыратын."}},
-        {"word": "多面的 (ためんてき)", "def": {"en": "multifaceted.", "ru": "многогранный.", "kk": "көп қырлы."}},
+        {"word": "儚い (hakanai)", "def": {"en": "ephemeral, fleeting.", "ru": "мимолётный, эфемерный.", "kk": "қысқа мерзімді, өткінші."}},
+        {"word": "言葉にできない (kotoba ni dekinai)", "def": {"en": "ineffable, cannot be put into words.", "ru": "невыразимый словами.", "kk": "сөзбен жеткізе алмайтын."}},
+        {"word": "洞察力がある (dōsatsuryoku ga aru)", "def": {"en": "perspicacious, insightful.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
+        {"word": "物議を醸す (butsugi o kamosu)", "def": {"en": "controversial, causing debate.", "ru": "спорный, вызывающий споры.", "kk": "пікірталас тудыратын."}},
+        {"word": "多面的 (tamenteki)", "def": {"en": "multifaceted.", "ru": "многогранный.", "kk": "көп қырлы."}},
     ],
 }
 
@@ -383,6 +397,11 @@ IDIOMS_EN = {
         {"idiom": "See you later", "meaning": {"en": "a casual way to say goodbye.", "ru": "неформальное прощание.", "kk": "бейресми қоштасу тіркесі."}},
         {"idiom": "Good job!", "meaning": {"en": "well done, praise for good work.", "ru": "молодец, похвала за хорошую работу.", "kk": "жарайсың, жақсы жұмыс үшін мақтау."}},
         {"idiom": "Take it easy", "meaning": {"en": "relax, don't stress.", "ru": "не напрягайся, расслабься.", "kk": "қобалжыма, тыныш бол."}},
+        {"idiom": "Thank you very much", "meaning": {"en": "a polite way to show gratitude.", "ru": "вежливая форма благодарности.", "kk": "алғысты сыпайы білдіру тәсілі."}},
+        {"idiom": "Excuse me", "meaning": {"en": "a polite way to get attention or apologize.", "ru": "вежливая фраза для привлечения внимания или извинения.", "kk": "назар аудару немесе кешірім сұрау үшін сыпайы тіркес."}},
+        {"idiom": "I'm sorry", "meaning": {"en": "an expression of apology.", "ru": "выражение извинения.", "kk": "кешірім білдіру сөзі."}},
+        {"idiom": "Have a nice day", "meaning": {"en": "a friendly farewell wish.", "ru": "дружелюбное пожелание при прощании.", "kk": "қоштасқанда айтылатын жылы тілек."}},
+        {"idiom": "It's up to you", "meaning": {"en": "the decision is yours to make.", "ru": "решение за тобой.", "kk": "шешім өзіңе байланысты."}},
     ],
     "B1-B2": [
         {"idiom": "A double-edged sword", "meaning": {"en": "something with both good and bad consequences.", "ru": "нечто имеющее и хорошие, и плохие последствия.", "kk": "жақсы да, жаман да салдары бар нәрсе."}},
@@ -390,6 +409,11 @@ IDIOMS_EN = {
         {"idiom": "The tip of the iceberg", "meaning": {"en": "a small visible part of a much bigger problem.", "ru": "малая видимая часть гораздо большей проблемы.", "kk": "үлкен мәселенің көрінетін кішкене бөлігі."}},
         {"idiom": "To hit the nail on the head", "meaning": {"en": "to describe exactly what is causing something.", "ru": "точно определить суть дела.", "kk": "мәселенің нақ өзін дәл айту."}},
         {"idiom": "Once in a blue moon", "meaning": {"en": "something that happens very rarely.", "ru": "то, что случается очень редко.", "kk": "өте сирек болатын нәрсе."}},
+        {"idiom": "To break the ice", "meaning": {"en": "to ease tension at the start of a conversation.", "ru": "снять напряжение в начале разговора.", "kk": "әңгіме басында алаңдаушылықты жеңілдету."}},
+        {"idiom": "A piece of cake", "meaning": {"en": "something very easy to do.", "ru": "что-то очень простое.", "kk": "өте оңай нәрсе."}},
+        {"idiom": "Under the weather", "meaning": {"en": "feeling slightly ill.", "ru": "чувствовать себя немного нездоровым.", "kk": "сәл сырқаттанып тұру."}},
+        {"idiom": "To cost an arm and a leg", "meaning": {"en": "to be very expensive.", "ru": "быть очень дорогим.", "kk": "өте қымбат болу."}},
+        {"idiom": "To let the cat out of the bag", "meaning": {"en": "to accidentally reveal a secret.", "ru": "случайно выдать секрет.", "kk": "құпияны байқаусызда ашып алу."}},
     ],
     "C1-C2": [
         {"idiom": "To read between the lines", "meaning": {"en": "to understand a hidden meaning.", "ru": "читать между строк.", "kk": "жасырын мағынаны түсіну."}},
@@ -397,6 +421,11 @@ IDIOMS_EN = {
         {"idiom": "To bite the bullet", "meaning": {"en": "to face a difficult situation bravely.", "ru": "стиснуть зубы и терпеть.", "kk": "қиындықты батыл қабылдау."}},
         {"idiom": "To go the extra mile", "meaning": {"en": "to make more effort than expected.", "ru": "приложить больше усилий, чем требуется.", "kk": "қажеттіден артық күш салу."}},
         {"idiom": "Actions speak louder than words", "meaning": {"en": "what you do matters more than what you say.", "ru": "дела важнее слов.", "kk": "істің сөзден маңыздылығы."}},
+        {"idiom": "The elephant in the room", "meaning": {"en": "an obvious problem no one wants to discuss.", "ru": "очевидная проблема, которую все избегают обсуждать.", "kk": "бәрі көріп тұрған, бірақ талқыламайтын мәселе."}},
+        {"idiom": "To take something with a grain of salt", "meaning": {"en": "to not fully believe something.", "ru": "относиться к чему-то скептически.", "kk": "бір нәрсеге толық сенбеу."}},
+        {"idiom": "To be on the same page", "meaning": {"en": "to have the same understanding as someone else.", "ru": "иметь одинаковое понимание с кем-то.", "kk": "біреумен бірдей түсінікте болу."}},
+        {"idiom": "To throw caution to the wind", "meaning": {"en": "to act boldly without worrying about risk.", "ru": "действовать смело, не думая о риске.", "kk": "тәуекелді ойламай батыл әрекет ету."}},
+        {"idiom": "The ball is in your court", "meaning": {"en": "it's your turn to act or decide.", "ru": "теперь твоя очередь действовать.", "kk": "енді әрекет ету кезегі сенде."}},
     ],
 }
 
@@ -594,18 +623,24 @@ BOOKS_EN = {
         {"title": "'Charlotte's Web' by E.B. White", "tag": "Friendship", "term": "Runt", "meaning": {"en": "the smallest animal in a litter.", "ru": "самый маленький детёныш в помёте.", "kk": "төлдегі ең кішкентай төл."}},
         {"title": "'Because of Winn-Dixie' by Kate DiCamillo", "tag": "Friendship", "term": "Lonely", "meaning": {"en": "feeling sad because you are alone.", "ru": "чувствующий грусть от одиночества.", "kk": "жалғыздықтан мұңды сезінетін."}},
         {"title": "'Judy Moody' by Megan McDonald", "tag": "School Life", "term": "Mood", "meaning": {"en": "a temporary state of feeling.", "ru": "временное состояние настроения.", "kk": "уақытша көңіл-күй."}},
+        {"title": "'Magic Tree House' by Mary Pope Osborne", "tag": "Adventure", "term": "Curious", "meaning": {"en": "wanting to learn or know about something.", "ru": "желающий узнать что-то новое.", "kk": "бір нәрсені білгісі келетін."}},
+        {"title": "'Ivy and Bean' by Annie Barrows", "tag": "Friendship", "term": "Mischief", "meaning": {"en": "playful troublemaking.", "ru": "озорное поведение.", "kk": "ойнақы тентектік."}},
     ],
     "B1-B2": [
         {"title": "'Wonder' by R.J. Palacio", "tag": "School Life", "term": "Empathy", "meaning": {"en": "understanding others' feelings.", "ru": "понимание чувств других.", "kk": "басқалардың сезімін түсіну."}},
         {"title": "'The Giver' by Lois Lowry", "tag": "Society", "term": "Utopia", "meaning": {"en": "an imagined perfect place.", "ru": "воображаемое идеальное место.", "kk": "қиялдағы мінсіз орын."}},
         {"title": "'Animal Farm' by George Orwell", "tag": "Politics", "term": "Allegory", "meaning": {"en": "a story with a hidden meaning.", "ru": "история со скрытым смыслом.", "kk": "жасырын мағынасы бар әңгіме."}},
         {"title": "'Holes' by Louis Sachar", "tag": "Adventure", "term": "Injustice", "meaning": {"en": "unfair treatment of someone.", "ru": "несправедливое обращение с кем-то.", "kk": "біреуге әділетсіз қарау."}},
+        {"title": "'Chains' by Laurie Halse Anderson", "tag": "History", "term": "Rebellion", "meaning": {"en": "resistance against authority.", "ru": "сопротивление власти.", "kk": "билікке қарсы тұру."}},
+        {"title": "'The Outsiders' by S.E. Hinton", "tag": "Identity", "term": "Loyalty", "meaning": {"en": "being faithful to someone.", "ru": "верность кому-то.", "kk": "біреуге адал болу."}},
     ],
     "C1-C2": [
         {"title": "'1984' by George Orwell", "tag": "Freedom", "term": "Totalitarianism", "meaning": {"en": "absolute state control.", "ru": "абсолютный контроль государства.", "kk": "мемлекеттің толық бақылауы."}},
         {"title": "'Fahrenheit 451' by Ray Bradbury", "tag": "Media", "term": "Censorship", "meaning": {"en": "suppressing information.", "ru": "подавление информации.", "kk": "ақпаратты тежеу."}},
         {"title": "'Brave New World' by Aldous Huxley", "tag": "Society", "term": "Conditioning", "meaning": {"en": "training someone to behave a certain way.", "ru": "обучение кого-либо определённому поведению.", "kk": "біреуді белгілі бір тәртіпке үйрету."}},
         {"title": "'Lord of the Flies' by William Golding", "tag": "Human Nature", "term": "Savagery", "meaning": {"en": "extremely cruel or violent behavior.", "ru": "крайне жестокое поведение.", "kk": "өте қатыгез мінез-құлық."}},
+        {"title": "'The Catcher in the Rye' by J.D. Salinger", "tag": "Identity", "term": "Alienation", "meaning": {"en": "feeling isolated from others.", "ru": "чувство оторванности от других.", "kk": "басқалардан алшақтау сезімі."}},
+        {"title": "'The Handmaid's Tale' by Margaret Atwood", "tag": "Society", "term": "Oppression", "meaning": {"en": "unjust use of power over others.", "ru": "несправедливое использование власти над другими.", "kk": "басқаларға әділетсіз билік жүргізу."}},
     ],
 }
 
@@ -724,16 +759,16 @@ BOOKS_ZH = {
 
 BOOKS_JA = {
     "N5-N4": [
-        {"title": "『ぐりとぐら』– 中川李枝子", "tag": "児童文学", "term": "友情 (ゆうじょう)", "meaning": {"en": "friendship.", "ru": "дружба.", "kk": "достық."}},
-        {"title": "『はらぺこあおむし』– エリック・カール", "tag": "児童文学", "term": "空腹 (くうふく)", "meaning": {"en": "hunger, being hungry.", "ru": "голод.", "kk": "аштық."}},
+        {"title": "『ぐりとぐら』– 中川李枝子", "tag": "児童文学", "term": "友情 (yūjō)", "meaning": {"en": "friendship.", "ru": "дружба.", "kk": "достық."}},
+        {"title": "『はらぺこあおむし』– エリック・カール", "tag": "児童文学", "term": "空腹 (kūfuku)", "meaning": {"en": "hunger, being hungry.", "ru": "голод.", "kk": "аштық."}},
     ],
     "N3-N2": [
-        {"title": "『キッチン』– 吉本ばなな", "tag": "現代文学", "term": "喪失 (そうしつ)", "meaning": {"en": "loss, the state of losing something.", "ru": "утрата, потеря чего-либо.", "kk": "жоғалту, айырылу."}},
-        {"title": "『魔女の宅急便』– 角野栄子", "tag": "成長物語", "term": "自立 (じりつ)", "meaning": {"en": "independence, standing on one's own.", "ru": "самостоятельность.", "kk": "дербестік."}},
+        {"title": "『キッチン』– 吉本ばなな", "tag": "現代文学", "term": "喪失 (sōshitsu)", "meaning": {"en": "loss, the state of losing something.", "ru": "утрата, потеря чего-либо.", "kk": "жоғалту, айырылу."}},
+        {"title": "『魔女の宅急便』– 角野栄子", "tag": "成長物語", "term": "自立 (jiritsu)", "meaning": {"en": "independence, standing on one's own.", "ru": "самостоятельность.", "kk": "дербестік."}},
     ],
     "N1": [
-        {"title": "『人間失格』– 太宰治", "tag": "文学", "term": "疎外感 (そがいかん)", "meaning": {"en": "a sense of alienation.", "ru": "чувство отчуждения.", "kk": "оқшаулану сезімі."}},
-        {"title": "『こころ』– 夏目漱石", "tag": "文学", "term": "孤独 (こどく)", "meaning": {"en": "solitude, loneliness.", "ru": "одиночество.", "kk": "жалғыздық."}},
+        {"title": "『人間失格』– 太宰治", "tag": "文学", "term": "疎外感 (sogaikan)", "meaning": {"en": "a sense of alienation.", "ru": "чувство отчуждения.", "kk": "оқшаулану сезімі."}},
+        {"title": "『こころ』– 夏目漱石", "tag": "文学", "term": "孤独 (kodoku)", "meaning": {"en": "solitude, loneliness.", "ru": "одиночество.", "kk": "жалғыздық."}},
     ],
 }
 
@@ -869,7 +904,7 @@ with st.sidebar:
     books_pool = get_books_pool(practice_lang, level)
     week_num = datetime.date.today().isocalendar()[1]
     random.seed(week_num)
-    weekly_selection = random.sample(books_pool, min(4, len(books_pool)))
+    weekly_selection = random.sample(books_pool, min(3, len(books_pool)))
 
     st.subheader(f"{t['books_header']} ({week_num})")
     for book in weekly_selection:
