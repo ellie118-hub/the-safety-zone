@@ -23,6 +23,8 @@ except Exception as e:
 
 st.set_page_config(page_title="The Safety Zone", page_icon="🎙️", layout="wide")
 
+
+
 EXPLAIN_LANGS = ["kk", "ru", "en"]
 EXPLAIN_LABELS = {"kk": "ҚАЗ", "ru": "РУС", "en": "ENG"}
 
@@ -212,6 +214,11 @@ WORDS_DE = {
         {"word": "Schule", "def": {"en": "school", "ru": "школа", "kk": "мектеп"}},
         {"word": "Familie", "def": {"en": "family", "ru": "семья", "kk": "отбасы"}},
         {"word": "Wetter", "def": {"en": "weather", "ru": "погода", "kk": "ауа райы"}},
+        {"word": "Buch", "def": {"en": "book", "ru": "книга", "kk": "кітап"}},
+        {"word": "Musik", "def": {"en": "music", "ru": "музыка", "kk": "музыка"}},
+        {"word": "Tier", "def": {"en": "animal", "ru": "животное", "kk": "жануар"}},
+        {"word": "Farbe", "def": {"en": "color", "ru": "цвет", "kk": "түс"}},
+        {"word": "Müde", "def": {"en": "tired", "ru": "уставший", "kk": "шаршаған"}},
     ],
     "B1-B2": [
         {"word": "Zwiespältig", "def": {"en": "conflicting, mixed feelings about something.", "ru": "противоречивый, двойственный.", "kk": "қарама-қайшы, екіұдай сезім тудыратын."}},
@@ -219,6 +226,11 @@ WORDS_DE = {
         {"word": "Allgegenwärtig", "def": {"en": "present everywhere.", "ru": "вездесущий, повсеместный.", "kk": "барлық жерде бар."}},
         {"word": "Plausibel", "def": {"en": "believable, reasonable.", "ru": "правдоподобный, обоснованный.", "kk": "сенімді, нанымды."}},
         {"word": "Akribisch", "def": {"en": "extremely careful and precise.", "ru": "очень тщательный, скрупулёзный.", "kk": "аса мұқият әрі дәл."}},
+        {"word": "Aufrichtig", "def": {"en": "honest and direct.", "ru": "честный и прямой.", "kk": "адал әрі турашыл."}},
+        {"word": "Widerstandsfähig", "def": {"en": "able to recover quickly from difficulty.", "ru": "способный быстро восстанавливаться после трудностей.", "kk": "қиындықтан тез қалпына келе алатын."}},
+        {"word": "Oberflächlich", "def": {"en": "shallow, not thorough.", "ru": "поверхностный, неглубокий.", "kk": "беткейлі, терең емес."}},
+        {"word": "Vielseitig", "def": {"en": "versatile, adaptable.", "ru": "разносторонний, гибкий.", "kk": "көп қырлы, бейімделгіш."}},
+        {"word": "Skeptisch", "def": {"en": "doubtful, questioning.", "ru": "скептический, сомневающийся.", "kk": "күмәнмен қарайтын."}},
     ],
     "C1-C2": [
         {"word": "Unwiderruflich", "def": {"en": "irrevocable, cannot be undone.", "ru": "безвозвратный, необратимый.", "kk": "қайтарымсыз, өзгертілмейтін."}},
@@ -226,6 +238,11 @@ WORDS_DE = {
         {"word": "Nuanciert", "def": {"en": "showing subtle shades of meaning.", "ru": "нюансированный, тонко проработанный.", "kk": "нәзік реңктермен ерекшеленетін."}},
         {"word": "Kontrovers", "def": {"en": "controversial, causing disagreement.", "ru": "спорный, вызывающий разногласия.", "kk": "пікірталас тудыратын, даулы."}},
         {"word": "Facettenreich", "def": {"en": "multifaceted, having many sides.", "ru": "многогранный.", "kk": "көп қырлы."}},
+        {"word": "Rätselhaft", "def": {"en": "mysterious, hard to understand.", "ru": "загадочный.", "kk": "жұмбақ."}},
+        {"word": "Paradox", "def": {"en": "seemingly contradictory yet possibly true.", "ru": "парадоксальный.", "kk": "қайшылықты көрінетін, бірақ шындыққа сай болуы мүмкін."}},
+        {"word": "Überflüssig", "def": {"en": "unnecessary, superfluous.", "ru": "излишний, ненужный.", "kk": "артық, қажетсіз."}},
+        {"word": "Vielschichtig", "def": {"en": "complex, having many layers.", "ru": "многослойный, сложный.", "kk": "көп қабатты, күрделі."}},
+        {"word": "Zerrissen", "def": {"en": "torn, internally conflicted.", "ru": "внутренне раздираемый противоречиями.", "kk": "ішкі қайшылықтан жырылған."}},
     ],
 }
 
@@ -235,6 +252,11 @@ WORDS_RU = [
     {"word": "Практичный", "def": {"en": "practical, dealing with things realistically.", "ru": "реалистично подходящий к делу.", "kk": "іске шынайы қарайтын."}},
     {"word": "Повсеместный", "def": {"en": "found everywhere.", "ru": "встречающийся повсюду.", "kk": "барлық жерде кездесетін."}},
     {"word": "Скрупулёзный", "def": {"en": "extremely careful about details.", "ru": "крайне внимательный к деталям.", "kk": "егжей-тегжейіне аса ұқыпты қарайтын."}},
+    {"word": "Категоричный", "def": {"en": "stated firmly, without exceptions.", "ru": "твёрдо и безоговорочно высказанный.", "kk": "қатаң, ешбір ерекшеліксіз айтылған."}},
+    {"word": "Проницательный", "def": {"en": "having sharp insight or understanding.", "ru": "обладающий острой наблюдательностью и пониманием.", "kk": "өткір байқампаздыққа ие."}},
+    {"word": "Изощрённый", "def": {"en": "highly refined or elaborate.", "ru": "утончённый или сложный.", "kk": "өте нәзік немесе күрделі."}},
+    {"word": "Многогранный", "def": {"en": "having many different aspects.", "ru": "имеющий много различных сторон.", "kk": "көптеген түрлі қырлары бар."}},
+    {"word": "Убедительный", "def": {"en": "persuasive, able to convince.", "ru": "способный убедить, весомый.", "kk": "сендіре алатын, салмақты."}},
 ]
 
 WORDS_KK = [
@@ -243,6 +265,11 @@ WORDS_KK = [
     {"word": "Ұтымды", "def": {"kk": "тиімді әрі орынды.", "ru": "эффективный и уместный.", "en": "efficient and apt."}},
     {"word": "Кең тараған", "def": {"kk": "барлық жерде кездесетін.", "ru": "распространённый повсюду.", "en": "widespread, found everywhere."}},
     {"word": "Сенімді", "def": {"kk": "нанымды, шындыққа жанасымды.", "ru": "правдоподобный, заслуживающий доверия.", "en": "plausible, credible."}},
+    {"word": "Байыпты", "def": {"kk": "асықпайтын, байсалды.", "ru": "неторопливый, рассудительный.", "en": "calm and measured in manner."}},
+    {"word": "Ұғымтал", "def": {"kk": "тез түсінетін, аңғарымпаз.", "ru": "быстро понимающий, проницательный.", "en": "quick to understand, perceptive."}},
+    {"word": "Қайшылықты", "def": {"kk": "өзара сәйкес келмейтін.", "ru": "противоречивый.", "en": "contradictory, conflicting."}},
+    {"word": "Ерекше", "def": {"kk": "басқалардан бөлек, айрықша.", "ru": "особенный, отличающийся от других.", "en": "unique, distinct from others."}},
+    {"word": "Салмақты", "def": {"kk": "маңызды әрі байсалды.", "ru": "весомый и рассудительный.", "en": "significant and composed."}},
 ]
 
 WORDS_ES = {
@@ -252,6 +279,11 @@ WORDS_ES = {
         {"word": "Escuela", "def": {"en": "school", "ru": "школа", "kk": "мектеп"}},
         {"word": "Familia", "def": {"en": "family", "ru": "семья", "kk": "отбасы"}},
         {"word": "Clima", "def": {"en": "weather", "ru": "погода", "kk": "ауа райы"}},
+        {"word": "Libro", "def": {"en": "book", "ru": "книга", "kk": "кітап"}},
+        {"word": "Música", "def": {"en": "music", "ru": "музыка", "kk": "музыка"}},
+        {"word": "Animal", "def": {"en": "animal", "ru": "животное", "kk": "жануар"}},
+        {"word": "Color", "def": {"en": "color", "ru": "цвет", "kk": "түс"}},
+        {"word": "Cansado", "def": {"en": "tired", "ru": "уставший", "kk": "шаршаған"}},
     ],
     "B1-B2": [
         {"word": "Ambiguo", "def": {"en": "having more than one meaning; unclear.", "ru": "неоднозначный, неясный.", "kk": "бірнеше мағынасы бар, түсініксіз."}},
@@ -259,6 +291,11 @@ WORDS_ES = {
         {"word": "Pragmático", "def": {"en": "practical and realistic.", "ru": "практичный, реалистичный.", "kk": "тәжірибелік әрі шынайы."}},
         {"word": "Omnipresente", "def": {"en": "present everywhere.", "ru": "вездесущий.", "kk": "барлық жерде бар."}},
         {"word": "Meticuloso", "def": {"en": "extremely careful and precise.", "ru": "очень тщательный.", "kk": "аса мұқият әрі дәл."}},
+        {"word": "Sincero", "def": {"en": "honest and direct.", "ru": "честный и прямой.", "kk": "адал әрі турашыл."}},
+        {"word": "Resiliente", "def": {"en": "able to recover quickly from difficulty.", "ru": "способный быстро восстанавливаться.", "kk": "қиындықтан тез қалпына келе алатын."}},
+        {"word": "Superficial", "def": {"en": "shallow, not thorough.", "ru": "поверхностный.", "kk": "беткейлі, терең емес."}},
+        {"word": "Versátil", "def": {"en": "versatile, adaptable.", "ru": "разносторонний, гибкий.", "kk": "көп қырлы, бейімделгіш."}},
+        {"word": "Escéptico", "def": {"en": "doubtful, questioning.", "ru": "скептический.", "kk": "күмәнмен қарайтын."}},
     ],
     "C1-C2": [
         {"word": "Efímero", "def": {"en": "lasting for a very short time.", "ru": "мимолётный.", "kk": "өте қысқа мерзімге созылатын."}},
@@ -266,6 +303,11 @@ WORDS_ES = {
         {"word": "Perspicaz", "def": {"en": "having keen insight or judgment.", "ru": "проницательный.", "kk": "өткір пайымды, зерек."}},
         {"word": "Ostensible", "def": {"en": "apparent, seemingly true.", "ru": "кажущийся, показной.", "kk": "сырт көрінісінде дұрыс болып көрінетін."}},
         {"word": "Ambivalente", "def": {"en": "having mixed, contradictory feelings.", "ru": "амбивалентный, двойственный.", "kk": "қарама-қайшы сезімдер тудыратын."}},
+        {"word": "Enigmático", "def": {"en": "mysterious, hard to understand.", "ru": "загадочный.", "kk": "жұмбақ."}},
+        {"word": "Paradójico", "def": {"en": "seemingly contradictory yet possibly true.", "ru": "парадоксальный.", "kk": "қайшылықты көрінетін."}},
+        {"word": "Controvertido", "def": {"en": "controversial, causing disagreement.", "ru": "спорный, вызывающий разногласия.", "kk": "пікірталас тудыратын, даулы."}},
+        {"word": "Superfluo", "def": {"en": "unnecessary, superfluous.", "ru": "излишний, ненужный.", "kk": "артық, қажетсіз."}},
+        {"word": "Polifacético", "def": {"en": "multifaceted, having many sides.", "ru": "многогранный.", "kk": "көп қырлы."}},
     ],
 }
 
@@ -276,6 +318,11 @@ WORDS_IT = {
         {"word": "Scuola", "def": {"en": "school", "ru": "школа", "kk": "мектеп"}},
         {"word": "Famiglia", "def": {"en": "family", "ru": "семья", "kk": "отбасы"}},
         {"word": "Meteo", "def": {"en": "weather", "ru": "погода", "kk": "ауа райы"}},
+        {"word": "Libro", "def": {"en": "book", "ru": "книга", "kk": "кітап"}},
+        {"word": "Musica", "def": {"en": "music", "ru": "музыка", "kk": "музыка"}},
+        {"word": "Animale", "def": {"en": "animal", "ru": "животное", "kk": "жануар"}},
+        {"word": "Colore", "def": {"en": "color", "ru": "цвет", "kk": "түс"}},
+        {"word": "Stanco", "def": {"en": "tired", "ru": "уставший", "kk": "шаршаған"}},
     ],
     "B1-B2": [
         {"word": "Ambiguo", "def": {"en": "having more than one meaning; unclear.", "ru": "неоднозначный.", "kk": "бірнеше мағынасы бар."}},
@@ -283,6 +330,11 @@ WORDS_IT = {
         {"word": "Pragmatico", "def": {"en": "practical and realistic.", "ru": "практичный.", "kk": "тәжірибелік әрі шынайы."}},
         {"word": "Onnipresente", "def": {"en": "present everywhere.", "ru": "вездесущий.", "kk": "барлық жерде бар."}},
         {"word": "Meticoloso", "def": {"en": "extremely careful and precise.", "ru": "очень тщательный.", "kk": "аса мұқият."}},
+        {"word": "Sincero", "def": {"en": "honest and direct.", "ru": "честный и прямой.", "kk": "адал әрі турашыл."}},
+        {"word": "Resiliente", "def": {"en": "able to recover quickly from difficulty.", "ru": "способный быстро восстанавливаться.", "kk": "қиындықтан тез қалпына келе алатын."}},
+        {"word": "Superficiale", "def": {"en": "shallow, not thorough.", "ru": "поверхностный.", "kk": "беткейлі, терең емес."}},
+        {"word": "Versatile", "def": {"en": "versatile, adaptable.", "ru": "разносторонний, гибкий.", "kk": "көп қырлы, бейімделгіш."}},
+        {"word": "Scettico", "def": {"en": "doubtful, questioning.", "ru": "скептический.", "kk": "күмәнмен қарайтын."}},
     ],
     "C1-C2": [
         {"word": "Effimero", "def": {"en": "lasting for a very short time.", "ru": "мимолётный.", "kk": "өте қысқа мерзімге созылатын."}},
@@ -290,6 +342,11 @@ WORDS_IT = {
         {"word": "Perspicace", "def": {"en": "having keen insight.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
         {"word": "Apparente", "def": {"en": "apparent, seemingly true.", "ru": "кажущийся.", "kk": "сырт көрінісінде дұрыс болып көрінетін."}},
         {"word": "Ambivalente", "def": {"en": "having mixed feelings.", "ru": "двойственный.", "kk": "қарама-қайшы сезімдер тудыратын."}},
+        {"word": "Enigmatico", "def": {"en": "mysterious, hard to understand.", "ru": "загадочный.", "kk": "жұмбақ."}},
+        {"word": "Paradossale", "def": {"en": "seemingly contradictory yet possibly true.", "ru": "парадоксальный.", "kk": "қайшылықты көрінетін."}},
+        {"word": "Controverso", "def": {"en": "controversial, causing disagreement.", "ru": "спорный, вызывающий разногласия.", "kk": "пікірталас тудыратын, даулы."}},
+        {"word": "Superfluo", "def": {"en": "unnecessary, superfluous.", "ru": "излишний, ненужный.", "kk": "артық, қажетсіз."}},
+        {"word": "Poliedrico", "def": {"en": "multifaceted, having many sides.", "ru": "многогранный.", "kk": "көп қырлы."}},
     ],
 }
 
@@ -300,6 +357,11 @@ WORDS_FR = {
         {"word": "École", "def": {"en": "school", "ru": "школа", "kk": "мектеп"}},
         {"word": "Famille", "def": {"en": "family", "ru": "семья", "kk": "отбасы"}},
         {"word": "Météo", "def": {"en": "weather", "ru": "погода", "kk": "ауа райы"}},
+        {"word": "Livre", "def": {"en": "book", "ru": "книга", "kk": "кітап"}},
+        {"word": "Musique", "def": {"en": "music", "ru": "музыка", "kk": "музыка"}},
+        {"word": "Animal", "def": {"en": "animal", "ru": "животное", "kk": "жануар"}},
+        {"word": "Couleur", "def": {"en": "color", "ru": "цвет", "kk": "түс"}},
+        {"word": "Fatigué", "def": {"en": "tired", "ru": "уставший", "kk": "шаршаған"}},
     ],
     "B1-B2": [
         {"word": "Ambigu", "def": {"en": "having more than one meaning; unclear.", "ru": "неоднозначный.", "kk": "бірнеше мағынасы бар."}},
@@ -307,6 +369,11 @@ WORDS_FR = {
         {"word": "Pragmatique", "def": {"en": "practical and realistic.", "ru": "практичный.", "kk": "тәжірибелік әрі шынайы."}},
         {"word": "Omniprésent", "def": {"en": "present everywhere.", "ru": "вездесущий.", "kk": "барлық жерде бар."}},
         {"word": "Méticuleux", "def": {"en": "extremely careful and precise.", "ru": "очень тщательный.", "kk": "аса мұқият."}},
+        {"word": "Sincère", "def": {"en": "honest and direct.", "ru": "честный и прямой.", "kk": "адал әрі турашыл."}},
+        {"word": "Résilient", "def": {"en": "able to recover quickly from difficulty.", "ru": "способный быстро восстанавливаться.", "kk": "қиындықтан тез қалпына келе алатын."}},
+        {"word": "Superficiel", "def": {"en": "shallow, not thorough.", "ru": "поверхностный.", "kk": "беткейлі, терең емес."}},
+        {"word": "Polyvalent", "def": {"en": "versatile, adaptable.", "ru": "разносторонний, гибкий.", "kk": "көп қырлы, бейімделгіш."}},
+        {"word": "Sceptique", "def": {"en": "doubtful, questioning.", "ru": "скептический.", "kk": "күмәнмен қарайтын."}},
     ],
     "C1-C2": [
         {"word": "Éphémère", "def": {"en": "lasting for a very short time.", "ru": "мимолётный.", "kk": "өте қысқа мерзімге созылатын."}},
@@ -314,6 +381,11 @@ WORDS_FR = {
         {"word": "Perspicace", "def": {"en": "having keen insight.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
         {"word": "Ostensible", "def": {"en": "apparent, seemingly true.", "ru": "кажущийся.", "kk": "сырт көрінісінде дұрыс болып көрінетін."}},
         {"word": "Ambivalent", "def": {"en": "having mixed feelings.", "ru": "двойственный.", "kk": "қарама-қайшы сезімдер тудыратын."}},
+        {"word": "Énigmatique", "def": {"en": "mysterious, hard to understand.", "ru": "загадочный.", "kk": "жұмбақ."}},
+        {"word": "Paradoxal", "def": {"en": "seemingly contradictory yet possibly true.", "ru": "парадоксальный.", "kk": "қайшылықты көрінетін."}},
+        {"word": "Controversé", "def": {"en": "controversial, causing disagreement.", "ru": "спорный, вызывающий разногласия.", "kk": "пікірталас тудыратын, даулы."}},
+        {"word": "Superflu", "def": {"en": "unnecessary, superfluous.", "ru": "излишний, ненужный.", "kk": "артық, қажетсіз."}},
+        {"word": "Multiforme", "def": {"en": "multifaceted, having many sides.", "ru": "многогранный.", "kk": "көп қырлы."}},
     ],
 }
 
@@ -436,6 +508,11 @@ IDIOMS_DE = {
         {"idiom": "Viel Spaß!", "meaning": {"en": "Have fun!", "ru": "Удачи, веселись!", "kk": "Сәттілік, көңілді өткіз!"}},
         {"idiom": "Alles klar!", "meaning": {"en": "Got it! All clear!", "ru": "Всё ясно!", "kk": "Бәрі түсінікті!"}},
         {"idiom": "Ich verstehe nicht.", "meaning": {"en": "I don't understand.", "ru": "Я не понимаю.", "kk": "Мен түсінбеймін."}},
+        {"idiom": "Danke schön", "meaning": {"en": "Thank you very much.", "ru": "Большое спасибо.", "kk": "Көп рахмет."}},
+        {"idiom": "Entschuldigung", "meaning": {"en": "Excuse me / sorry.", "ru": "Извините.", "kk": "Кешіріңіз."}},
+        {"idiom": "Es tut mir leid.", "meaning": {"en": "I'm sorry.", "ru": "Мне жаль.", "kk": "Кешірім сұраймын."}},
+        {"idiom": "Schönen Tag noch!", "meaning": {"en": "Have a nice day!", "ru": "Хорошего дня!", "kk": "Күніңіз сәтті өтсін!"}},
+        {"idiom": "Wie du willst.", "meaning": {"en": "As you wish, it's up to you.", "ru": "Как хочешь, решать тебе.", "kk": "Қалауың бойынша, шешім өзіңде."}},
     ],
     "B1-B2": [
         {"idiom": "Da liegt der Hund begraben", "meaning": {"en": "that's the real core of the problem.", "ru": "вот где собака зарыта (суть проблемы).", "kk": "мәселенің түйіні дәл осында."}},
@@ -443,6 +520,11 @@ IDIOMS_DE = {
         {"idiom": "Den Nagel auf den Kopf treffen", "meaning": {"en": "to describe exactly what's essential.", "ru": "попасть в самую точку.", "kk": "мәселенің дәл өзін айту."}},
         {"idiom": "Um den heißen Brei reden", "meaning": {"en": "to avoid the main topic.", "ru": "ходить вокруг да около.", "kk": "негізгі тақырыпты айналып өту."}},
         {"idiom": "Die Nase voll haben", "meaning": {"en": "to have had enough of something.", "ru": "быть сытым по горло чем-то.", "kk": "бір нәрседен түңілу, жалығу."}},
+        {"idiom": "Das Eis brechen", "meaning": {"en": "to break the ice.", "ru": "растопить лёд, снять напряжение.", "kk": "мұзды еріту, шиеленісті бәсеңдету."}},
+        {"idiom": "Ein Kinderspiel", "meaning": {"en": "something very easy (child's play).", "ru": "проще простого.", "kk": "өте оңай нәрсе."}},
+        {"idiom": "Nicht ganz auf der Höhe sein", "meaning": {"en": "to feel slightly unwell.", "ru": "чувствовать себя не очень хорошо.", "kk": "сәл сырқаттанып тұру."}},
+        {"idiom": "Ein Vermögen kosten", "meaning": {"en": "to be very expensive.", "ru": "стоить целое состояние.", "kk": "өте қымбат тұру."}},
+        {"idiom": "Die Katze aus dem Sack lassen", "meaning": {"en": "to accidentally reveal a secret.", "ru": "случайно выдать секрет.", "kk": "құпияны байқаусызда ашып алу."}},
     ],
     "C1-C2": [
         {"idiom": "Jemandem einen Bären aufbinden", "meaning": {"en": "to trick or deceive someone.", "ru": "обмануть, разыграть кого-то.", "kk": "біреуді алдау, ойнату."}},
@@ -450,6 +532,11 @@ IDIOMS_DE = {
         {"idiom": "Etwas auf die lange Bank schieben", "meaning": {"en": "to postpone something indefinitely.", "ru": "откладывать в долгий ящик.", "kk": "бір нәрсені созбалаңға салу."}},
         {"idiom": "Den Wald vor lauter Bäumen nicht sehen", "meaning": {"en": "can't see the big picture for the details.", "ru": "за деревьями не видеть леса.", "kk": "ұсақ-түйекке бола үлкен суретті көрмеу."}},
         {"idiom": "Sich etwas zu Herzen nehmen", "meaning": {"en": "to take something to heart.", "ru": "принимать что-то близко к сердцу.", "kk": "бір нәрсені жүрекке жақын алу."}},
+        {"idiom": "Der Elefant im Raum", "meaning": {"en": "the elephant in the room, an obvious unspoken problem.", "ru": "слон в комнате, очевидная, но замалчиваемая проблема.", "kk": "бәрі көріп тұрған, бірақ айтылмайтын мәселе."}},
+        {"idiom": "Mit Vorsicht genießen", "meaning": {"en": "to take something with a grain of salt.", "ru": "относиться к чему-то скептически.", "kk": "бір нәрсеге толық сенбеу."}},
+        {"idiom": "Auf einer Wellenlänge sein", "meaning": {"en": "to be on the same wavelength as someone.", "ru": "быть на одной волне с кем-то.", "kk": "біреумен бір толқында болу."}},
+        {"idiom": "Alles auf eine Karte setzen", "meaning": {"en": "to risk everything on one option.", "ru": "поставить всё на одну карту.", "kk": "бәрін бір нәрсеге тәуекел ету."}},
+        {"idiom": "Der Ball liegt bei dir", "meaning": {"en": "the ball is in your court.", "ru": "теперь твоя очередь действовать.", "kk": "енді әрекет ету кезегі сенде."}},
     ],
 }
 
@@ -459,6 +546,11 @@ IDIOMS_RU = [
     {"idiom": "Бить баклуши", "meaning": {"en": "to be idle, waste time doing nothing.", "ru": "бездельничать.", "kk": "бос уақыт өткізу, еш нәрсе істемеу."}},
     {"idiom": "Держать язык за зубами", "meaning": {"en": "to keep quiet about something.", "ru": "молчать о чём-то, не выдавать секрет.", "kk": "бір нәрсе жайлы үндемеу, құпияны сақтау."}},
     {"idiom": "Как две капли воды", "meaning": {"en": "to look exactly alike.", "ru": "быть очень похожими друг на друга.", "kk": "бір-біріне өте ұқсас болу."}},
+    {"idiom": "Заварить кашу", "meaning": {"en": "to start a complicated or troublesome situation.", "ru": "затеять сложное, хлопотное дело.", "kk": "күрделі, бас ауыртатын іс бастау."}},
+    {"idiom": "Делать из мухи слона", "meaning": {"en": "to exaggerate a small problem.", "ru": "преувеличивать незначительную проблему.", "kk": "кішкентай мәселені үлкейтіп жіберу."}},
+    {"idiom": "Зарубить на носу", "meaning": {"en": "to remember something firmly.", "ru": "твёрдо запомнить что-то.", "kk": "бір нәрсені мықтап есте сақтау."}},
+    {"idiom": "Пускать пыль в глаза", "meaning": {"en": "to show off or create a false impression.", "ru": "создавать ложное впечатление, хвастаться.", "kk": "жалған әсер қалдыру, көзбояушылық жасау."}},
+    {"idiom": "Не в своей тарелке", "meaning": {"en": "to feel uncomfortable or out of place.", "ru": "чувствовать себя неловко, не в своей стихии.", "kk": "өзін ыңғайсыз, бейтаныс жерде сезіну."}},
 ]
 
 IDIOMS_KK = [
@@ -467,6 +559,11 @@ IDIOMS_KK = [
     {"idiom": "Мұрнын көкке көтеру", "meaning": {"kk": "тым тәкаппар, паң болу.", "ru": "задирать нос, важничать.", "en": "to become arrogant."}},
     {"idiom": "Екі езуі құлағында", "meaning": {"kk": "өте қуанышты, риза болу.", "ru": "улыбаться до ушей от радости.", "en": "to be grinning from ear to ear."}},
     {"idiom": "Ит арқасы қияда", "meaning": {"kk": "істің оңға басып, сәті түсуі.", "ru": "дела идут в гору, всё складывается удачно.", "en": "things are going smoothly."}},
+    {"idiom": "Қой аузынан шөп алмас", "meaning": {"kk": "өте момын, зиянсыз адам.", "ru": "чрезвычайно кроткий, безобидный человек.", "en": "an extremely gentle, harmless person."}},
+    {"idiom": "Тас бауыр", "meaning": {"kk": "қатал, мейірімсіз адам.", "ru": "бессердечный, холодный человек.", "en": "a cold, heartless person."}},
+    {"idiom": "Өз бетімен кету", "meaning": {"kk": "өз бетінше әрекет ету.", "ru": "действовать самостоятельно, по-своему.", "en": "to act independently, go one's own way."}},
+    {"idiom": "Ит өлген жерде", "meaning": {"kk": "қашық, адам аяғы баспаған жер.", "ru": "глухое, забытое богом место.", "en": "a remote, godforsaken place."}},
+    {"idiom": "Көңілі қалу", "meaning": {"kk": "көңілі қалу, ренжу.", "ru": "чувствовать разочарование, обиду.", "en": "to feel disappointed or hurt."}},
 ]
 
 IDIOMS_ES = {
@@ -476,6 +573,11 @@ IDIOMS_ES = {
         {"idiom": "Hasta luego", "meaning": {"en": "see you later.", "ru": "до скорого.", "kk": "кездескенше."}},
         {"idiom": "¡Buen trabajo!", "meaning": {"en": "good job!", "ru": "хорошая работа!", "kk": "жарайсың!"}},
         {"idiom": "Tranquilo/a", "meaning": {"en": "take it easy, relax.", "ru": "не переживай, расслабься.", "kk": "алаңдама, тыныш бол."}},
+        {"idiom": "Muchas gracias", "meaning": {"en": "thank you very much.", "ru": "большое спасибо.", "kk": "көп рахмет."}},
+        {"idiom": "Perdón", "meaning": {"en": "excuse me / sorry.", "ru": "извините.", "kk": "кешіріңіз."}},
+        {"idiom": "Lo siento", "meaning": {"en": "I'm sorry.", "ru": "мне жаль.", "kk": "кешірім сұраймын."}},
+        {"idiom": "Que tengas un buen día", "meaning": {"en": "have a nice day.", "ru": "хорошего дня.", "kk": "күніңіз сәтті өтсін."}},
+        {"idiom": "Como quieras", "meaning": {"en": "as you wish, it's up to you.", "ru": "как хочешь, решать тебе.", "kk": "қалауың бойынша, шешім өзіңде."}},
     ],
     "B1-B2": [
         {"idiom": "Estar en las nubes", "meaning": {"en": "to be daydreaming, absent-minded.", "ru": "витать в облаках.", "kk": "ойға шомып кету."}},
@@ -483,6 +585,11 @@ IDIOMS_ES = {
         {"idiom": "Meter la pata", "meaning": {"en": "to make a blunder.", "ru": "сделать промах.", "kk": "қателік жіберу."}},
         {"idiom": "No tener pelos en la lengua", "meaning": {"en": "to speak bluntly, without holding back.", "ru": "говорить без обиняков.", "kk": "тіке, ашық сөйлеу."}},
         {"idiom": "Ser pan comido", "meaning": {"en": "to be very easy (a piece of cake).", "ru": "быть проще простого.", "kk": "өте оңай болу."}},
+        {"idiom": "Romper el hielo", "meaning": {"en": "to break the ice.", "ru": "растопить лёд, снять напряжение.", "kk": "мұзды еріту, шиеленісті бәсеңдету."}},
+        {"idiom": "Estar pachucho/a", "meaning": {"en": "to feel slightly unwell.", "ru": "чувствовать себя не очень хорошо.", "kk": "сәл сырқаттанып тұру."}},
+        {"idiom": "Írsele la lengua", "meaning": {"en": "to accidentally reveal something.", "ru": "случайно проговориться.", "kk": "байқаусызда құпияны айтып қою."}},
+        {"idiom": "Dar la lata", "meaning": {"en": "to be a nuisance, bother someone.", "ru": "надоедать, докучать.", "kk": "мазалау, жалықтыру."}},
+        {"idiom": "Ponerse las pilas", "meaning": {"en": "to get one's act together.", "ru": "взяться за дело, собраться.", "kk": "іске кірісу, жиналу."}},
     ],
     "C1-C2": [
         {"idiom": "Tirar la casa por la ventana", "meaning": {"en": "to spare no expense.", "ru": "не жалеть денег, шиковать.", "kk": "шығынды аямай жұмсау."}},
@@ -490,6 +597,11 @@ IDIOMS_ES = {
         {"idiom": "Dar en el clavo", "meaning": {"en": "to hit the nail on the head.", "ru": "попасть в самую точку.", "kk": "мәселенің дәл өзін айту."}},
         {"idiom": "Irse por las ramas", "meaning": {"en": "to beat around the bush.", "ru": "ходить вокруг да около.", "kk": "негізгі тақырыпты айналып өту."}},
         {"idiom": "Poner los puntos sobre las íes", "meaning": {"en": "to clarify something precisely.", "ru": "расставить все точки над и.", "kk": "бәрін нақтылап түсіндіру."}},
+        {"idiom": "El elefante en la habitación", "meaning": {"en": "the elephant in the room.", "ru": "слон в комнате, очевидная замалчиваемая проблема.", "kk": "бәрі көріп тұрған, бірақ айтылмайтын мәселе."}},
+        {"idiom": "Tomarlo con pinzas", "meaning": {"en": "to take something with a grain of salt.", "ru": "относиться к чему-то скептически.", "kk": "бір нәрсеге толық сенбеу."}},
+        {"idiom": "Estar en la misma sintonía", "meaning": {"en": "to be on the same wavelength.", "ru": "быть на одной волне с кем-то.", "kk": "біреумен бір толқында болу."}},
+        {"idiom": "Jugárselo todo a una carta", "meaning": {"en": "to risk everything on one option.", "ru": "поставить всё на одну карту.", "kk": "бәрін бір нәрсеге тәуекел ету."}},
+        {"idiom": "La pelota está en tu tejado", "meaning": {"en": "the ball is in your court.", "ru": "теперь твоя очередь действовать.", "kk": "енді әрекет ету кезегі сенде."}},
     ],
 }
 
@@ -650,18 +762,24 @@ BOOKS_DE = {
         {"title": "«Die Sams» – Paul Maar", "tag": "Fantasie", "term": "Wunsch", "meaning": {"en": "a desire or wish.", "ru": "желание.", "kk": "тілек."}},
         {"title": "«Emil und die Detektive» – Erich Kästner", "tag": "Abenteuer", "term": "Zusammenhalt", "meaning": {"en": "acting together for a goal.", "ru": "совместные действия ради цели.", "kk": "ортақ мақсат үшін бірге әрекет ету."}},
         {"title": "«Das doppelte Lottchen» – Erich Kästner", "tag": "Familie", "term": "Zwilling", "meaning": {"en": "a twin.", "ru": "близнец.", "kk": "егіз."}},
+        {"title": "«Der Regenbogenfisch» – Marcus Pfister", "tag": "Freundschaft", "term": "Freundlich", "meaning": {"en": "kind and considerate toward others.", "ru": "добрый и внимательный к другим.", "kk": "басқаларға мейірімді әрі қамқор."}},
+        {"title": "«Die kleine Hexe» – Otfried Preußler", "tag": "Fantasie", "term": "Neugierig", "meaning": {"en": "curious, eager to learn.", "ru": "любопытный.", "kk": "қызығушылық танытатын."}},
     ],
     "B1-B2": [
         {"title": "«Die Welle» – Todd Strasser", "tag": "Gesellschaft", "term": "Konformität", "meaning": {"en": "going along with the group.", "ru": "подчинение группе.", "kk": "топқа бағыну."}},
         {"title": "«Tschick» – Wolfgang Herrndorf", "tag": "Freundschaft", "term": "Außenseiter", "meaning": {"en": "someone who doesn't belong.", "ru": "тот, кто не вписывается.", "kk": "топқа сыймайтын адам."}},
         {"title": "«Momo» – Michael Ende", "tag": "Zeit", "term": "Achtsamkeit", "meaning": {"en": "being aware of the present.", "ru": "внимание к настоящему моменту.", "kk": "қазіргі сәтке мән беру."}},
         {"title": "«Krabat» – Otfried Preußler", "tag": "Fantasie", "term": "Macht", "meaning": {"en": "control or power over others.", "ru": "власть, контроль над другими.", "kk": "басқаларға билік жүргізу."}},
+        {"title": "«Vorstadtkrokodile» – Max von der Grün", "tag": "Freundschaft", "term": "Vorurteil", "meaning": {"en": "prejudice.", "ru": "предрассудок.", "kk": "жаңсақ пікір."}},
+        {"title": "«Damals war es Friedrich» – Hans Peter Richter", "tag": "Geschichte", "term": "Verfolgung", "meaning": {"en": "persecution.", "ru": "преследование.", "kk": "қуғын-сүргін."}},
     ],
     "C1-C2": [
         {"title": "«Die Verwandlung» – Franz Kafka", "tag": "Identität", "term": "Entfremdung", "meaning": {"en": "feeling disconnected from others.", "ru": "чувство оторванности от других.", "kk": "басқалардан алшақтау сезімі."}},
         {"title": "«Der Steppenwolf» – Hermann Hesse", "tag": "Philosophie", "term": "Zerrissenheit", "meaning": {"en": "inner conflict, being torn between two selves.", "ru": "внутренний разлад, раздвоенность.", "kk": "ішкі қайшылық, екіге бөлінген күй."}},
         {"title": "«Der Vorleser» – Bernhard Schlink", "tag": "Geschichte", "term": "Schuld", "meaning": {"en": "guilt, responsibility for wrongdoing.", "ru": "вина, ответственность за проступок.", "kk": "кінә, жасаған қателігі үшін жауапкершілік."}},
         {"title": "«Homo Faber» – Max Frisch", "tag": "Schicksal", "term": "Zufall", "meaning": {"en": "chance, coincidence.", "ru": "случайность.", "kk": "кездейсоқтық."}},
+        {"title": "«Siddhartha» – Hermann Hesse", "tag": "Philosophie", "term": "Erleuchtung", "meaning": {"en": "a state of deep spiritual understanding.", "ru": "состояние глубокого духовного прозрения.", "kk": "терең рухани түсінік күйі."}},
+        {"title": "«Der Prozess» – Franz Kafka", "tag": "Justiz", "term": "Absurdität", "meaning": {"en": "absurdity.", "ru": "абсурдность.", "kk": "абсурдтық."}},
     ],
 }
 
@@ -670,6 +788,8 @@ BOOKS_RU = [
     {"title": "«Дети подземелья» — Владимир Короленко", "tag": "Общество", "term": "Сострадание", "meaning": {"en": "sympathy for others.", "ru": "сочувствие другим.", "kk": "басқаларға жанашырлық."}},
     {"title": "«Дубровский» — Александр Пушкин", "tag": "Справедливость", "term": "Справедливость", "meaning": {"en": "fairness and moral rightness.", "ru": "нравственная правота.", "kk": "адалдық пен растық."}},
     {"title": "«Судьба человека» — Михаил Шолохов", "tag": "Война", "term": "Стойкость", "meaning": {"en": "the ability to recover from hardship.", "ru": "способность преодолевать трудности.", "kk": "қиындықтан қайта қалпына келу қабілеті."}},
+    {"title": "«Капитанская дочка» — Александр Пушкин", "tag": "История", "term": "Честь", "meaning": {"en": "honor, moral integrity.", "ru": "честь, нравственное достоинство.", "kk": "ар-намыс, адамгершілік қасиет."}},
+    {"title": "«Отцы и дети» — Иван Тургенев", "tag": "Поколения", "term": "Нигилизм", "meaning": {"en": "rejection of established beliefs and values.", "ru": "отрицание общепринятых убеждений и ценностей.", "kk": "жалпыға қабылданған нанымдар мен құндылықтарды теріске шығару."}},
 ]
 
 BOOKS_KK = [
@@ -677,6 +797,8 @@ BOOKS_KK = [
     {"title": "«Менің атым Қожа» – Бердібек Соқпақбаев", "tag": "Мектеп өмірі", "term": "Жауапкершілік", "meaning": {"kk": "өз әрекетің үшін жауап беру.", "ru": "обязанность отвечать за свои поступки.", "en": "being accountable for one's actions."}},
     {"title": "«Көшпенділер» – Ілияс Есенберлин", "tag": "Тарих", "term": "Азаттық", "meaning": {"kk": "тәуелсіздік, еркіндік.", "ru": "независимость.", "en": "independence."}},
     {"title": "«Ұлпан» – Ғабит Мүсірепов", "tag": "Қоғам", "term": "Әділдік", "meaning": {"kk": "растық пен адалдық.", "ru": "правда и честность.", "en": "fairness and honesty."}},
+    {"title": "«Қан мен тер» – Әбдіжәміл Нұрпейісов", "tag": "Тарих", "term": "Тартыс", "meaning": {"kk": "қиын жағдайдағы күрес.", "ru": "борьба в тяжёлых условиях.", "en": "struggle under difficult circumstances."}},
+    {"title": "«Балалық шаққа саяхат» – Бердібек Соқпақбаев", "tag": "Балалық шақ", "term": "Достық", "meaning": {"kk": "жақын қарым-қатынас пен сенім.", "ru": "близкие отношения и доверие.", "en": "a close, trusting relationship."}},
 ]
 
 BOOKS_ES = {
@@ -685,18 +807,24 @@ BOOKS_ES = {
         {"title": "'Platero y yo' – Juan Ramón Jiménez", "tag": "Naturaleza", "term": "Ternura", "meaning": {"en": "tenderness, gentle affection.", "ru": "нежность.", "kk": "нәзіктік."}},
         {"title": "'Cuentos de la selva' – Horacio Quiroga", "tag": "Aventura", "term": "Selva", "meaning": {"en": "jungle, forest.", "ru": "джунгли, лес.", "kk": "джунгли, орман."}},
         {"title": "'Marcelino Pan y Vino' – José María Sánchez Silva", "tag": "Amistad", "term": "Bondad", "meaning": {"en": "kindness, goodness.", "ru": "доброта.", "kk": "мейірімділік."}},
+        {"title": "'Manolito Gafotas' – Elvira Lindo", "tag": "Vida escolar", "term": "Travieso", "meaning": {"en": "mischievous, playfully naughty.", "ru": "озорной, шаловливый.", "kk": "тентек, ойнақы."}},
+        {"title": "'Elmer' – David McKee", "tag": "Identidad", "term": "Colorido", "meaning": {"en": "having many bright colors.", "ru": "разноцветный, яркий.", "kk": "түрлі-түсті, жарқын."}},
     ],
     "B1-B2": [
         {"title": "'Como agua para chocolate' – Laura Esquivel", "tag": "Tradición", "term": "Pasión", "meaning": {"en": "intense, powerful emotion.", "ru": "сильное, глубокое чувство.", "kk": "қатты, терең сезім."}},
         {"title": "'El túnel' – Ernesto Sabato", "tag": "Psicología", "term": "Obsesión", "meaning": {"en": "a fixed, intense preoccupation.", "ru": "навязчивая, сильная поглощённость чем-то.", "kk": "бір нәрсеге қатты құмарту."}},
         {"title": "'La casa de los espíritus' – Isabel Allende", "tag": "Familia", "term": "Destino", "meaning": {"en": "the predetermined course of events.", "ru": "предопределённый ход событий.", "kk": "алдын ала белгіленген өмір барысы."}},
         {"title": "'Réquiem por un campesino español' – Ramón J. Sender", "tag": "Guerra", "term": "Traición", "meaning": {"en": "betrayal.", "ru": "предательство.", "kk": "опасыздық."}},
+        {"title": "'El diario de Ana Frank' (edición en español)", "tag": "Historia", "term": "Esperanza", "meaning": {"en": "hope.", "ru": "надежда.", "kk": "үміт."}},
+        {"title": "'La casa en Mango Street' – Sandra Cisneros", "tag": "Identidad", "term": "Pertenencia", "meaning": {"en": "belonging.", "ru": "принадлежность.", "kk": "тиесілілік."}},
     ],
     "C1-C2": [
         {"title": "'Cien años de soledad' – Gabriel García Márquez", "tag": "Realismo mágico", "term": "Soledad", "meaning": {"en": "the state of being alone.", "ru": "состояние уединения.", "kk": "жалғыз қалу күйі."}},
         {"title": "'Rayuela' – Julio Cortázar", "tag": "Literatura experimental", "term": "Ambigüedad", "meaning": {"en": "ambiguity.", "ru": "двусмысленность.", "kk": "екіұштылық."}},
         {"title": "'Pedro Páramo' – Juan Rulfo", "tag": "Realismo mágico", "term": "Fantasma", "meaning": {"en": "ghost, apparition.", "ru": "призрак.", "kk": "елес, аруақ."}},
         {"title": "'La casa de Bernarda Alba' – Federico García Lorca", "tag": "Teatro", "term": "Represión", "meaning": {"en": "repression.", "ru": "подавление, репрессия.", "kk": "басып-жаншу, репрессия."}},
+        {"title": "'La familia de Pascual Duarte' – Camilo José Cela", "tag": "Sociedad", "term": "Violencia", "meaning": {"en": "violence.", "ru": "насилие.", "kk": "зорлық-зомбылық."}},
+        {"title": "'Ficciones' – Jorge Luis Borges", "tag": "Filosofía", "term": "Infinito", "meaning": {"en": "infinity.", "ru": "бесконечность.", "kk": "шексіздік."}},
     ],
 }
 
