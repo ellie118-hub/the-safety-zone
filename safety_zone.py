@@ -23,7 +23,12 @@ except Exception as e:
 
 st.set_page_config(page_title="The Safety Zone", page_icon="🎙️", layout="wide")
 
-
+# =========================================================================
+#   explain_lang  -> the language the STUDENT understands (UI text, and
+#                     the meaning/translation of new words, idioms, books)
+#   practice_lang -> the language the STUDENT IS PRACTICING SPEAKING
+#   level         -> only shown/used for languages in LEVELED_LANGS
+# =========================================================================
 
 EXPLAIN_LANGS = ["kk", "ru", "en"]
 EXPLAIN_LABELS = {"kk": "ҚАЗ", "ru": "РУС", "en": "ENG"}
@@ -612,6 +617,11 @@ IDIOMS_IT = {
         {"idiom": "Ci vediamo dopo", "meaning": {"en": "see you later.", "ru": "увидимся позже.", "kk": "кейін кездесеміз."}},
         {"idiom": "Ottimo lavoro!", "meaning": {"en": "great job!", "ru": "отличная работа!", "kk": "керемет жұмыс!"}},
         {"idiom": "Stai tranquillo/a", "meaning": {"en": "take it easy.", "ru": "не переживай.", "kk": "алаңдама."}},
+        {"idiom": "Grazie mille", "meaning": {"en": "thank you very much.", "ru": "большое спасибо.", "kk": "көп рахмет."}},
+        {"idiom": "Scusami", "meaning": {"en": "excuse me, I'm sorry.", "ru": "извини меня.", "kk": "кешір мені."}},
+        {"idiom": "Buona giornata", "meaning": {"en": "have a nice day.", "ru": "хорошего дня.", "kk": "күнің сәтті өтсін."}},
+        {"idiom": "Come va?", "meaning": {"en": "how's it going?", "ru": "как дела?", "kk": "қалың қалай?"}},
+        {"idiom": "Sta a te", "meaning": {"en": "it's up to you.", "ru": "решать тебе.", "kk": "шешім өзіңе байланысты."}},
     ],
     "B1-B2": [
         {"idiom": "In bocca al lupo", "meaning": {"en": "good luck.", "ru": "ни пуха ни пера.", "kk": "сәттілік."}},
@@ -619,6 +629,11 @@ IDIOMS_IT = {
         {"idiom": "Prendere due piccioni con una fava", "meaning": {"en": "to kill two birds with one stone.", "ru": "убить двух зайцев.", "kk": "бір оқпен екі қоян ату."}},
         {"idiom": "Non vedere l'ora", "meaning": {"en": "to be unable to wait for something.", "ru": "с нетерпением ждать.", "kk": "асыға күту."}},
         {"idiom": "Fare orecchie da mercante", "meaning": {"en": "to pretend not to hear.", "ru": "делать вид, что не слышишь.", "kk": "естімегенсіп жасалу."}},
+        {"idiom": "Costare un occhio della testa", "meaning": {"en": "to be very expensive.", "ru": "стоить очень дорого.", "kk": "өте қымбатқа түсу."}},
+        {"idiom": "Essere al verde", "meaning": {"en": "to be broke, out of money.", "ru": "быть без денег.", "kk": "ақшасыз қалу."}},
+        {"idiom": "Avere la testa fra le nuvole", "meaning": {"en": "to be daydreaming, distracted.", "ru": "витать в облаках.", "kk": "ойға шомып кету."}},
+        {"idiom": "Fare il primo passo", "meaning": {"en": "to make the first move.", "ru": "сделать первый шаг.", "kk": "бірінші қадам жасау."}},
+        {"idiom": "Perdere le staffe", "meaning": {"en": "to lose one's temper.", "ru": "выйти из себя.", "kk": "ашуланып кету."}},
     ],
     "C1-C2": [
         {"idiom": "Toccare il cielo con un dito", "meaning": {"en": "to be extremely happy.", "ru": "быть на седьмом небе от счастья.", "kk": "бақыттан ұшып жүру."}},
@@ -626,6 +641,11 @@ IDIOMS_IT = {
         {"idiom": "Avere la coda di paglia", "meaning": {"en": "to have a guilty conscience.", "ru": "иметь нечистую совесть.", "kk": "ар-ұяты таза болмау."}},
         {"idiom": "Menare il can per l'aia", "meaning": {"en": "to beat around the bush.", "ru": "ходить вокруг да около.", "kk": "негізгі тақырыпты айналып өту."}},
         {"idiom": "Mettere il carro davanti ai buoi", "meaning": {"en": "to put the cart before the horse.", "ru": "ставить телегу впереди лошади.", "kk": "ретсіз, кезексіз іс істеу."}},
+        {"idiom": "Avere le spalle larghe", "meaning": {"en": "to be able to bear a lot of responsibility.", "ru": "иметь широкие плечи (уметь нести ответственность).", "kk": "үлкен жауапкершілікті көтере алу."}},
+        {"idiom": "Nascere con la camicia", "meaning": {"en": "to be born lucky.", "ru": "родиться в рубашке.", "kk": "бақытты болып туылу."}},
+        {"idiom": "Chi dorme non piglia pesci", "meaning": {"en": "the early bird catches the worm.", "ru": "кто рано встаёт, тому Бог подаёт.", "kk": "ерте тұрған қуанады."}},
+        {"idiom": "Fare di necessità virtù", "meaning": {"en": "to make the best of a bad situation.", "ru": "делать из нужды добродетель.", "kk": "қиын жағдайды пайдаға айналдыру."}},
+        {"idiom": "Gettare la maschera", "meaning": {"en": "to reveal one's true self.", "ru": "сбросить маску, показать истинное лицо.", "kk": "нағыз бет-бейнесін ашу."}},
     ],
 }
 
@@ -636,6 +656,11 @@ IDIOMS_FR = {
         {"idiom": "À plus tard", "meaning": {"en": "see you later.", "ru": "до скорого.", "kk": "кездескенше."}},
         {"idiom": "Bon travail !", "meaning": {"en": "good job!", "ru": "хорошая работа!", "kk": "жарайсың!"}},
         {"idiom": "Ne t'en fais pas", "meaning": {"en": "take it easy, don't worry.", "ru": "не переживай.", "kk": "алаңдама."}},
+        {"idiom": "Merci beaucoup", "meaning": {"en": "thank you very much.", "ru": "большое спасибо.", "kk": "көп рахмет."}},
+        {"idiom": "Excusez-moi", "meaning": {"en": "excuse me.", "ru": "извините меня.", "kk": "кешіріңіз."}},
+        {"idiom": "Bonne journée", "meaning": {"en": "have a nice day.", "ru": "хорошего дня.", "kk": "күнің сәтті өтсін."}},
+        {"idiom": "Comment ça va ?", "meaning": {"en": "how's it going?", "ru": "как дела?", "kk": "қалың қалай?"}},
+        {"idiom": "C'est toi qui décides", "meaning": {"en": "it's up to you.", "ru": "решать тебе.", "kk": "шешім өзіңе байланысты."}},
     ],
     "B1-B2": [
         {"idiom": "Avoir le cafard", "meaning": {"en": "to feel down, blue.", "ru": "хандрить, грустить.", "kk": "көңіл-күйі түсу."}},
@@ -643,6 +668,11 @@ IDIOMS_FR = {
         {"idiom": "Poser un lapin", "meaning": {"en": "to stand someone up.", "ru": "не прийти на встречу.", "kk": "кездесуге келмей қою."}},
         {"idiom": "Coûter les yeux de la tête", "meaning": {"en": "to cost a fortune.", "ru": "стоить целое состояние.", "kk": "өте қымбатқа түсу."}},
         {"idiom": "Avoir un chat dans la gorge", "meaning": {"en": "to have a frog in one's throat.", "ru": "першить в горле.", "kk": "тамақ ашуы."}},
+        {"idiom": "Être fauché", "meaning": {"en": "to be broke, out of money.", "ru": "быть без денег.", "kk": "ақшасыз қалу."}},
+        {"idiom": "Avoir la tête dans les nuages", "meaning": {"en": "to be daydreaming, distracted.", "ru": "витать в облаках.", "kk": "ойға шомып кету."}},
+        {"idiom": "Faire le premier pas", "meaning": {"en": "to make the first move.", "ru": "сделать первый шаг.", "kk": "бірінші қадам жасау."}},
+        {"idiom": "Sortir de ses gonds", "meaning": {"en": "to lose one's temper.", "ru": "выйти из себя.", "kk": "ашуланып кету."}},
+        {"idiom": "Ne pas avoir la langue dans sa poche", "meaning": {"en": "to speak bluntly and freely.", "ru": "не лезть за словом в карман.", "kk": "тіл-жағы жүйрік болу."}},
     ],
     "C1-C2": [
         {"idiom": "Mettre les points sur les i", "meaning": {"en": "to clarify something precisely.", "ru": "расставить все точки над и.", "kk": "бәрін нақтылап түсіндіру."}},
@@ -650,6 +680,11 @@ IDIOMS_FR = {
         {"idiom": "Ne pas y aller par quatre chemins", "meaning": {"en": "to get straight to the point.", "ru": "говорить без обиняков.", "kk": "тіке, ашық айту."}},
         {"idiom": "Avoir d'autres chats à fouetter", "meaning": {"en": "to have other priorities.", "ru": "иметь дела поважнее.", "kk": "маңыздырақ істері болу."}},
         {"idiom": "Se serrer les coudes", "meaning": {"en": "to stick together, support each other.", "ru": "держаться сообща.", "kk": "бірлесе қолдау көрсету."}},
+        {"idiom": "Prendre son mal en patience", "meaning": {"en": "to endure a hardship patiently.", "ru": "терпеливо переносить трудности.", "kk": "қиындықты сабырмен көтеру."}},
+        {"idiom": "Tirer son épingle du jeu", "meaning": {"en": "to come out of a situation well.", "ru": "выйти сухим из воды.", "kk": "жағдайдан сәтті шығу."}},
+        {"idiom": "Mettre la charrue avant les bœufs", "meaning": {"en": "to put the cart before the horse.", "ru": "ставить телегу впереди лошади.", "kk": "ретсіз, кезексіз іс істеу."}},
+        {"idiom": "Avoir le vent en poupe", "meaning": {"en": "to be very successful, thriving.", "ru": "быть на волне успеха.", "kk": "табысқа кенелу."}},
+        {"idiom": "Jeter l'éponge", "meaning": {"en": "to give up.", "ru": "сдаться, бросить попытки.", "kk": "тырысуды тоқтату."}},
     ],
 }
 
@@ -834,18 +869,24 @@ BOOKS_IT = {
         {"title": "'Pinocchio' – Carlo Collodi", "tag": "Avventura", "term": "Bugia", "meaning": {"en": "a lie.", "ru": "ложь.", "kk": "өтірік."}},
         {"title": "'Cuore' – Edmondo De Amicis", "tag": "Scuola", "term": "Amicizia", "meaning": {"en": "friendship.", "ru": "дружба.", "kk": "достық."}},
         {"title": "'Marcovaldo' – Italo Calvino", "tag": "Vita quotidiana", "term": "Nostalgia", "meaning": {"en": "nostalgia.", "ru": "ностальгия.", "kk": "аңсау сезімі."}},
+        {"title": "'Gian Burrasca' – Luigi Bertelli", "tag": "Infanzia", "term": "Monelleria", "meaning": {"en": "mischievous behavior.", "ru": "озорное поведение.", "kk": "тентек мінез."}},
+        {"title": "'Le avventure di Cipollino' – Gianni Rodari", "tag": "Fiaba", "term": "Coraggio", "meaning": {"en": "courage.", "ru": "смелость.", "kk": "батылдық."}},
     ],
     "B1-B2": [
         {"title": "'Io non ho paura' – Niccolò Ammaniti", "tag": "Infanzia", "term": "Paura", "meaning": {"en": "fear.", "ru": "страх.", "kk": "қорқыныш."}},
         {"title": "'L'isola di Arturo' – Elsa Morante", "tag": "Crescita", "term": "Solitudine", "meaning": {"en": "solitude.", "ru": "одиночество.", "kk": "жалғыздық."}},
         {"title": "'Va' dove ti porta il cuore' – Susanna Tamaro", "tag": "Famiglia", "term": "Rimpianto", "meaning": {"en": "regret.", "ru": "сожаление.", "kk": "өкіну."}},
         {"title": "'Il nome della rosa' – Umberto Eco", "tag": "Mistero", "term": "Verità", "meaning": {"en": "what is actually real.", "ru": "то, что действительно реально.", "kk": "шынайы болған нәрсе."}},
+        {"title": "'La lunga vita di Marianna Ucrìa' – Dacia Maraini", "tag": "Storia", "term": "Silenzio", "meaning": {"en": "silence.", "ru": "молчание.", "kk": "үнсіздік."}},
+        {"title": "'Novecento' – Alessandro Baricco", "tag": "Musica", "term": "Talento", "meaning": {"en": "talent.", "ru": "талант.", "kk": "дарын."}},
     ],
     "C1-C2": [
         {"title": "'Il fu Mattia Pascal' – Luigi Pirandello", "tag": "Identità", "term": "Identità", "meaning": {"en": "who a person truly is.", "ru": "то, кем человек является на самом деле.", "kk": "адамның шынайы болмысы."}},
         {"title": "'Se questo è un uomo' – Primo Levi", "tag": "Memoria", "term": "Dignità", "meaning": {"en": "the value and worth of a person.", "ru": "ценность и значимость человека.", "kk": "адамның құндылығы."}},
         {"title": "'La coscienza di Zeno' – Italo Svevo", "tag": "Psicologia", "term": "Coscienza", "meaning": {"en": "awareness of oneself.", "ru": "осознание себя.", "kk": "өзін-өзі түйсіну."}},
         {"title": "'Se una notte d'inverno un viaggiatore' – Italo Calvino", "tag": "Metaletteratura", "term": "Narrazione", "meaning": {"en": "storytelling, narration.", "ru": "повествование.", "kk": "әңгімелеу."}},
+        {"title": "'Gomorra' – Roberto Saviano", "tag": "Società", "term": "Corruzione", "meaning": {"en": "corruption.", "ru": "коррупция.", "kk": "сыбайлас жемқорлық."}},
+        {"title": "'Il giorno della civetta' – Leonardo Sciascia", "tag": "Giustizia", "term": "Omertà", "meaning": {"en": "a code of silence, refusal to inform authorities.", "ru": "закон молчания, отказ доносить властям.", "kk": "билікке хабарламау туралы үнсіздік ережесі."}},
     ],
 }
 
@@ -855,18 +896,24 @@ BOOKS_FR = {
         {"title": "'Le Petit Nicolas' – René Goscinny", "tag": "École", "term": "Bêtise", "meaning": {"en": "a silly or foolish act.", "ru": "глупый поступок.", "kk": "ақымақтық іс."}},
         {"title": "'Charlie et la Chocolaterie' – Roald Dahl", "tag": "Aventure", "term": "Gourmandise", "meaning": {"en": "greed for food or sweets.", "ru": "чревоугодие, жадность до сладкого.", "kk": "тәтті нәрсеге құмарлық."}},
         {"title": "'Poil de Carotte' – Jules Renard", "tag": "Famille", "term": "Injustice", "meaning": {"en": "unfair treatment.", "ru": "несправедливость.", "kk": "әділетсіздік."}},
+        {"title": "'Sans famille' – Hector Malot", "tag": "Aventure", "term": "Abandon", "meaning": {"en": "the act of leaving someone behind.", "ru": "оставление кого-либо.", "kk": "біреуді тастап кету."}},
+        {"title": "'La Guerre des boutons' – Louis Pergaud", "tag": "Enfance", "term": "Rivalité", "meaning": {"en": "rivalry, competition.", "ru": "соперничество.", "kk": "бәсекелестік."}},
     ],
     "B1-B2": [
         {"title": "'No et moi' – Delphine de Vigan", "tag": "Société", "term": "Solitude", "meaning": {"en": "the state of being alone.", "ru": "состояние уединения.", "kk": "жалғыз қалу күйі."}},
         {"title": "'L'Élégance du hérisson' – Muriel Barbery", "tag": "Société", "term": "Apparence", "meaning": {"en": "outward appearance versus reality.", "ru": "внешний вид в противовес реальности.", "kk": "сырт көрінісі мен шынайылықтың айырмашылығы."}},
         {"title": "'Kiffe kiffe demain' – Faïza Guène", "tag": "Identité", "term": "Banlieue", "meaning": {"en": "suburb, outskirts of a city.", "ru": "пригород, окраина города.", "kk": "қала маңы."}},
         {"title": "'La Gloire de mon père' – Marcel Pagnol", "tag": "Enfance", "term": "Souvenir", "meaning": {"en": "a memory.", "ru": "воспоминание.", "kk": "естелік."}},
+        {"title": "'Le Grand Meaulnes' – Alain-Fournier", "tag": "Aventure", "term": "Quête", "meaning": {"en": "a quest, a search for something.", "ru": "поиск, стремление к чему-то.", "kk": "бір нәрсені іздеу, ұмтылу."}},
+        {"title": "'L'Enfant noir' – Camara Laye", "tag": "Identité", "term": "Héritage", "meaning": {"en": "heritage, what is passed down.", "ru": "наследие.", "kk": "мұра."}},
     ],
     "C1-C2": [
         {"title": "'L'Étranger' – Albert Camus", "tag": "Philosophie", "term": "Absurde", "meaning": {"en": "lacking apparent logical meaning.", "ru": "лишённое видимого логического смысла.", "kk": "логикалық мағынасы жоқтай көрінетін."}},
         {"title": "'Les Misérables' – Victor Hugo", "tag": "Justice sociale", "term": "Rédemption", "meaning": {"en": "being saved from wrongdoing.", "ru": "освобождение от вины через исправление.", "kk": "кінәні түзету арқылы құтылу."}},
         {"title": "'Huis clos' – Jean-Paul Sartre", "tag": "Philosophie", "term": "Enfer", "meaning": {"en": "hell (here, a metaphor for other people).", "ru": "ад (здесь — метафора для других людей).", "kk": "тозақ (мұнда — басқа адамдарға метафора)."}},
         {"title": "'Madame Bovary' – Gustave Flaubert", "tag": "Société", "term": "Désillusion", "meaning": {"en": "disillusionment.", "ru": "разочарование.", "kk": "көңілі қалу."}},
+        {"title": "'La Peste' – Albert Camus", "tag": "Philosophie", "term": "Fléau", "meaning": {"en": "a great disaster or calamity.", "ru": "великое бедствие.", "kk": "үлкен апат."}},
+        {"title": "'Les Faux-Monnayeurs' – André Gide", "tag": "Identité", "term": "Sincérité", "meaning": {"en": "sincerity, honesty.", "ru": "искренность.", "kk": "шыншылдық."}},
     ],
 }
 
