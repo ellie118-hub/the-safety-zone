@@ -23,13 +23,6 @@ except Exception as e:
 
 st.set_page_config(page_title="The Safety Zone", page_icon="🎙️", layout="wide")
 
-# =========================================================================
-#   explain_lang  -> the language the STUDENT understands (UI text, and
-#                     the meaning/translation of new words, idioms, books)
-#   practice_lang -> the language the STUDENT IS PRACTICING SPEAKING
-#   level         -> only shown/used for languages in LEVELED_LANGS
-# =========================================================================
-
 EXPLAIN_LANGS = ["kk", "ru", "en"]
 EXPLAIN_LABELS = {"kk": "ҚАЗ", "ru": "РУС", "en": "ENG"}
 
@@ -401,6 +394,11 @@ WORDS_ZH = {
         {"word": "学校 (xuéxiào)", "def": {"en": "school.", "ru": "школа.", "kk": "мектеп."}},
         {"word": "天气 (tiānqì)", "def": {"en": "weather.", "ru": "погода.", "kk": "ауа райы."}},
         {"word": "高兴 (gāoxìng)", "def": {"en": "happy.", "ru": "счастливый, довольный.", "kk": "қуанышты."}},
+        {"word": "书 (shū)", "def": {"en": "book.", "ru": "книга.", "kk": "кітап."}},
+        {"word": "音乐 (yīnyuè)", "def": {"en": "music.", "ru": "музыка.", "kk": "музыка."}},
+        {"word": "动物 (dòngwù)", "def": {"en": "animal.", "ru": "животное.", "kk": "жануар."}},
+        {"word": "颜色 (yánsè)", "def": {"en": "color.", "ru": "цвет.", "kk": "түс."}},
+        {"word": "累 (lèi)", "def": {"en": "tired.", "ru": "уставший.", "kk": "шаршаған."}},
     ],
     "HSK 4-6": [
         {"word": "矛盾 (máodùn)", "def": {"en": "conflicting, contradictory.", "ru": "противоречивый.", "kk": "қарама-қайшы."}},
@@ -408,6 +406,11 @@ WORDS_ZH = {
         {"word": "普遍 (pǔbiàn)", "def": {"en": "widespread, universal.", "ru": "повсеместный.", "kk": "кең тараған."}},
         {"word": "合理 (hélǐ)", "def": {"en": "reasonable, plausible.", "ru": "разумный, обоснованный.", "kk": "негізді, сенімді."}},
         {"word": "细致 (xìzhì)", "def": {"en": "meticulous, detailed.", "ru": "скрупулёзный, детальный.", "kk": "мұқият, егжей-тегжейлі."}},
+        {"word": "坦率 (tǎnshuài)", "def": {"en": "candid, frank.", "ru": "откровенный, прямой.", "kk": "ашық, турашыл."}},
+        {"word": "坚韧 (jiānrèn)", "def": {"en": "resilient, tenacious.", "ru": "стойкий, упорный.", "kk": "төзімді, шыдамды."}},
+        {"word": "肤浅 (fūqiǎn)", "def": {"en": "superficial, shallow.", "ru": "поверхностный.", "kk": "беткейлі, терең емес."}},
+        {"word": "多才多艺 (duōcáiduōyì)", "def": {"en": "versatile, multi-talented.", "ru": "разносторонний, многогранный.", "kk": "көп қырлы, талантты."}},
+        {"word": "怀疑 (huáiyí)", "def": {"en": "skeptical, doubtful.", "ru": "скептический, сомневающийся.", "kk": "күмәнмен қарайтын."}},
     ],
     "HSK 7-9": [
         {"word": "短暂 (duǎnzàn)", "def": {"en": "ephemeral, short-lived.", "ru": "мимолётный.", "kk": "қысқа мерзімді."}},
@@ -415,6 +418,11 @@ WORDS_ZH = {
         {"word": "敏锐 (mǐnruì)", "def": {"en": "perspicacious, sharp insight.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
         {"word": "有争议 (yǒuzhēngyì)", "def": {"en": "controversial.", "ru": "спорный.", "kk": "даулы."}},
         {"word": "多面性 (duōmiànxìng)", "def": {"en": "multifaceted nature.", "ru": "многогранность.", "kk": "көп қырлылық."}},
+        {"word": "矛盾重重 (máodùn chóngchóng)", "def": {"en": "riddled with contradictions.", "ru": "полный противоречий.", "kk": "қайшылыққа толы."}},
+        {"word": "神秘莫测 (shénmì mòcè)", "def": {"en": "enigmatic, mysterious.", "ru": "загадочный, труднообъяснимый.", "kk": "жұмбақ, түсінуге қиын."}},
+        {"word": "悖论 (bèilùn)", "def": {"en": "a paradox.", "ru": "парадокс.", "kk": "парадокс."}},
+        {"word": "多余 (duōyú)", "def": {"en": "superfluous, unnecessary.", "ru": "излишний, ненужный.", "kk": "артық, қажетсіз."}},
+        {"word": "矛盾心理 (máodùn xīnlǐ)", "def": {"en": "ambivalence, mixed feelings.", "ru": "амбивалентность, смешанные чувства.", "kk": "қарама-қайшы сезім."}},
     ],
 }
 
@@ -425,6 +433,11 @@ WORDS_JA = {
         {"word": "学校 (gakkō)", "def": {"en": "school.", "ru": "школа.", "kk": "мектеп."}},
         {"word": "天気 (tenki)", "def": {"en": "weather.", "ru": "погода.", "kk": "ауа райы."}},
         {"word": "嬉しい (ureshii)", "def": {"en": "happy, glad.", "ru": "счастливый, радостный.", "kk": "қуанышты."}},
+        {"word": "本 (hon)", "def": {"en": "book.", "ru": "книга.", "kk": "кітап."}},
+        {"word": "音楽 (ongaku)", "def": {"en": "music.", "ru": "музыка.", "kk": "музыка."}},
+        {"word": "動物 (dōbutsu)", "def": {"en": "animal.", "ru": "животное.", "kk": "жануар."}},
+        {"word": "色 (iro)", "def": {"en": "color.", "ru": "цвет.", "kk": "түс."}},
+        {"word": "疲れた (tsukareta)", "def": {"en": "tired.", "ru": "уставший.", "kk": "шаршаған."}},
     ],
     "N3-N2": [
         {"word": "矛盾 (mujun)", "def": {"en": "contradiction, conflicting.", "ru": "противоречие.", "kk": "қайшылық."}},
@@ -432,6 +445,11 @@ WORDS_JA = {
         {"word": "普遍的 (fuhenteki)", "def": {"en": "universal, widespread.", "ru": "универсальный.", "kk": "жалпыға ортақ."}},
         {"word": "妥当 (datō)", "def": {"en": "reasonable, appropriate.", "ru": "разумный, уместный.", "kk": "негізді, орынды."}},
         {"word": "几帳面 (kichōmen)", "def": {"en": "meticulous, precise.", "ru": "скрупулёзный, педантичный.", "kk": "мұқият, дәл."}},
+        {"word": "率直 (sotchoku)", "def": {"en": "candid, frank.", "ru": "откровенный, прямой.", "kk": "ашық, турашыл."}},
+        {"word": "粘り強い (nebarizuyoi)", "def": {"en": "resilient, persistent.", "ru": "стойкий, упорный.", "kk": "төзімді, шыдамды."}},
+        {"word": "表面的 (hyōmenteki)", "def": {"en": "superficial, shallow.", "ru": "поверхностный.", "kk": "беткейлі, терең емес."}},
+        {"word": "多才 (tasai)", "def": {"en": "versatile, multi-talented.", "ru": "разносторонний.", "kk": "көп қырлы."}},
+        {"word": "懐疑的 (kaigiteki)", "def": {"en": "skeptical, doubtful.", "ru": "скептический.", "kk": "күмәнмен қарайтын."}},
     ],
     "N1": [
         {"word": "儚い (hakanai)", "def": {"en": "ephemeral, fleeting.", "ru": "мимолётный, эфемерный.", "kk": "қысқа мерзімді, өткінші."}},
@@ -439,6 +457,11 @@ WORDS_JA = {
         {"word": "洞察力がある (dōsatsuryoku ga aru)", "def": {"en": "perspicacious, insightful.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
         {"word": "物議を醸す (butsugi o kamosu)", "def": {"en": "controversial, causing debate.", "ru": "спорный, вызывающий споры.", "kk": "пікірталас тудыратын."}},
         {"word": "多面的 (tamenteki)", "def": {"en": "multifaceted.", "ru": "многогранный.", "kk": "көп қырлы."}},
+        {"word": "矛盾だらけ (mujun darake)", "def": {"en": "riddled with contradictions.", "ru": "полный противоречий.", "kk": "қайшылыққа толы."}},
+        {"word": "謎めいた (nazomeita)", "def": {"en": "enigmatic, mysterious.", "ru": "загадочный.", "kk": "жұмбақ."}},
+        {"word": "逆説的 (gyakusetsuteki)", "def": {"en": "paradoxical.", "ru": "парадоксальный.", "kk": "парадоксты."}},
+        {"word": "余計 (yokei)", "def": {"en": "superfluous, unnecessary.", "ru": "излишний, ненужный.", "kk": "артық, қажетсіз."}},
+        {"word": "複雑な気持ち (fukuzatsu na kimochi)", "def": {"en": "ambivalence, mixed feelings.", "ru": "амбивалентность, смешанные чувства.", "kk": "қарама-қайшы сезім."}},
     ],
 }
 
@@ -449,6 +472,11 @@ WORDS_KO = {
         {"word": "학교 (hakgyo)", "def": {"en": "school.", "ru": "школа.", "kk": "мектеп."}},
         {"word": "날씨 (nalssi)", "def": {"en": "weather.", "ru": "погода.", "kk": "ауа райы."}},
         {"word": "기쁘다 (gippeuda)", "def": {"en": "to be happy, glad.", "ru": "быть счастливым, радостным.", "kk": "қуанышты болу."}},
+        {"word": "책 (chaek)", "def": {"en": "book.", "ru": "книга.", "kk": "кітап."}},
+        {"word": "음악 (eumak)", "def": {"en": "music.", "ru": "музыка.", "kk": "музыка."}},
+        {"word": "동물 (dongmul)", "def": {"en": "animal.", "ru": "животное.", "kk": "жануар."}},
+        {"word": "색깔 (saekkkal)", "def": {"en": "color.", "ru": "цвет.", "kk": "түс."}},
+        {"word": "피곤하다 (pigonhada)", "def": {"en": "to be tired.", "ru": "быть уставшим.", "kk": "шаршаған болу."}},
     ],
     "TOPIK 3-4": [
         {"word": "모순되다 (mosundoeda)", "def": {"en": "to be contradictory.", "ru": "быть противоречивым.", "kk": "қайшылықты болу."}},
@@ -456,6 +484,11 @@ WORDS_KO = {
         {"word": "보편적 (bopyeonjeok)", "def": {"en": "universal, widespread.", "ru": "универсальный.", "kk": "жалпыға ортақ."}},
         {"word": "타당하다 (tadanghada)", "def": {"en": "to be reasonable, valid.", "ru": "быть разумным, обоснованным.", "kk": "негізді болу."}},
         {"word": "꼼꼼하다 (kkomkkomhada)", "def": {"en": "to be meticulous, thorough.", "ru": "быть скрупулёзным.", "kk": "мұқият, ұқыпты болу."}},
+        {"word": "솔직하다 (soljikhada)", "def": {"en": "to be candid, honest.", "ru": "быть откровенным.", "kk": "ашық, турашыл болу."}},
+        {"word": "끈질기다 (kkeunjilgida)", "def": {"en": "to be persistent, resilient.", "ru": "быть стойким, упорным.", "kk": "төзімді, шыдамды болу."}},
+        {"word": "피상적 (pisangjeok)", "def": {"en": "superficial, shallow.", "ru": "поверхностный.", "kk": "беткейлі, терең емес."}},
+        {"word": "다재다능하다 (dajaedaneunghada)", "def": {"en": "to be versatile, multi-talented.", "ru": "быть разносторонним.", "kk": "көп қырлы болу."}},
+        {"word": "회의적 (hoeuijeok)", "def": {"en": "skeptical, doubtful.", "ru": "скептический.", "kk": "күмәнмен қарайтын."}},
     ],
     "TOPIK 5-6": [
         {"word": "덧없다 (deodeopda)", "def": {"en": "ephemeral, fleeting.", "ru": "мимолётный, эфемерный.", "kk": "қысқа мерзімді, өткінші."}},
@@ -463,6 +496,11 @@ WORDS_KO = {
         {"word": "통찰력 있다 (tongchallyeok itda)", "def": {"en": "perspicacious, insightful.", "ru": "проницательный.", "kk": "зерек, өткір пайымды."}},
         {"word": "논란이 되다 (nollani doeda)", "def": {"en": "to be controversial.", "ru": "быть спорным.", "kk": "пікірталас тудыру."}},
         {"word": "다면적 (damyeonjeok)", "def": {"en": "multifaceted.", "ru": "многогранный.", "kk": "көп қырлы."}},
+        {"word": "모순투성이 (mosuntuseongi)", "def": {"en": "riddled with contradictions.", "ru": "полный противоречий.", "kk": "қайшылыққа толы."}},
+        {"word": "수수께끼 같다 (susukkekki gatda)", "def": {"en": "enigmatic, mysterious.", "ru": "загадочный.", "kk": "жұмбақ."}},
+        {"word": "역설적 (yeokseoljeok)", "def": {"en": "paradoxical.", "ru": "парадоксальный.", "kk": "парадоксты."}},
+        {"word": "불필요하다 (bulpilyohada)", "def": {"en": "superfluous, unnecessary.", "ru": "излишний, ненужный.", "kk": "артық, қажетсіз."}},
+        {"word": "복잡한 심경 (bokjaphan simgyeong)", "def": {"en": "ambivalence, mixed feelings.", "ru": "амбивалентность, смешанные чувства.", "kk": "қарама-қайшы сезім."}},
     ],
 }
 
@@ -695,6 +733,11 @@ IDIOMS_ZH = {
         {"idiom": "再见 (zàijiàn)", "meaning": {"en": "Goodbye.", "ru": "До свидания.", "kk": "Сау бол."}},
         {"idiom": "做得好! (zuò de hǎo!)", "meaning": {"en": "Well done!", "ru": "Молодец!", "kk": "Жарайсың!"}},
         {"idiom": "别担心 (bié dānxīn)", "meaning": {"en": "Don't worry.", "ru": "Не волнуйся.", "kk": "Алаңдама."}},
+        {"idiom": "谢谢 (xièxie)", "meaning": {"en": "Thank you.", "ru": "Спасибо.", "kk": "Рахмет."}},
+        {"idiom": "对不起 (duìbuqǐ)", "meaning": {"en": "I'm sorry.", "ru": "Извини.", "kk": "Кешір."}},
+        {"idiom": "慢走 (màn zǒu)", "meaning": {"en": "Take care (said when someone is leaving).", "ru": "Счастливого пути (при прощании).", "kk": "Сау сапар (қоштасқанда)."}},
+        {"idiom": "加油! (jiāyóu!)", "meaning": {"en": "Good luck! Keep going!", "ru": "Удачи! Давай, вперёд!", "kk": "Сәттілік! Алға!"}},
+        {"idiom": "没事儿 (méishìr)", "meaning": {"en": "It's nothing, no worries.", "ru": "Ничего страшного.", "kk": "Ештеңе етпейді."}},
     ],
     "HSK 4-6": [
         {"idiom": "马马虎虎 (mǎmǎhūhū)", "meaning": {"en": "careless, so-so, mediocre.", "ru": "так себе, небрежно.", "kk": "бей-жай, ортача."}},
@@ -702,6 +745,11 @@ IDIOMS_ZH = {
         {"idiom": "入乡随俗 (rùxiāngsuísú)", "meaning": {"en": "when in Rome, do as the Romans do.", "ru": "в чужой монастырь со своим уставом не ходят.", "kk": "қай жерге барсаң, сол жердің салтын ұста."}},
         {"idiom": "画蛇添足 (huàshétiānzú)", "meaning": {"en": "to ruin something by overdoing it.", "ru": "испортить излишним старанием.", "kk": "артық әрекетпен істі бұзу."}},
         {"idiom": "一举两得 (yìjǔliǎngdé)", "meaning": {"en": "to kill two birds with one stone.", "ru": "убить двух зайцев одним выстрелом.", "kk": "бір оқпен екі қоян ату."}},
+        {"idiom": "三心二意 (sānxīnèryì)", "meaning": {"en": "half-hearted, indecisive.", "ru": "нерешительный, без энтузиазма.", "kk": "екіұдай, шешімсіз."}},
+        {"idiom": "对症下药 (duìzhèngxiàyào)", "meaning": {"en": "to address the exact cause of a problem.", "ru": "лечить именно то, что нужно.", "kk": "мәселенің нақ себебін шешу."}},
+        {"idiom": "熟能生巧 (shúnéngshēngqiǎo)", "meaning": {"en": "practice makes perfect.", "ru": "практика ведёт к мастерству.", "kk": "жаттығу шеберлікке жеткізеді."}},
+        {"idiom": "眼高手低 (yǎngāoshǒudī)", "meaning": {"en": "ambitious but not skilled enough yet.", "ru": "амбициозный, но пока недостаточно умелый.", "kk": "талабы биік, бірақ шеберлігі жете қоймаған."}},
+        {"idiom": "望梅止渴 (wàngméizhǐkě)", "meaning": {"en": "to console oneself with false hope.", "ru": "утешать себя ложной надеждой.", "kk": "жалған үмітпен өзін жұбату."}},
     ],
     "HSK 7-9": [
         {"idiom": "塞翁失马 (sàiwēngshīmǎ)", "meaning": {"en": "a blessing in disguise.", "ru": "нет худа без добра.", "kk": "жаманнан жақсылық шығуы."}},
@@ -709,6 +757,11 @@ IDIOMS_ZH = {
         {"idiom": "画龙点睛 (huàlóngdiǎnjīng)", "meaning": {"en": "to add the crucial finishing touch.", "ru": "добавить решающий штрих.", "kk": "шешуші түпкі штрихты қосу."}},
         {"idiom": "亡羊补牢 (wángyángbǔláo)", "meaning": {"en": "better late than never.", "ru": "лучше поздно, чем никогда.", "kk": "кеш болса да, түк болмағаннан жақсы."}},
         {"idiom": "井底之蛙 (jǐngdǐzhīwā)", "meaning": {"en": "a person with a narrow view of the world.", "ru": "человек с узким кругозором.", "kk": "дүниетанымы тар адам."}},
+        {"idiom": "千里之行始于足下 (qiānlǐzhīxíngshǐyúzúxià)", "meaning": {"en": "a journey of a thousand miles begins with a single step.", "ru": "путь в тысячу ли начинается с первого шага.", "kk": "мың шақырымдық жол бір қадамнан басталады."}},
+        {"idiom": "水滴石穿 (shuǐdīshíchuān)", "meaning": {"en": "persistence pays off over time.", "ru": "терпение и труд всё перетрут.", "kk": "төзімділік пен еңбек нәтиже береді."}},
+        {"idiom": "事半功倍 (shìbàngōngbèi)", "meaning": {"en": "to get twice the result with half the effort.", "ru": "добиться большего меньшими усилиями.", "kk": "аз күшпен көп нәтижеге жету."}},
+        {"idiom": "未雨绸缪 (wèiyǔchóumóu)", "meaning": {"en": "to prepare in advance for future trouble.", "ru": "готовиться заранее к трудностям.", "kk": "қиындыққа алдын ала дайындалу."}},
+        {"idiom": "明知山有虎偏向虎山行 (míngzhī shān yǒu hǔ piānxiàng hǔshān xíng)", "meaning": {"en": "to knowingly face danger with courage.", "ru": "сознательно идти навстречу опасности.", "kk": "қауіпті біле тұра, батыл қарсы алу."}},
     ],
 }
 
@@ -719,6 +772,11 @@ IDIOMS_JA = {
         {"idiom": "またね (Mata ne.)", "meaning": {"en": "See you (casual goodbye).", "ru": "Пока, увидимся.", "kk": "Кездескенше."}},
         {"idiom": "よくできました! (Yoku dekimashita!)", "meaning": {"en": "Well done!", "ru": "Молодец!", "kk": "Жарайсың!"}},
         {"idiom": "心配しないで (Shinpai shinaide.)", "meaning": {"en": "Don't worry.", "ru": "Не волнуйся.", "kk": "Алаңдама."}},
+        {"idiom": "ありがとうございます (Arigatō gozaimasu.)", "meaning": {"en": "Thank you very much.", "ru": "Большое спасибо.", "kk": "Көп рахмет."}},
+        {"idiom": "ごめんなさい (Gomen nasai.)", "meaning": {"en": "I'm sorry.", "ru": "Извини.", "kk": "Кешір."}},
+        {"idiom": "お疲れ様です (Otsukaresama desu.)", "meaning": {"en": "Thanks for your hard work.", "ru": "Спасибо за труд.", "kk": "Еңбегің үшін рахмет."}},
+        {"idiom": "頑張って! (Ganbatte!)", "meaning": {"en": "Good luck, do your best!", "ru": "Удачи, старайся!", "kk": "Сәттілік, тырыс!"}},
+        {"idiom": "いってらっしゃい (Itterasshai.)", "meaning": {"en": "Take care (said to someone leaving).", "ru": "Счастливого пути (при прощании).", "kk": "Сау сапар (қоштасқанда)."}},
     ],
     "N3-N2": [
         {"idiom": "猫の手も借りたい (Neko no te mo karitai.)", "meaning": {"en": "to be extremely busy.", "ru": "быть очень занятым.", "kk": "өте бос емес болу."}},
@@ -726,6 +784,11 @@ IDIOMS_JA = {
         {"idiom": "馬が合う (Uma ga au.)", "meaning": {"en": "to get along well with someone.", "ru": "хорошо ладить с кем-то.", "kk": "біреумен жақсы тіл табысу."}},
         {"idiom": "頭が固い (Atama ga katai.)", "meaning": {"en": "to be stubborn, inflexible.", "ru": "быть упрямым.", "kk": "ойлауда қасаң болу."}},
         {"idiom": "耳が痛い (Mimi ga itai.)", "meaning": {"en": "a criticism that hits close to home.", "ru": "критика, задевающая за живое.", "kk": "жанға тиетін сын."}},
+        {"idiom": "一石二鳥 (Isseki nichō.)", "meaning": {"en": "to kill two birds with one stone.", "ru": "убить двух зайцев одним выстрелом.", "kk": "бір оқпен екі қоян ату."}},
+        {"idiom": "口が軽い (Kuchi ga karui.)", "meaning": {"en": "unable to keep a secret.", "ru": "неспособный хранить секреты.", "kk": "құпияны сақтай алмайтын."}},
+        {"idiom": "腹が立つ (Hara ga tatsu.)", "meaning": {"en": "to get angry.", "ru": "разозлиться.", "kk": "ашулану."}},
+        {"idiom": "目が高い (Me ga takai.)", "meaning": {"en": "to have a discerning eye, good taste.", "ru": "иметь хороший вкус, разборчивый взгляд.", "kk": "жоғары талғамы бар."}},
+        {"idiom": "手が届く (Te ga todoku.)", "meaning": {"en": "to be within reach, affordable.", "ru": "быть доступным, достижимым.", "kk": "қолжетімді болу."}},
     ],
     "N1": [
         {"idiom": "背水の陣 (Haisui no jin.)", "meaning": {"en": "to commit fully with no retreat.", "ru": "сжечь мосты.", "kk": "кейін шегінбей, толық берілу."}},
@@ -733,6 +796,11 @@ IDIOMS_JA = {
         {"idiom": "覆水盆に返らず (Fukusui bon ni kaerazu.)", "meaning": {"en": "what's done cannot be undone.", "ru": "что сделано, то сделано.", "kk": "болған іс қайтпайды."}},
         {"idiom": "虎穴に入らずんば虎子を得ず (Koketsu ni irazunba koji o ezu.)", "meaning": {"en": "nothing ventured, nothing gained.", "ru": "кто не рискует, тот не выигрывает.", "kk": "тәуекел етпеген жетістікке жетпейді."}},
         {"idiom": "善は急げ (Zen wa isoge.)", "meaning": {"en": "strike while the iron is hot.", "ru": "куй железо, пока горячо.", "kk": "темірді ыстығында соқ."}},
+        {"idiom": "一期一会 (Ichigo ichie.)", "meaning": {"en": "a once-in-a-lifetime encounter.", "ru": "неповторимая, единственная встреча.", "kk": "өмірде бір рет кездесетін сәт."}},
+        {"idiom": "塞翁が馬 (Saiō ga uma.)", "meaning": {"en": "a blessing in disguise.", "ru": "нет худа без добра.", "kk": "жаманнан жақсылық шығуы."}},
+        {"idiom": "石橋を叩いて渡る (Ishibashi wo tataite wataru.)", "meaning": {"en": "to be extremely cautious.", "ru": "быть чрезвычайно осторожным.", "kk": "өте абай болу."}},
+        {"idiom": "光陰矢の如し (Kōin ya no gotoshi.)", "meaning": {"en": "time flies like an arrow.", "ru": "время летит как стрела.", "kk": "уақыт оқтай зулап өтеді."}},
+        {"idiom": "七転び八起き (Nanakorobi yaoki.)", "meaning": {"en": "to never give up despite repeated failure.", "ru": "падать семь раз, подниматься восемь.", "kk": "жеті рет жығылса да, сегіз рет тұру."}},
     ],
 }
 
@@ -743,6 +811,11 @@ IDIOMS_KO = {
         {"idiom": "또 만나요 (Tto mannayo.)", "meaning": {"en": "See you again.", "ru": "До встречи.", "kk": "Тағы кездесеміз."}},
         {"idiom": "잘했어요! (Jalhaesseoyo!)", "meaning": {"en": "Well done!", "ru": "Молодец!", "kk": "Жарайсың!"}},
         {"idiom": "걱정하지 마세요 (Geokjeonghaji maseyo.)", "meaning": {"en": "Don't worry.", "ru": "Не волнуйся.", "kk": "Алаңдама."}},
+        {"idiom": "감사합니다 (Gamsahamnida.)", "meaning": {"en": "Thank you.", "ru": "Спасибо.", "kk": "Рахмет."}},
+        {"idiom": "미안해요 (Mianhaeyo.)", "meaning": {"en": "I'm sorry.", "ru": "Извини.", "kk": "Кешір."}},
+        {"idiom": "수고하셨어요 (Sugohasyeosseoyo.)", "meaning": {"en": "Thanks for your hard work.", "ru": "Спасибо за труд.", "kk": "Еңбегің үшін рахмет."}},
+        {"idiom": "화이팅! (Hwaiting!)", "meaning": {"en": "Fighting! (Good luck / go for it)", "ru": "Удачи, вперёд!", "kk": "Сәттілік, алға!"}},
+        {"idiom": "다녀오세요 (Danyeooseyo.)", "meaning": {"en": "Take care (said to someone leaving).", "ru": "Счастливого пути (при прощании).", "kk": "Сау сапар (қоштасқанда)."}},
     ],
     "TOPIK 3-4": [
         {"idiom": "손이 크다 (Soni keuda.)", "meaning": {"en": "to be generous (lit: to have big hands).", "ru": "быть щедрым.", "kk": "жомарт болу."}},
@@ -750,6 +823,11 @@ IDIOMS_KO = {
         {"idiom": "눈이 높다 (Nuni nopda.)", "meaning": {"en": "to have high standards.", "ru": "иметь высокие требования.", "kk": "талғамы жоғары болу."}},
         {"idiom": "입이 무겁다 (Ibi mugeopda.)", "meaning": {"en": "to be discreet, able to keep a secret.", "ru": "уметь хранить секреты.", "kk": "құпияны сақтай білу."}},
         {"idiom": "귀가 얇다 (Gwiga yalpda.)", "meaning": {"en": "to be easily persuaded by others.", "ru": "легко поддаваться чужому влиянию.", "kk": "басқаның сөзіне тез көну."}},
+        {"idiom": "일석이조 (Ilseogijo.)", "meaning": {"en": "to kill two birds with one stone.", "ru": "убить двух зайцев одним выстрелом.", "kk": "бір оқпен екі қоян ату."}},
+        {"idiom": "입이 가볍다 (Ibi gabyeopda.)", "meaning": {"en": "unable to keep a secret.", "ru": "неспособный хранить секреты.", "kk": "құпияны сақтай алмайтын."}},
+        {"idiom": "화가 나다 (Hwaga nada.)", "meaning": {"en": "to get angry.", "ru": "разозлиться.", "kk": "ашулану."}},
+        {"idiom": "눈썰미가 있다 (Nunsseolmiga itda.)", "meaning": {"en": "to have a keen, observant eye.", "ru": "иметь острый, наблюдательный взгляд.", "kk": "байқампаз көзі бар."}},
+        {"idiom": "손에 잡히다 (Sone japhida.)", "meaning": {"en": "to be within reach, manageable.", "ru": "быть доступным, посильным.", "kk": "қолжетімді болу."}},
     ],
     "TOPIK 5-6": [
         {"idiom": "등잔 밑이 어둡다 (Deungjan michi eodupda.)", "meaning": {"en": "the obvious is often overlooked.", "ru": "самое очевидное часто остаётся незамеченным.", "kk": "көзге көрінген нәрсе байқалмай қалады."}},
@@ -757,6 +835,11 @@ IDIOMS_KO = {
         {"idiom": "호랑이 굴에 가야 호랑이를 잡는다 (Horangi gure gaya horangireul jamneunda.)", "meaning": {"en": "nothing ventured, nothing gained.", "ru": "кто не рискует, тот не выигрывает.", "kk": "тәуекел етпеген жетістікке жетпейді."}},
         {"idiom": "쇠뿔도 단김에 빼라 (Soebbuldo dangime ppaera.)", "meaning": {"en": "strike while the iron is hot.", "ru": "куй железо, пока горячо.", "kk": "темірді ыстығында соқ."}},
         {"idiom": "우물 안 개구리 (Umul an gaeguri.)", "meaning": {"en": "a person with a narrow view of the world.", "ru": "человек с узким кругозором.", "kk": "дүниетанымы тар адам."}},
+        {"idiom": "일생일대 (Ilsaengildae.)", "meaning": {"en": "a once-in-a-lifetime occasion.", "ru": "неповторимый, единственный в жизни случай.", "kk": "өмірде бір рет кездесетін жағдай."}},
+        {"idiom": "새옹지마 (Saeongjima.)", "meaning": {"en": "a blessing in disguise.", "ru": "нет худа без добра.", "kk": "жаманнан жақсылық шығуы."}},
+        {"idiom": "돌다리도 두들겨 보고 건너라 (Doldarido dudeulgyeo bogo geonneora.)", "meaning": {"en": "to be extremely cautious.", "ru": "быть чрезвычайно осторожным.", "kk": "өте абай болу."}},
+        {"idiom": "세월이 쏜살같다 (Seworhi ssonsalgatda.)", "meaning": {"en": "time flies like an arrow.", "ru": "время летит как стрела.", "kk": "уақыт оқтай зулап өтеді."}},
+        {"idiom": "칠전팔기 (Chiljeonpalgi.)", "meaning": {"en": "to never give up despite repeated failure.", "ru": "падать семь раз, подниматься восемь.", "kk": "жеті рет жығылса да, сегіз рет тұру."}},
     ],
 }
 
@@ -921,14 +1004,23 @@ BOOKS_ZH = {
     "HSK 1-3": [
         {"title": "《不一样的卡梅拉》系列", "tag": "儿童故事", "term": "勇敢 (yǒnggǎn)", "meaning": {"en": "brave, having courage.", "ru": "смелый, храбрый.", "kk": "батыл, ержүрек."}},
         {"title": "《猜猜我有多爱你》", "tag": "家庭", "term": "爱 (ài)", "meaning": {"en": "love, deep affection.", "ru": "любовь, глубокая привязанность.", "kk": "сүйіспеншілік."}},
+        {"title": "《三只小猪》", "tag": "童话", "term": "聪明 (cōngmíng)", "meaning": {"en": "clever, smart.", "ru": "умный.", "kk": "ақылды."}},
+        {"title": "《小红帽》", "tag": "童话", "term": "危险 (wēixiǎn)", "meaning": {"en": "danger.", "ru": "опасность.", "kk": "қауіп."}},
+        {"title": "《丑小鸭》", "tag": "童话", "term": "自信 (zìxìn)", "meaning": {"en": "self-confidence.", "ru": "уверенность в себе.", "kk": "өзіне сенімділік."}},
     ],
     "HSK 4-6": [
         {"title": "《小王子》– 圣埃克苏佩里", "tag": "哲学", "term": "本质 (běnzhì)", "meaning": {"en": "essence, what truly matters.", "ru": "суть, то, что действительно важно.", "kk": "мән, шынымен маңызды нәрсе."}},
         {"title": "《活着》– 余华", "tag": "人生", "term": "命运 (mìngyùn)", "meaning": {"en": "fate, the course of events beyond one's control.", "ru": "судьба.", "kk": "тағдыр."}},
+        {"title": "《骆驼祥子》– 老舍", "tag": "社会", "term": "挣扎 (zhēngzhá)", "meaning": {"en": "struggle.", "ru": "борьба.", "kk": "күрес."}},
+        {"title": "《边城》– 沈从文", "tag": "乡土文学", "term": "纯真 (chúnzhēn)", "meaning": {"en": "innocence, purity.", "ru": "невинность, чистота.", "kk": "тазалық, кіршіксіздік."}},
+        {"title": "《城南旧事》– 林海音", "tag": "童年", "term": "童年 (tóngnián)", "meaning": {"en": "childhood.", "ru": "детство.", "kk": "балалық шақ."}},
     ],
     "HSK 7-9": [
         {"title": "《红楼梦》– 曹雪芹", "tag": "经典文学", "term": "情缘 (qíngyuán)", "meaning": {"en": "a destined emotional bond between people.", "ru": "предначертанная эмоциональная связь между людьми.", "kk": "адамдар арасындағы тағдырлы сезімдік байланыс."}},
         {"title": "《围城》– 钱钟书", "tag": "社会讽刺", "term": "讽刺 (fěngcì)", "meaning": {"en": "satire, using irony to criticize.", "ru": "сатира.", "kk": "сатира, мысқылмен сынау."}},
+        {"title": "《狂人日记》– 鲁迅", "tag": "现代文学", "term": "疯狂 (fēngkuáng)", "meaning": {"en": "madness.", "ru": "безумие.", "kk": "ессіздік."}},
+        {"title": "《呐喊》– 鲁迅", "tag": "现代文学", "term": "觉醒 (juéxǐng)", "meaning": {"en": "awakening.", "ru": "пробуждение.", "kk": "ояну."}},
+        {"title": "《平凡的世界》– 路遥", "tag": "社会", "term": "奋斗 (fèndòu)", "meaning": {"en": "struggle, striving.", "ru": "борьба, усилия.", "kk": "күш салу, талпыну."}},
     ],
 }
 
@@ -936,14 +1028,23 @@ BOOKS_JA = {
     "N5-N4": [
         {"title": "『ぐりとぐら』– 中川李枝子", "tag": "児童文学", "term": "友情 (yūjō)", "meaning": {"en": "friendship.", "ru": "дружба.", "kk": "достық."}},
         {"title": "『はらぺこあおむし』– エリック・カール", "tag": "児童文学", "term": "空腹 (kūfuku)", "meaning": {"en": "hunger, being hungry.", "ru": "голод.", "kk": "аштық."}},
+        {"title": "『３びきのこぶた』", "tag": "童話", "term": "賢い (kashikoi)", "meaning": {"en": "clever, wise.", "ru": "умный.", "kk": "ақылды."}},
+        {"title": "『あかずきん』", "tag": "童話", "term": "危険 (kiken)", "meaning": {"en": "danger.", "ru": "опасность.", "kk": "қауіп."}},
+        {"title": "『みにくいアヒルの子』", "tag": "童話", "term": "自信 (jishin)", "meaning": {"en": "self-confidence.", "ru": "уверенность в себе.", "kk": "өзіне сенімділік."}},
     ],
     "N3-N2": [
         {"title": "『キッチン』– 吉本ばなな", "tag": "現代文学", "term": "喪失 (sōshitsu)", "meaning": {"en": "loss, the state of losing something.", "ru": "утрата, потеря чего-либо.", "kk": "жоғалту, айырылу."}},
         {"title": "『魔女の宅急便』– 角野栄子", "tag": "成長物語", "term": "自立 (jiritsu)", "meaning": {"en": "independence, standing on one's own.", "ru": "самостоятельность.", "kk": "дербестік."}},
+        {"title": "『博士の愛した数式』– 小川洋子", "tag": "現代文学", "term": "記憶 (kioku)", "meaning": {"en": "memory.", "ru": "память.", "kk": "есте сақтау, жады."}},
+        {"title": "『赤毛のアン』(日本語訳)", "tag": "成長物語", "term": "想像力 (sōzōryoku)", "meaning": {"en": "imagination.", "ru": "воображение.", "kk": "қиял."}},
+        {"title": "『時をかける少女』– 筒井康隆", "tag": "SF", "term": "運命 (unmei)", "meaning": {"en": "fate, destiny.", "ru": "судьба.", "kk": "тағдыр."}},
     ],
     "N1": [
         {"title": "『人間失格』– 太宰治", "tag": "文学", "term": "疎外感 (sogaikan)", "meaning": {"en": "a sense of alienation.", "ru": "чувство отчуждения.", "kk": "оқшаулану сезімі."}},
         {"title": "『こころ』– 夏目漱石", "tag": "文学", "term": "孤独 (kodoku)", "meaning": {"en": "solitude, loneliness.", "ru": "одиночество.", "kk": "жалғыздық."}},
+        {"title": "『雪国』– 川端康成", "tag": "文学", "term": "儚さ (hakanasa)", "meaning": {"en": "fleetingness, transience.", "ru": "мимолётность.", "kk": "өткіншілік."}},
+        {"title": "『羅生門』– 芥川龍之介", "tag": "文学", "term": "利己主義 (rikoshugi)", "meaning": {"en": "egoism, selfishness.", "ru": "эгоизм.", "kk": "өзімшілдік."}},
+        {"title": "『金閣寺』– 三島由紀夫", "tag": "文学", "term": "執着 (shūchaku)", "meaning": {"en": "obsession, attachment.", "ru": "одержимость, привязанность.", "kk": "құмарлық, бекінушілік."}},
     ],
 }
 
@@ -951,14 +1052,23 @@ BOOKS_KO = {
     "TOPIK 1-2": [
         {"title": "『구름빵』– 백희나", "tag": "동화", "term": "상상력 (sangsangnyeok)", "meaning": {"en": "imagination.", "ru": "воображение.", "kk": "қиял, елестету қабілеті."}},
         {"title": "『강아지똥』– 권정생", "tag": "동화", "term": "소중함 (sojungham)", "meaning": {"en": "preciousness, being valuable.", "ru": "ценность, значимость.", "kk": "құндылық, маңыздылық."}},
+        {"title": "『아기 돼지 삼형제』", "tag": "동화", "term": "똑똑함 (ttokttokham)", "meaning": {"en": "cleverness.", "ru": "сообразительность.", "kk": "ақылдылық."}},
+        {"title": "『빨간 모자』", "tag": "동화", "term": "위험 (wiheom)", "meaning": {"en": "danger.", "ru": "опасность.", "kk": "қауіп."}},
+        {"title": "『미운 아기 오리』", "tag": "동화", "term": "자신감 (jasingam)", "meaning": {"en": "self-confidence.", "ru": "уверенность в себе.", "kk": "өзіне сенімділік."}},
     ],
     "TOPIK 3-4": [
         {"title": "『완득이』– 김려령", "tag": "청소년 소설", "term": "편견 (pyeongyeon)", "meaning": {"en": "prejudice, a preconceived opinion.", "ru": "предрассудок, предвзятое мнение.", "kk": "жаңсақ пікір."}},
         {"title": "『나미야 잡화점의 기적』– 히가시노 게이고", "tag": "소설", "term": "인연 (inyeon)", "meaning": {"en": "fated connection between people.", "ru": "предопределённая связь между людьми.", "kk": "адамдар арасындағы тағдырлы байланыс."}},
+        {"title": "『행복한 왕자』", "tag": "동화", "term": "희생 (huisaeng)", "meaning": {"en": "sacrifice.", "ru": "жертва.", "kk": "құрбандық."}},
+        {"title": "『소나기』– 황순원", "tag": "청소년 소설", "term": "순수함 (sunsuham)", "meaning": {"en": "purity, innocence.", "ru": "чистота, невинность.", "kk": "тазалық."}},
+        {"title": "『동백꽃』– 김유정", "tag": "청소년 소설", "term": "순박함 (sunbakham)", "meaning": {"en": "naivety, simplicity.", "ru": "простодушие.", "kk": "аңғалдық."}},
     ],
     "TOPIK 5-6": [
         {"title": "『채식주의자』– 한강", "tag": "현대 문학", "term": "소외감 (so-oe-gam)", "meaning": {"en": "a sense of alienation.", "ru": "чувство отчуждения.", "kk": "оқшаулану сезімі."}},
         {"title": "『토지』– 박경리", "tag": "대하소설", "term": "운명 (unmyeong)", "meaning": {"en": "fate, destiny.", "ru": "судьба.", "kk": "тағдыр."}},
+        {"title": "『무정』– 이광수", "tag": "근대문학", "term": "근대화 (geundaehwa)", "meaning": {"en": "modernization.", "ru": "модернизация.", "kk": "жаңғырту."}},
+        {"title": "『난장이가 쏘아올린 작은 공』– 조세희", "tag": "사회소설", "term": "불평등 (bulpyeongdeung)", "meaning": {"en": "inequality.", "ru": "неравенство.", "kk": "теңсіздік."}},
+        {"title": "『엄마를 부탁해』– 신경숙", "tag": "가족", "term": "그리움 (geuriwum)", "meaning": {"en": "longing, yearning.", "ru": "тоска, стремление.", "kk": "сағыну."}},
     ],
 }
 
